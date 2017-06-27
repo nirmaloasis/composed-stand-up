@@ -1,0 +1,269 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  background-color: #ededed;
+}
+
+#headerWrapper{
+    width: 100%;
+    margin: 0;
+    background-color: #262626;
+    box-sizing: border-box;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+#compozedLogo{
+    font-family: cursive;
+    color: lightgreen;
+    font-size: xx-large;
+    padding-left: 20px;
+}
+
+#adminSpan{
+    display: flex;
+    float: right;
+    color: white;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+#adminLink{
+    padding-left: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+#menuDiv{
+    text-align: center;
+    padding-bottom: 20px;    
+}
+
+#headerMenuItems{
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#todaysStatus{
+    text-align: center;
+    padding: 30px;
+    background: white;
+}
+
+#contentSection{
+    min-height: 1200px;
+}
+
+#todayDate{
+    background: white;
+    text-align: end;
+    color: brown;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    margin-bottom: 27px;
+    margin: 0 auto;
+    padding: 0 10px 10px 0px;
+    box-shadow: 0px 0.4px #686868;
+}
+
+#facilitator{
+    color: brown;
+    text-transform: capitalize;
+}
+
+#todaysFacilitator{
+    padding: 30px 0px 0px 0px;
+    background: white;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    word-spacing: 8px;
+}
+
+.TextMedium{
+    background: white;
+    color: #262626;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 1px;
+    word-spacing: 8px;
+    margin-bottom: 27px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contentWrapper{
+    display: flex;
+    width: 92%;
+    min-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;   
+}
+
+#newFaces{
+    width: 20%;
+    min-height: 300px;
+    border-radius: 40px 20px 0px 0px;
+    background: white;
+    box-shadow: 0 0 1.2px #686868;
+}
+
+#prevHelp{
+    margin-left: 3%;
+    width: 38%;
+    min-height: 500px;
+    border-radius: 40px 20px 0px 0px;
+    background: white;
+    box-shadow: 0 0 1.2px #686868;
+}
+
+#upcommingEvents{
+    margin-left: 1%;
+    width: 38%;
+    min-height: 500px;
+    border-radius: 40px 20px 0px 0px;
+    background: white;
+    box-shadow: 0 0 1.2px #686868;
+}
+
+.contentStyle{
+    box-shadow: 0 0 1.2px #686868;
+    background: white;
+    float: left;
+}
+
+#fillColor{
+    padding: 10px;
+    background: #262626;
+    border-radius: 40px 20px 0px 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 1px;
+    word-spacing: 8px;
+    text-align: center;
+}
+
+#addMultipleItems{
+    padding: .5rem .75rem .75rem;
+    border: 1px solid #C5C5C5;
+    border-radius: .25rem;
+    cursor: text;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#noNewFaceWrapper{
+    text-align: center;
+}
+
+#noNewFace{
+    background: white;
+    padding: 40px 0px 0px 0px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: brown;
+    width: 90%;
+}
+
+#addNewFaces{
+    display: flex;
+    margin: 10px;
+    margin-top: 0px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #262626;
+    padding: 5%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px 0px #262626;
+}
+
+#newFaceList{
+    display: flex;
+    padding-left: 5px;
+    box-shadow: 0px 0px 2px 0px #262626;
+    border-radius: 3px;
+    margin: 10%;
+}
+
+#inputFace{
+    border: 0px;
+    outline: none;
+    height: 25px;
+    font-size: 13px;
+    width: 87%;
+    color: #262626;
+    letter-spacing: 1px;
+}
+
+#addSign{
+    box-shadow: 0px 0px 2px 0px #262626;
+    width: 13%;
+    background: #262626;
+    color: white;
+    cursor: pointer;
+    font-size: large;
+    padding-top: 2px;
+}
+
+.NewFaces{
+    letter-spacing: 1px;
+    padding: 10px;
+    text-align: left;
+    margin-left: 10%;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #262626;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
+  margin-left: 48%;
+  margin-top: 10%;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#loaderText{
+    text-align: center;
+    color: brown;
+    font-size: 20px;
+    margin: 30px;
+}
+
+#prevItemsWrap{
+    padding-top: 30px;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+#prevItemsDiv{
+    margin: 10px;
+}
+
+#prevItems{
+}
+
+#prevDate{
+    color: brown;
+    font-family: cursive;
+}

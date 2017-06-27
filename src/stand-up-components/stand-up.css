@@ -1,0 +1,118 @@
+#standUpHeader{
+    background: #262626;
+    padding: 5px;
+}
+
+#heading{
+    color: lightgreen;
+    padding: 15px;
+    font-size: xx-large;
+    text-align: left;
+    font-family: cursive;
+}
+
+#nextFacilitator{
+    margin-top: 10px;
+    margin-right: 20px;
+    float: right;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+#error{
+    color: red;
+    text-align: center;
+    letter-spacing: 1px;
+    float: right;
+    margin-top: 15px;
+    font-size: large;
+    background: #262626;
+}
+
+#facilitatorGenerated{
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+    float: right;
+    margin-top: 15px;
+    margin-right: 20px;
+    background: #262626;
+}
+
+#stFacilitator{
+    text-align: center;
+    background: #262626;
+    font-size: large;
+    color: white;
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+#standUpcontentWrapper{
+    display: flex;
+    width: 92%;
+    min-height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    text-align: center;
+    box-shadow: 0 0 1.2px #686868;
+    background: white;
+}
+
+#leftContainer,#middleontainer{
+    width: 33.33%;
+    border-right: 1px solid #262626;
+}
+
+#rightContainer{
+    width: 33.33%;
+    border-right: 1px solid #262626;
+}
+
+#todayDateSUp{
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    margin-bottom: 27px;
+    margin: 0 auto;
+    padding: 20px 30px 20px 0px;
+    background: white;
+    box-shadow: 0 0 1.2px #686868;
+}
+
+#newFaceSt{
+    margin-left: 30px;
+}
+
+#itemsHeading{
+    padding: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 1px;
+    word-spacing: 8px;
+    text-align: center;
+    border-bottom: 1px solid #262626;
+}
+
+#standUpContent #newFaceList{
+   margin: 5%;
+}
+
+#standUpContent #inputFace{
+   width: 90%;
+}
+
+#standUpContent #addSign{
+   width: 10%;
+}
+
+#stDate{
+    float: right;
+    color: brown;
+}
