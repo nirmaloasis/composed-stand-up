@@ -10,7 +10,6 @@ export default class NewFaces extends React.Component {
 
     componentWillMount(){
         console.log("NewFaces Componenet=>>>>>",this.props)
-        debugger
     }
 
     addNewFaces(){
@@ -31,19 +30,20 @@ export default class NewFaces extends React.Component {
 
     render() {
         return (
-            <div id="newFaces" className="contentStyle">
-                <div id="fillColor">Any New Faces ? </div>
-                <div id="noNewFaceWrapper">
-                    <div id="noNewFace">
-                        {this.state.listOfNewFaces.map((value,index) => <div className="NewFaces" key={index}>{value}</div>)}
-                    </div>
-                    <div>
-                        <div id="newFaceList">
-                            <input id="inputFace" placeholder="Add new Faces" ref={(input) => { this.textInput = input}} /> 
-                            <span id="addSign" onClick={this.addNewFaces}>+</span>                              
-                        </div> 
-                    </div>
-                </div> 
+            <div id="noNewFaceWrapper">
+                <span>
+                    <span>
+                        New Faces : 
+                    </span>
+                    <span>
+                        {this.state.listOfNewFaces.map((value,index) => <span className="NewFaces" key={index}>{index ? ' , '+ value : value}</span>)}
+                    </span>
+                </span>
+                <span id="addNewFaces">
+                    <input id="inputAddFace" type="text" name="newFace" required placeholder="Add new Faces" ref={(input) => { this.textInput = input}}/> 
+                    <span id="addFace" onClick={this.addNewFaces}>+</span> 
+                </span>
+                <span id="todayDate">{new Date().toDateString()}</span>
             </div>
         );
     }

@@ -81,7 +81,8 @@ router.post('/reset-sUpdata', function(req, res, next) {
 })
 
 router.post('/add-newFaces', function(req, res, next) {
-  // console.log("add >>>>",req.body)
+  debugger
+  console.log("add >>>>",req.body)
   json = JSON.stringify(req.body); 
   fs.writeFile(standUpFilePath, json, 'utf8',()=>{});
 })

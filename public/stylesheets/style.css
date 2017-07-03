@@ -2,48 +2,94 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
   background-color: #ededed;
+  width: 1440px;
 }
 
 #headerWrapper{
     width: 100%;
     margin: 0;
-    background-color: #262626;
+    background-color: #254b6e;
     box-sizing: border-box;
     font-size: 18px;
     letter-spacing: 1px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
 }
 
 #compozedLogo{
-    font-family: cursive;
-    color: lightgreen;
+    font-family: fantasy;
+    color: white;
     font-size: xx-large;
-    padding-left: 20px;
+    padding-left: 4%;
+    width: 25%;
 }
 
 #adminSpan{
     display: flex;
+    align-items: center;
     float: right;
     color: white;
-    padding-right: 10px;
-    padding-top: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid white;
+    padding: 2px 5px 2px 5px;
+    border-radius: 4px;
 }
 
 #adminLink{
-    padding-left: 5px;
     color: white;
     text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+#adminLogo{
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
 }
 
 #menuDiv{
     text-align: center;
-    padding-bottom: 20px;    
+    font-size: 15px;
+    width: 15%;
 }
 
-#headerMenuItems{
+#todaysFacilitator{
+    width: 45.5%;
+    font-size: 16px;
     color: white;
-    margin: 20px;
+}
+
+#rightBar{
+    float: right;
+    padding: 12px 25px 12px 0px;
+    margin-right: 25px;
+    border-right: 1px solid white;
+}
+
+
+
+.HeaderMenuItems{
+    margin: 15px;
     text-decoration: none;
     cursor: pointer;
+    padding: 3px 10px 4px 10px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid white;
+}
+
+#newDateWrap{
+    width: 100%;
+    font-size: 18px;
+    background: white;
+    box-shadow: 0px 0.4px #686868;
+    border-bottom: .062rem solid #cccccc;
 }
 
 #todaysStatus{
@@ -57,43 +103,34 @@ body {
 }
 
 #todayDate{
-    background: white;
-    text-align: end;
-    color: brown;
-    font-weight: 400;
-    font-size: 20px;
+    float: right;
+    color: #254b6e;
+}
+
+#div92per{
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
     letter-spacing: 1px;
-    word-spacing: 5px;
-    margin-bottom: 27px;
-    margin: 0 auto;
-    padding: 0 10px 10px 0px;
-    box-shadow: 0px 0.4px #686868;
+    text-transform: capitalize;
+    color: #254b6e;
 }
 
 #facilitator{
-    color: brown;
-    text-transform: capitalize;
+    color: #444444;
 }
 
-#todaysFacilitator{
-    padding: 30px 0px 0px 0px;
-    background: white;
-    text-align: center;
-    font-size: 20px;
-    letter-spacing: 1px;
-    word-spacing: 8px;
+#notPresent{
+    text-decoration: underline;
+    font-size: 13px;
+    padding-left: 10px;
+    cursor: pointer;
 }
+
 
 .TextMedium{
-    background: white;
-    color: #262626;
-    font-weight: 400;
-    font-size: 20px;
-    letter-spacing: 1px;
-    word-spacing: 8px;
-    margin-bottom: 27px;
-    margin: 0 auto;
-    text-align: center;
+
 }
 
 #contentWrapper{
@@ -107,8 +144,8 @@ body {
 
 #newFaces{
     width: 20%;
-    min-height: 300px;
-    border-radius: 40px 20px 0px 0px;
+    height: 320px;
+    border-radius: 5px 5px 0px 0px;
     background: white;
     box-shadow: 0 0 1.2px #686868;
 }
@@ -117,7 +154,7 @@ body {
     margin-left: 3%;
     width: 38%;
     min-height: 500px;
-    border-radius: 40px 20px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
     background: white;
     box-shadow: 0 0 1.2px #686868;
 }
@@ -126,7 +163,7 @@ body {
     margin-left: 1%;
     width: 38%;
     min-height: 500px;
-    border-radius: 40px 20px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
     background: white;
     box-shadow: 0 0 1.2px #686868;
 }
@@ -139,8 +176,8 @@ body {
 
 #fillColor{
     padding: 10px;
-    background: #262626;
-    border-radius: 40px 20px 0px 0px;
+    background: #254b6e;
+    border-radius: 5px 5px 0px 0px;
     color: white;
     font-weight: 400;
     font-size: 18px;
@@ -158,66 +195,46 @@ body {
     flex-wrap: wrap;
 }
 
-#noNewFaceWrapper{
-    text-align: center;
-}
-
 #noNewFace{
-    background: white;
-    padding: 40px 0px 0px 0px;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: brown;
-    width: 90%;
+
 }
 
 #addNewFaces{
-    display: flex;
-    margin: 10px;
-    margin-top: 0px;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #262626;
-    padding: 5%;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    border-radius: 4px;
-    box-shadow: 0px 0px 2px 0px #262626;
-}
-
-#newFaceList{
-    display: flex;
-    padding-left: 5px;
-    box-shadow: 0px 0px 2px 0px #262626;
+    border: 1.3px solid #254b6e;
+    margin-left: 50px;
     border-radius: 3px;
-    margin: 10%;
+    display: inline-flex;
+    width: 150px;
+    align-items: center;
+    height: 24px;
+    height: px;
 }
 
-#inputFace{
+#inputAddFace{
     border: 0px;
     outline: none;
-    height: 25px;
+    padding-left: 5px;
     font-size: 13px;
-    width: 87%;
-    color: #262626;
-    letter-spacing: 1px;
+    width: 120px;
 }
 
-#addSign{
-    box-shadow: 0px 0px 2px 0px #262626;
-    width: 13%;
-    background: #262626;
+#addFace{
     color: white;
+    height: 25px;
+    text-align: center;
+    width: 30px;
+    border-left: 1.4px solid #254b6e;
+    font-size: 20px;
+    background: #254b6e;
     cursor: pointer;
-    font-size: large;
-    padding-top: 2px;
 }
 
 .NewFaces{
     letter-spacing: 1px;
-    padding: 10px;
     text-align: left;
-    margin-left: 10%;
+    text-transform: capitalize;
+    color: #444444;
+    padding-left: 4px;
 }
 
 .loader {
@@ -251,9 +268,10 @@ body {
 
 #prevItemsWrap{
     padding-top: 30px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     letter-spacing: 1px;
+    color: #6d6d6d;
 }
 
 #prevItemsDiv{
@@ -264,6 +282,6 @@ body {
 }
 
 #prevDate{
-    color: brown;
-    font-family: cursive;
+    color: #254b6e;
+    font-family: fantasy;
 }

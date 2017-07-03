@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
 import axios from 'axios'
-import Home from './Home'
 import Loader from './Loader'
 import StandUpHome from './stand-up-components/StandUpHome.js'
+import RetroHome from './retro-components/RetroHome.js'
+
 
 export default class Router extends Component {
     constructor(props){
@@ -13,12 +14,11 @@ export default class Router extends Component {
     }
 
     changeRoute(route){
-        console.log("change route to =>>>",route)
+        console.log("changing route to =>>>",route)
         this.setState({route:route})
     }
 
     componentWillMount(){
-        console.log("entry routre")
         axios.get('/sUpdata', {
             params: { }
         })
@@ -28,21 +28,17 @@ export default class Router extends Component {
         .catch(function (error) {
             console.log(error);
         });
-        console.log("exit routre")
     }
 
     resetStandUpDataAfterADay(data){
         var today = new Date().toDateString();
         if(today == data.date){
-            this.setState({standUpData : data,route :"home"},()=>console.log("Router State=>>",this.state.standUpData))
+            this.setState({standUpData : data,route :"standUp"})
         }
         else{
-            console.log("posing resetting")
             var resetData = data
-            resetData.interestings = []
             resetData.newFaces = ["None"]
-            this.setState({standUpData : resetData,route :"home"},()=>{
-                console.log("Reset Router State=>>",this.state.standUpData)
+            this.setState({standUpData : resetData,route :"standUp"},()=>{
                 axios.post('/reset-sUpdata',resetData)
                 .catch(function (error) {
                     console.log(error);
@@ -52,13 +48,12 @@ export default class Router extends Component {
     }
 
     render(){
-        console.log("route=--->",this.state.route)
         switch(this.state.route){
-            case "home" : 
-                return (<Home standUpData={this.state.standUpData} changeRoute={this.changeRoute}/>);
-
             case "standUp" : 
-                return (<StandUpHome standUpData={this.state.standUpData}/>);
+                return (<StandUpHome standUpData={this.state.standUpData} route={this.state.route} changeRoute={this.changeRoute}/>);
+
+            case "retro" : 
+                return (<RetroHome standUpData={this.state.standUpData} route={this.state.route} changeRoute={this.changeRoute}/>);
 
             case "loader" :
                 return(

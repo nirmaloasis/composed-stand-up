@@ -7,17 +7,16 @@ export default class MainBody extends React.Component {
         this.state = {}
     }
     componentWillMount(){
-        debugger
         console.log("MainBody Componenet=>>>>>",this.props)
     }
   render() {
       var prevActionItems = this.props.standUpData.actionItems.map((value,index)=>{
           var splitStr = value.split('-->')
-          return <div id="prevItemsDiv"><span id="prevItems">{splitStr[0]}  </span><span id="prevDate"> {splitStr[1] ? " --> " + splitStr[1] : ""}</span></div>
+          return <div id="prevItemsDiv" key={index}><span id="prevItems">{splitStr[0]}  </span><span id="prevDate"> {splitStr[1] ? " --> " + splitStr[1] : ""}</span></div>
       })
       var upcommingEvents = this.props.standUpData.events.map((value,index)=>{
           var splitStr = value.split('-->')
-          return <div id="prevItemsDiv"><span id="prevItems">{splitStr[0]}  </span><span id="prevDate"> {splitStr[1] ? " --> " + splitStr[1] : ""}</span></div>
+          return <div id="prevItemsDiv" key={index}><span id="prevItems">{splitStr[0]}  </span><span id="prevDate"> {splitStr[1] ? " --> " + splitStr[1] : ""}</span></div>
       })
 
     return (

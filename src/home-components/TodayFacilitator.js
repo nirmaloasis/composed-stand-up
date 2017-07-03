@@ -8,9 +8,9 @@ export default class TodayFacilitator extends React.Component {
 
   render() {
     return (
-    <div id="todaysFacilitator" className="TextMedium">
-        <span>Today's Facilitator  : </span><span id="facilitator">{this.props.standUpData.currentFacilitator}</span>
-    </div>
+    <span>
+        <span id="todaysFacilitator">Today's Facilitator  : </span><span id="facilitator">{this.props.standUpData.currentFacilitator}</span>
+    </span>
     );
   }
 }

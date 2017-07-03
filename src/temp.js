@@ -1,10 +1,39 @@
 {
     "date" : "Mon Jun 25 2017",
     "newFaces": ["None"],
-    "helps" : [],
-    "interestings": [],
+    "helps" : [
+        {   "id":1,
+            "askingHelp":"Divya",
+            "helpText":"B'day money collection",
+            "date":"Mon Jun 25 2017",
+            "helpedBy":"Jimit"
+        },
+        {   "id":2,
+            "askingHelp":"Divya",
+            "helpText":"Vote for Trip",
+            "date":"Mon Jun 25 2017",
+            "helpedBy":"None"
+        }
+    ],
+    "interestings": [
+        {
+            "id":1,
+            "tellingInteresting":"thiru",
+            "interestingText":"Something about mac or apple"
+        },
+        {
+            "id":2,
+            "tellingInteresting":"Animesh",
+            "interestingText":"RbI 200 Rs Note"
+        },
+        {
+            "id":3,
+            "tellingInteresting":"Shashank",
+            "interestingText":"Game of thrones trailer released"
+        }
+    ],
     "events" : ["# product expo --> Mon Jun 25 2017" , "# product demo by someone ,yeah --> Mon Jun 25 2017","# football games no participation --> Mon Jun 25 2017"],
-    "actionItems" : ["# free breakfast or lunch or both --> Abdul Ahad" , "# free breakfast or lunch or both lunch or both","# free free breakfast or lunch or both"]
+    "actionItems" : ["# free breakfast or lunch or both --> Abdul Ahad" , "# free breakfast or lunch or both lunch or both","# free free breakfast or lunch or both"],
     "currentFacilitator":"Dikshita Khandke",
     "notDoneList": [ 
                     "Abdul Ahad",
