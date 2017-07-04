@@ -34,6 +34,7 @@ export default class Home extends Component {
                     <span id="middleontainer"><ContentInterestings heading="Interestings" standUpData = {this.props.standUpData}/></span>
                     <span id="rightContainer"><ContentEvents heading="Events" standUpData = {this.props.standUpData}/></span>
                 </div>
+                <div id="clapWrap"><span id="clap">let's clap</span></div>
             </div>
         );
     }

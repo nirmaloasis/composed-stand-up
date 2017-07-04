@@ -6,10 +6,10 @@
             "askingHelp":"Divya",
             "helpText":"B'day money collection",
             "date":"Mon Jun 25 2017",
-            "helpedBy":"Jimit"
+            "helpedBy":"Anish"
         },
         {   "id":2,
-            "askingHelp":"Divya",
+            "askingHelp":"Animesh",
             "helpText":"Vote for Trip",
             "date":"Mon Jun 25 2017",
             "helpedBy":"None"
@@ -19,7 +19,7 @@
         {
             "id":1,
             "tellingInteresting":"thiru",
-            "interestingText":"Something about mac or apple"
+            "interestingText":"Something about apple or rich thing"
         },
         {
             "id":2,
@@ -32,7 +32,26 @@
             "interestingText":"Game of thrones trailer released"
         }
     ],
-    "events" : ["# product expo --> Mon Jun 25 2017" , "# product demo by someone ,yeah --> Mon Jun 25 2017","# football games no participation --> Mon Jun 25 2017"],
+    "events" : [
+        {
+            "id":1,
+            "mentioningEvent":"Shashank",
+            "eventText":"Game of thrones trailer released",
+            "date":"Mon Jul 31 2017"
+        },
+        {
+            "id":2,
+            "mentioningEvent":"Abdul",
+            "eventText":"Moving to new Lab",
+            "date":"Mon Aug 3 2017"
+        },
+        {
+            "id":3,
+            "mentioningEvent":"Meenu",
+            "eventText":"Sodexo distribution",
+            "date":"Mon Jul 14 2017"
+        }
+    ],
     "actionItems" : ["# free breakfast or lunch or both --> Abdul Ahad" , "# free breakfast or lunch or both lunch or both","# free free breakfast or lunch or both"],
     "currentFacilitator":"Dikshita Khandke",
     "notDoneList": [ 

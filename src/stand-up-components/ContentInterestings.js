@@ -43,7 +43,7 @@ export default class ContentInterestings extends React.Component {
                 return(
                 <div id="closeHelpSection" key={i} data-id={i+1}>
                     <div id="closeHelpDiv"><div id="closeHelp" onClick={this.closeInteresting}>+</div></div>
-                    <div id="closeHelpContent">
+                    <div id="closeInterestingContent">
                         <div id={val.tellingInteresting.length>6?"askingHelpReadOnlyFont" :"askingHelpReadOnly"}>
                             {val.tellingInteresting}
                         </div> : 
@@ -55,10 +55,13 @@ export default class ContentInterestings extends React.Component {
         }
         <div id="helpSection">
             <div id="askingHelp">
-                <input id="listMembers" list="memberList" placeholder="Search" ref={(input) => { this.memberSelected = input}}/>
-                <datalist id="memberList">
-                    {membersList.map((val,i)=><option key={i} value={val}/>)}
-                </datalist>
+                <div id="searchDiv">
+                    <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
+                    <input id="listMembers" list="memberList" placeholder="Search" ref={(input) => { this.memberSelected = input}}/>
+                    <datalist id="memberList">
+                        {membersList.map((val,i)=><option key={i} value={val}/>)}
+                    </datalist>
+                </div>
             </div> : 
             <input id="helpTextArea" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInput = input}} /> 
             <span id="addHelp" onClick={this.addInteresting}>+</span>                              

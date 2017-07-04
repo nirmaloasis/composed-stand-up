@@ -2,7 +2,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
   background-color: #ededed;
-  width: 1440px;
+  min-width: 1440px;
 }
 
 #headerWrapper{
@@ -23,7 +23,7 @@ body {
     color: white;
     font-size: xx-large;
     padding-left: 4%;
-    width: 25%;
+    width: 320px;
 }
 
 #adminSpan{
@@ -60,7 +60,7 @@ body {
 }
 
 #todaysFacilitator{
-    width: 45.5%;
+    width: 48%;
     font-size: 16px;
     color: white;
 }
@@ -200,7 +200,7 @@ body {
 }
 
 #addNewFaces{
-    border: 1.3px solid #254b6e;
+    border: 1.3px solid #ccc;
     margin-left: 50px;
     border-radius: 3px;
     display: inline-flex;
@@ -284,4 +284,47 @@ body {
 #prevDate{
     color: #254b6e;
     font-family: fantasy;
+}
+
+#ui-datepicker-div{
+    box-shadow: 0 1px 3px #888;
+}
+
+.ui-datepicker-header{
+    background: #254b6e;
+    padding: 5px;
+    color: white;
+}
+
+.ui-datepicker-prev{
+
+}
+
+.ui-datepicker-next{
+    float: right;
+}
+
+.ui-datepicker-title{
+    text-align: center;
+}
+
+.ui-datepicker-calendar{
+    background: white;
+}
+
+.ui-datepicker-calendar th{
+    padding: 5px;
+    color: #444444;
+}
+
+.ui-datepicker-calendar td{
+    padding: 5px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.ui-datepicker-calendar a{
+    color: #686868;
 }
