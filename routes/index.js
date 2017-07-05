@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs')
-var standUpFilePath = __dirname + '/data/stand-up-data.js'
+var standUpFilePath = __dirname + '/data/stand-up-data.json'
 
 var membersList = [ 
   "Abdul Ahad",
@@ -67,7 +67,7 @@ router.get('/sUpdata', function(req, res, next) {
 
 router.post('/reset-sUpdata', function(req, res, next) {
   // console.log("req body>>>>",req.body)
-  json = JSON.stringify(req.body); 
+  json = JSON.stringify(req.body, null, 3); 
   fs.writeFile(standUpFilePath, json, 'utf8',()=>{
       fs.readFile(standUpFilePath, 'utf8', function readFileCallback(err, data){
         if (err) {
@@ -83,7 +83,7 @@ router.post('/reset-sUpdata', function(req, res, next) {
 router.post('/add-newFaces', function(req, res, next) {
   debugger
   console.log("add >>>>",req.body)
-  json = JSON.stringify(req.body); 
+  json = JSON.stringify(req.body, null, 3); 
   fs.writeFile(standUpFilePath, json, 'utf8',()=>{});
 })
 
@@ -110,7 +110,7 @@ router.post('/next-facilitator', function(req, res, next) {
     writeBackObject.date = new Date().toDateString()
 
     var response = nextFacilitator
-    var json = JSON.stringify(writeBackObject); 
+    var json = JSON.stringify(writeBackObject, null, 3); 
     fs.writeFile(standUpFilePath, json, 'utf8',()=>{
       res.send(response)
     });

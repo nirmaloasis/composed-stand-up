@@ -38,21 +38,29 @@ export default class Header extends React.Component {
                      };
     return (
         <div id="headerWrapper">
-            <span id="compozedLogo">Compozed Activities</span>
-            <span id="menuDiv">
-                <a className="HeaderMenuItems" onClick={this.startStandUp} style={route=="standUp" ? tabStyleClicked : tabStyleNormal}>Stand-Up</a>
-                <a className="HeaderMenuItems" onClick={this.startRetro} style={route=="retro" ? tabStyleClicked : tabStyleNormal}>Retro</a>
-            </span>
-            <span id="todaysFacilitator">
-                <span id="rightBar">
-                    Today's Facilitator : Dikshita Khandke
-                    <span id="notPresent">not present ?</span>
+            <div id="header92">
+                <span>
+                    <span id="compozedLogo">Compozed Activities</span>
+                    <span id="menuDiv">
+                        <a className="HeaderMenuItems" onClick={this.startStandUp} style={route=="standUp" ? tabStyleClicked : tabStyleNormal}>Stand-Up</a>
+                        <a className="HeaderMenuItems" onClick={this.startRetro} style={route=="retro" ? tabStyleClicked : tabStyleNormal}>Retro</a>
+                    </span>
                 </span>
-            </span>
-            <span id="adminSpan">
-                <img id="adminLogo" src="images/admin-logo.svg" alt="#"/>
-                <a id="adminLink" >Admin</a>
-            </span>
+                <span id="headerRight">
+                    <div id="headerRightAlign">
+                        <span id="todaysFacilitator">
+                            <span id="rightBar">
+                                Today's Facilitator : Dikshita Khandke
+                                <span id="notPresent">not present ?</span>
+                            </span>
+                        </span>
+                        <span id="adminSpan">
+                            <img id="adminLogo" src="images/admin-logo.svg" alt="#"/>
+                            <a id="adminLink" >Admin</a>
+                        </span>
+                    </div>
+                </span>
+            </div>
         </div>
     );
   }

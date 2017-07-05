@@ -3,7 +3,6 @@ import axios from 'axios'
 import './stand-up.css'
 import  TodayFacilitator from '../home-components/TodayFacilitator.js'
 import  Header from '../home-components/Header.js'
-import Content from './Content'
 import NextFacilitator from './NextFacilitator'
 import NewFaces from "../home-components/NewFaces.js"
 import ContentHelps from './ContentHelps'
@@ -32,7 +31,7 @@ export default class Home extends Component {
                 <div id="standUpcontentWrapper"> 
                     <span id="leftContainer"><ContentHelps heading="Helps" standUpData = {this.props.standUpData}/></span>
                     <span id="middleontainer"><ContentInterestings heading="Interestings" standUpData = {this.props.standUpData}/></span>
-                    <span id="rightContainer"><ContentEvents heading="Events" standUpData = {this.props.standUpData}/></span>
+                    <span id="rightContainer"><ContentEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList}/></span>
                 </div>
                 <div id="clapWrap"><span id="clap">let's clap</span></div>
             </div>

@@ -18,8 +18,9 @@ export default class ContentHelps extends React.Component {
         var helpText = this.textInput.value
         var date = new Date().toDateString()
         var helpedBy = "None"
-        var newHelp = {askingHelp,helpText,date,helpedBy}
         var helpItems = this.props.standUpData.helps
+        debugger
+        var newHelp = {askingHelp,helpText,date,helpedBy}
         helpItems.push(newHelp)
         this.setState({helpItems},()=>{
             this.memberSelected.value = ""
@@ -28,16 +29,21 @@ export default class ContentHelps extends React.Component {
     }
 
     addHelpingName(event){
-        var helpingPerson = event.target.parentElement.querySelector('#helpedByList').value
-        var helpId = event.target.parentElement.getAttribute('data-id') - 1
+        debugger
+        var helpingPerson = event.target.parentElement.parentElement.querySelector("#helpedByList").value 
+        var helpId = event.target.parentElement.parentElement.querySelector("#helpContent").getAttribute('data-id') -1;
         var helpItems = this.props.standUpData.helps
         helpItems[helpId].helpedBy = helpingPerson
         this.setState({},()=>{})
     }
 
     closeHelp(event){
-        event.target.parentElement.parentElement.style.display = "none";
-
+        var helpItems = this.state.helpItems
+        var id = event.target.parentElement.parentElement.getAttribute("data-id")
+        helpItems.splice(id-1 ,1)
+        this.setState(helpItems,()=>{
+            
+        })
     }
 
   render() {

@@ -9,6 +9,8 @@ export default class ContentEvents extends React.Component {
         this.addEvent = this.addEvent.bind(this)
         this.closeInteresting = this.closeInteresting.bind(this)
         this.pickDate = this.pickDate.bind(this)
+        this.pickDateExtra = this.pickDateExtra.bind(this)
+        this.addEventExtra = this.addEventExtra.bind(this)
     }
 
     componentDidMount(){
@@ -22,10 +24,12 @@ export default class ContentEvents extends React.Component {
         var getDate = this.dateInput.value
         var date
         getDate == "" ? date = "" : date = new Date(getDate).toDateString()
-        var newEvent = {mentioningEvent,eventText,date}
+        var newEvent = [{mentioningEvent,eventText,date}]
         var events = this.props.standUpData.events
-        events.push(newEvent)
+        getDate == "" ? "" : newEvent = this.props.refineEventList(newEvent)
+        newEvent.length == 0 ? "" : events.push(newEvent[0])
         this.setState({events},()=>{
+            getDate == "" ?  $("#datepickerExtra").datepicker() : ""
             this.memberSelected.value = ""
             this.textInput.value = ""
             this.dateInput.value = ""
@@ -34,11 +38,23 @@ export default class ContentEvents extends React.Component {
 
     closeInteresting(event){
         event.target.parentElement.parentElement.style.display = "none";
-
     }
 
     pickDate(){
         $("#datepicker").datepicker();
+    }
+
+    pickDateExtra(){
+        $("#datepickerExtra").datepicker();
+    }
+
+    addEventExtra(event){
+        debugger
+        var events = this.state.events
+        var date = this.dateInputExtra.value
+        var id =  event.target.parentElement.parentElement.parentElement.getAttribute('data-id') -1;
+        events[id].date = new Date(date).toDateString()
+        this.setState({},()=>{})
     }
 
   render() {
@@ -50,7 +66,7 @@ export default class ContentEvents extends React.Component {
         {
             events.map((val,i)=>{
                 return(
-                <div id="closeHelpSection" className={val.date=="" ?"PickDateWrap":""} key={i} data-id={i+1}>
+                <div id="closeEventSection" className={val.date=="" ?"PickDateWrap":""} key={i} data-id={i+1}>
                     <div id="closeHelpDiv"><div id="closeHelp" onClick={this.closeInteresting}>+</div></div>
                     <div id={val.date=="" ?"closeEventEmptyDate":"closeEventContent"}>
                         <div id={val.mentioningEvent.length>6?"askingHelpReadOnlyFont" :"askingHelpReadOnly"}>
@@ -60,8 +76,11 @@ export default class ContentEvents extends React.Component {
                     </div>
                     {val.date != "" ? <div id="eventDate">{ " - "+ val.date}</div> : 
                     <div id="searchDiv">
-                        <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
-                        <input type="text" id="datepicker" placeholder="Pick Date" ref={(input) => { this.dateInput = input}} onClick={this.pickDate}/>                    
+                        <span id="searchDivExtra">
+                            <span id="searchSpanExtra"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
+                            <input type="text" id="datepickerExtra" placeholder="Pick Date" ref={(input) => { this.dateInputExtra = input}} onClick={this.pickDateExtra}/>                    
+                            <span id="addHelper" onClick={this.addEventExtra}>+</span>
+                        </span>
                     </div>}
                 </div>
                 )

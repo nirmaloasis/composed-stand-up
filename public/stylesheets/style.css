@@ -12,18 +12,22 @@ body {
     box-sizing: border-box;
     font-size: 18px;
     letter-spacing: 1px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     align-items: center;
+}
+
+#header92{
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto; 
 }
 
 #compozedLogo{
     font-family: fantasy;
     color: white;
     font-size: xx-large;
-    padding-left: 4%;
-    width: 320px;
 }
 
 #adminSpan{
@@ -56,11 +60,20 @@ body {
 #menuDiv{
     text-align: center;
     font-size: 15px;
-    width: 15%;
+    padding-left: 30px;
+}
+
+#headerRight{
+    float: right;
+    padding-top: 3px;
+}
+
+#headerRightAlign{
+    display: flex;
+    align-items: center;
 }
 
 #todaysFacilitator{
-    width: 48%;
     font-size: 16px;
     color: white;
 }

@@ -219,6 +219,13 @@ input{
     color: #254b6e;
 }
 
+#closeEventSection{
+    background: white;
+    margin: 30px;
+    box-shadow: 0 1px 3px #888;
+    color: #254b6e;
+}
+
 #closeHelpContent{
     display: flex;
     align-items: center;
@@ -344,4 +351,24 @@ input{
 
 .CloseEventContent{
     min-height: 30px;
+}
+
+#searchDivExtra{
+    padding-right: 10px;
+    float: right;  
+}
+
+#searchSpanExtra{
+    position: absolute;
+    right: 25px;
+    top: 5px;
+}
+
+#datepickerExtra{
+    width: 100px;
+    border: 0;
+    border-bottom: 1px solid #686868;
+    height: 23px;
+    margin-left: 10px;
+    font-size: 12px
 }

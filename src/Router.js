@@ -11,11 +11,7 @@ export default class Router extends Component {
         this.state = {route : "loader",standUpData:""}
         this.resetStandUpDataAfterADay = this.resetStandUpDataAfterADay.bind(this)
         this.changeRoute = this.changeRoute.bind(this)
-    }
-
-    changeRoute(route){
-        console.log("changing route to =>>>",route)
-        this.setState({route:route})
+        this.refineEventList = this.refineEventList.bind(this)
     }
 
     componentWillMount(){
@@ -30,7 +26,39 @@ export default class Router extends Component {
         });
     }
 
+    changeRoute(route){
+        this.setState({route:route})
+    }
+
+    refineEventList(events){
+        var temp 
+        events = events.filter((val)=>{
+            var today = new Date()
+            var eventDate = new Date(val.date)
+            if(today.getFullYear()>eventDate.getFullYear())
+                temp = "false";
+            else if (today.getMonth()>eventDate.getMonth())
+                temp = "false";
+            else if(today.getDate()>eventDate.getDate())
+                temp = "false";
+            else if(today.getDate() == eventDate.getDate())
+                temp = "Today"
+            else if((today.getDate()+1) == eventDate.getDate())
+                temp = "Tomorrow"
+            else 
+                temp = "true"
+            if(temp == "Today" || temp == "Tomorrow"){
+                val.date = temp
+                return val
+            }     
+            else if(temp == "true")
+                return val
+        })
+        return events;
+    }
+
     resetStandUpDataAfterADay(data){
+        debugger
         var today = new Date().toDateString();
         if(today == data.date){
             this.setState({standUpData : data,route :"standUp"})
@@ -38,6 +66,10 @@ export default class Router extends Component {
         else{
             var resetData = data
             resetData.newFaces = ["None"]
+            resetData.interestings = []
+            var events = resetData.events
+            resetData.events = this.refineEventList(events)
+            debugger
             this.setState({standUpData : resetData,route :"standUp"},()=>{
                 axios.post('/reset-sUpdata',resetData)
                 .catch(function (error) {
@@ -50,7 +82,7 @@ export default class Router extends Component {
     render(){
         switch(this.state.route){
             case "standUp" : 
-                return (<StandUpHome standUpData={this.state.standUpData} route={this.state.route} changeRoute={this.changeRoute}/>);
+                return (<StandUpHome standUpData={this.state.standUpData} route={this.state.route} changeRoute={this.changeRoute} refineEventList={this.refineEventList}/>);
 
             case "retro" : 
                 return (<RetroHome standUpData={this.state.standUpData} route={this.state.route} changeRoute={this.changeRoute}/>);
