@@ -62,6 +62,7 @@
     text-align: center;
     box-shadow: 0 0 1.2px #686868;
     background: white;
+    font-size: 17px;
 }
 
 #leftContainer,#middleontainer{
@@ -107,6 +108,7 @@
     align-items: center;
     min-height: 50px;
     color: #254b6e;
+    overflow: auto;
 }
 
 #askingHelp{
@@ -116,7 +118,7 @@
 #listMembers{
     border: 0;
     border-bottom: 1px solid #6d6d6d;
-    font-size: 12px;
+    font-size: 14px;
     width: 85%;
     height: 25px;
     padding: 0px;
@@ -161,7 +163,7 @@ input{
     padding-right: 10px;
     text-align: left;
     color: #254b6e;
-    width: 65px;   
+    /*width: 65px;   */
 }
 
 #helpItemReadOnly{
@@ -173,7 +175,7 @@ input{
 #helpedByList{
     width: 100px;
     border: 0;
-    font-size: 12px;
+    font-size: 14px;
     border-bottom: 1px solid #686868;
     height: 25px;
 }
@@ -181,14 +183,14 @@ input{
 #helpedByListNoBorder{
     width: 80px;
     border: 0;
-    font-size: 12px;
+    font-size: 14px;
     height: 25px;
 }
 
 #addHelper{
     width: 15px;
     height: 15px;
-    font-size: 12px;
+    font-size: 14px;
     background: white;
     color: #254b6e;
     margin: 0;
@@ -217,6 +219,7 @@ input{
     margin: 30px;
     box-shadow: 0 1px 3px #888;
     color: #254b6e;
+    overflow: auto;
 }
 
 #closeEventSection{
@@ -224,6 +227,7 @@ input{
     margin: 30px;
     box-shadow: 0 1px 3px #888;
     color: #254b6e;
+    overflow: auto;
 }
 
 #closeHelpContent{
@@ -259,7 +263,7 @@ input{
 
 #helpedByPerson{
     border: 0;
-    font-size: 13px;
+    font-size: 14px;
     color: #254b6e;
     text-align: right;
     padding: 0px 15px 5px 0px;
@@ -271,14 +275,14 @@ input{
     border-bottom: 1px solid #686868;
     height: 23px;
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 14px;
     float: right;
 }
 
 #eventDate{
     text-align: right;
     padding: 0px 15px 5px 0px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 #searchDiv{
@@ -303,6 +307,7 @@ input{
     box-shadow: 0 1px 3px #888;
     min-height: 55px;
     color: #254b6e;
+    overflow: auto;
 }
 
 #eventContent{
@@ -318,6 +323,7 @@ input{
     box-shadow: 0 1px 3px #888;
     min-height: 45px;
     color: #254b6e;
+    overflow: auto;
 }
 
 #helpContent{
@@ -330,14 +336,16 @@ input{
 }
 
 #clap{
-    padding: 10px 15px;
+    padding: 5px 35px;
     border: 1px solid #254b6e;
-    color: #254b6e;
-    background: white;
+    color: white;
+    background: #254b6e;
     text-transform: capitalize;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 1px 3px #888;
+    font-size: 30px;
+    font-family: cursive;
 }
 
 #clapWrap{
@@ -370,5 +378,5 @@ input{
     border-bottom: 1px solid #686868;
     height: 23px;
     margin-left: 10px;
-    font-size: 12px
+    font-size: 14px
 }

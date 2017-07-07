@@ -32,7 +32,7 @@ export default class NewFaces extends React.Component {
         return (
             <div id="noNewFaceWrapper">
                 <span>
-                    <span>
+                    <span className="newFaceHead">
                         New Faces : 
                     </span>
                     <span>

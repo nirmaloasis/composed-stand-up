@@ -93,29 +93,32 @@ router.get('/start-standUp', function(req, res, next) {
   res.render('standUp');
 })
 
-router.post('/next-facilitator', function(req, res, next) {
-    var compozedStanUpData = req.body
-    notDoneList = compozedStanUpData["notDoneList"]
-    doneList= compozedStanUpData["doneList"]
-    currentFacilitator = compozedStanUpData["currentFacilitator"]
+router.post('/facilitator', function(req, res, next) {
+    var standUpData = req.body.standUpData
+    var temp = standUpData.notDoneList
+    var notDoneList = (temp.length > 0 ? temp : membersList)
+    var doneList= standUpData["doneList"]
+    var currentFacilitator = standUpData["currentFacilitator"]
     var randomIndex = Math.floor((notDoneList.length) * Math.random())
     var nextFacilitator = notDoneList[randomIndex];
-    var temp = notDoneList
-    temp.splice(temp.indexOf(nextFacilitator),1)
-    var temp1 = doneList.concat([currentFacilitator])
-    var writeBackObject = compozedStanUpData
+    
+    temp.splice(randomIndex,1)
+    if(!req.body.notPresent){
+      (temp.length >0) ? doneList.push(currentFacilitator) : ""
+    }
+    else{
+      notDoneList.push(currentFacilitator)
+      notDoneList.sort()
+    }
+    var writeBackObject = standUpData
     writeBackObject.currentFacilitator = nextFacilitator
-    writeBackObject.notDoneList = (temp.length==0 ? membersList : temp)
-    writeBackObject.doneList = (temp.length==0 ? [] : temp1)
+    writeBackObject.notDoneList = notDoneList
+    writeBackObject.doneList = doneList
     writeBackObject.date = new Date().toDateString()
-
-    var response = nextFacilitator
     var json = JSON.stringify(writeBackObject, null, 3); 
     fs.writeFile(standUpFilePath, json, 'utf8',()=>{
-      res.send(response)
+      res.json(writeBackObject.currentFacilitator)
     });
 })
-
-
 
 module.exports = router;

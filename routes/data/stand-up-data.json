@@ -1,5 +1,5 @@
 {
-   "date": "Mon Jun 25 2017",
+   "date": "Fri Jul 07 2017",
    "newFaces": [
       "None"
    ],
@@ -20,14 +20,9 @@
    "interestings": [],
    "events": [
       {
-         "mentioningEvent": "Shashank",
-         "eventText": "Game of thrones trailer released",
-         "date": "Today"
-      },
-      {
          "mentioningEvent": "Abdul",
          "eventText": "Moving to new Lab",
-         "date": "Tomorrow"
+         "date": "Today"
       },
       {
          "mentioningEvent": "Meenu",
@@ -40,7 +35,7 @@
       "# free breakfast or lunch or both lunch or both",
       "# free free breakfast or lunch or both"
    ],
-   "currentFacilitator": "Dikshita Khandke",
+   "currentFacilitator": "Lavanya Gowlla",
    "notDoneList": [
       "Abdul Ahad",
       "Abhishek Kumar",
@@ -50,6 +45,7 @@
       "Ashish Verma",
       "Bharat Rathad",
       "Chandramouli M S",
+      "Dikshita Khandke",
       "Dinesh kumar Suvendrian",
       "Divya Chandrasekaran",
       "Geeta Hubli",
@@ -62,7 +58,6 @@
       "Kapil Taneja",
       "Krishn Kant Nayak",
       "Kumar Sameer Ranjan",
-      "Lavanya Gowlla",
       "Meenu Sharma",
       "Mukesh Pandit",
       "Naveen Telker",
@@ -77,12 +72,12 @@
       "Shashank Goyal",
       "Shree Lakshmi",
       "Shreyansh Kant",
-      "Thirupathi M",
-      "Vinod Subramanian",
       "Srinivas Readdy",
       "Sumit Kumar",
       "Swapnil Shah",
+      "Thirupathi M",
       "Vinit Rohela",
+      "Vinod Subramanian",
       "Vivek"
    ],
    "doneList": [

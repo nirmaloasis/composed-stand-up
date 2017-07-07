@@ -58,7 +58,6 @@ export default class Router extends Component {
     }
 
     resetStandUpDataAfterADay(data){
-        debugger
         var today = new Date().toDateString();
         if(today == data.date){
             this.setState({standUpData : data,route :"standUp"})
@@ -69,7 +68,6 @@ export default class Router extends Component {
             resetData.interestings = []
             var events = resetData.events
             resetData.events = this.refineEventList(events)
-            debugger
             this.setState({standUpData : resetData,route :"standUp"},()=>{
                 axios.post('/reset-sUpdata',resetData)
                 .catch(function (error) {

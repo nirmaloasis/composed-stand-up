@@ -214,7 +214,7 @@ body {
 
 #addNewFaces{
     border: 1.3px solid #ccc;
-    margin-left: 50px;
+    margin-left: 40px;
     border-radius: 3px;
     display: inline-flex;
     width: 150px;
@@ -247,7 +247,6 @@ body {
     text-align: left;
     text-transform: capitalize;
     color: #444444;
-    padding-left: 4px;
 }
 
 .loader {
@@ -340,4 +339,12 @@ a{
 
 .ui-datepicker-calendar a{
     color: #686868;
+}
+
+.hideMenu{
+    display: none;
+}
+
+.newFaceHead{
+    padding-right: 10px;
 }

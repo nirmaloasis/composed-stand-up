@@ -5,9 +5,10 @@ import  TodayFacilitator from './TodayFacilitator.js'
 export default class Header extends React.Component {
     constructor(props){
         super(props)
-        this.state = {}
+        this.state = {currentFacilitator : this.props.standUpData.currentFacilitator}
         this.startStandUp = this.startStandUp.bind(this)
         this.startRetro = this.startRetro.bind(this)
+        this.facilitatorNotPresent = this.facilitatorNotPresent.bind(this)
     }
 
     startStandUp(event){
@@ -25,6 +26,18 @@ export default class Header extends React.Component {
         this.props.changeRoute("retro")
     }
 
+    facilitatorNotPresent(event){
+        axios.post('/facilitator', {
+            standUpData : this.props.standUpData,
+            notPresent : true
+        })
+        .then((response)=>{
+            this.setState({currentFacilitator : response.data})
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
 
   render() {
       var route = this.props.route
@@ -40,18 +53,18 @@ export default class Header extends React.Component {
         <div id="headerWrapper">
             <div id="header92">
                 <span>
-                    <span id="compozedLogo">Compozed Activities</span>
+                    <span id="compozedLogo">Compozed Stand-Up</span>
                     <span id="menuDiv">
-                        <a className="HeaderMenuItems" onClick={this.startStandUp} style={route=="standUp" ? tabStyleClicked : tabStyleNormal}>Stand-Up</a>
-                        <a className="HeaderMenuItems" onClick={this.startRetro} style={route=="retro" ? tabStyleClicked : tabStyleNormal}>Retro</a>
+                        <a className="HeaderMenuItems" className="hideMenu" onClick={this.startStandUp} style={route=="standUp" ? tabStyleClicked : tabStyleNormal}>Stand-Up</a>
+                        <a className="HeaderMenuItems" className="hideMenu" onClick={this.startRetro} style={route=="retro" ? tabStyleClicked : tabStyleNormal}>Retro</a>
                     </span>
                 </span>
                 <span id="headerRight">
                     <div id="headerRightAlign">
                         <span id="todaysFacilitator">
                             <span id="rightBar">
-                                Today's Facilitator : Dikshita Khandke
-                                <span id="notPresent">not present ?</span>
+                                Today's Facilitator : {this.state.currentFacilitator}
+                                <span id="notPresent" onClick={this.facilitatorNotPresent}>not present ?</span>
                             </span>
                         </span>
                         <span id="adminSpan">

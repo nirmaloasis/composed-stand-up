@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Loader from '../Loader'
 import axios from 'axios'
 
-export default class TodayFacilitator extends React.Component {
+export default class NextFacilitator extends React.Component {
     constructor(props){
         super(props)
         this.state = {action:"normal",nextFacilitator:""}

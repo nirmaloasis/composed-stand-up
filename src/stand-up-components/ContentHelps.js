@@ -100,7 +100,7 @@ export default class ContentHelps extends React.Component {
             <div id="askingHelp">
                 <div id="searchDiv">
                     <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
-                    <input id="listMembers" list="memberList" placeholder="Search" ref={(input) => { this.memberSelected = input}}/>
+                    <input id="listMembers" list="memberList" placeholder="Name" ref={(input) => { this.memberSelected = input}}/>
                     <datalist id="memberList">
                         {membersList.map((val,i)=><option key={i} value={val}/>)}
                     </datalist>
