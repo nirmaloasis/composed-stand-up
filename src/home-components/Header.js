@@ -5,7 +5,7 @@ import  TodayFacilitator from './TodayFacilitator.js'
 export default class Header extends React.Component {
     constructor(props){
         super(props)
-        this.state = {currentFacilitator : this.props.standUpData.currentFacilitator}
+        this.state = {currentFacilitator : this.props.standUpData.currentFacilitator,errorMessage : ""}
         this.startStandUp = this.startStandUp.bind(this)
         this.startRetro = this.startRetro.bind(this)
         this.facilitatorNotPresent = this.facilitatorNotPresent.bind(this)
@@ -18,6 +18,8 @@ export default class Header extends React.Component {
 
         })
         .catch(function (error) {
+            var errorMessage = error
+            this.setState({errorMessage})
             console.log(error);
         });
     }
@@ -35,6 +37,8 @@ export default class Header extends React.Component {
             this.setState({currentFacilitator : response.data})
         })
         .catch(function (error) {
+            var errorMessage = error
+            this.setState({errorMessage})
             console.log(error);
         });
     }

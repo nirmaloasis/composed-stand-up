@@ -213,14 +213,13 @@ body {
 }
 
 #addNewFaces{
-    border: 1.3px solid #ccc;
+    border-bottom: 1.3px solid #ccc;
     margin-left: 40px;
-    border-radius: 3px;
     display: inline-flex;
     width: 150px;
     align-items: center;
     height: 24px;
-    height: px;
+    margin-right: 5px
 }
 
 #inputAddFace{
@@ -240,6 +239,7 @@ body {
     font-size: 20px;
     background: #254b6e;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .NewFaces{
@@ -347,4 +347,10 @@ a{
 
 .newFaceHead{
     padding-right: 10px;
+}
+
+#errorMsg{
+    text-align: center;
+    color: red;
+    letter-spacing: 1px;
 }

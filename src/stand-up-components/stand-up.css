@@ -108,7 +108,8 @@
     align-items: center;
     min-height: 50px;
     color: #254b6e;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #askingHelp{
@@ -219,7 +220,8 @@ input{
     margin: 30px;
     box-shadow: 0 1px 3px #888;
     color: #254b6e;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #closeEventSection{
@@ -227,7 +229,8 @@ input{
     margin: 30px;
     box-shadow: 0 1px 3px #888;
     color: #254b6e;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #closeHelpContent{
@@ -307,7 +310,8 @@ input{
     box-shadow: 0 1px 3px #888;
     min-height: 55px;
     color: #254b6e;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #eventContent{
@@ -323,7 +327,8 @@ input{
     box-shadow: 0 1px 3px #888;
     min-height: 45px;
     color: #254b6e;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #helpContent{
@@ -351,6 +356,7 @@ input{
 #clapWrap{
     text-align: center;
     margin: 50px;
+    margin-bottom: 20px;
 }
 
 .PickDateWrap{

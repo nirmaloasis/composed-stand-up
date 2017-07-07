@@ -23,6 +23,8 @@ export default class NewFaces extends React.Component {
             this.textInput.value = "";
             axios.post('/add-newFaces',standUpData)
             .catch(function (error) {
+                var errorMessage = error
+                this.setState({errorMessage})
                 console.log(error);
             });
         })

@@ -20,22 +20,12 @@
    "interestings": [],
    "events": [
       {
-         "mentioningEvent": "Abdul",
-         "eventText": "Moving to new Lab",
-         "date": "Today"
-      },
-      {
          "mentioningEvent": "Meenu",
          "eventText": "Sodexo distribution",
          "date": "Mon Jul 31 2017"
       }
    ],
-   "actionItems": [
-      "# free breakfast or lunch or both --> Abdul Ahad",
-      "# free breakfast or lunch or both lunch or both",
-      "# free free breakfast or lunch or both"
-   ],
-   "currentFacilitator": "Lavanya Gowlla",
+   "currentFacilitator": "Raja Madhu",
    "notDoneList": [
       "Abdul Ahad",
       "Abhishek Kumar",
@@ -45,7 +35,6 @@
       "Ashish Verma",
       "Bharat Rathad",
       "Chandramouli M S",
-      "Dikshita Khandke",
       "Dinesh kumar Suvendrian",
       "Divya Chandrasekaran",
       "Geeta Hubli",
@@ -58,12 +47,12 @@
       "Kapil Taneja",
       "Krishn Kant Nayak",
       "Kumar Sameer Ranjan",
+      "Lavanya Gowlla",
       "Meenu Sharma",
       "Mukesh Pandit",
       "Naveen Telker",
       "Nirmal PS",
       "Praveen Kumar K",
-      "Raja Madhu",
       "Rakesh Dutta",
       "Rakesh Shastry",
       "Ramandeep Kaur",
@@ -72,15 +61,16 @@
       "Shashank Goyal",
       "Shree Lakshmi",
       "Shreyansh Kant",
+      "Thirupathi M",
+      "Vinod Subramanian",
       "Srinivas Readdy",
       "Sumit Kumar",
       "Swapnil Shah",
-      "Thirupathi M",
       "Vinit Rohela",
-      "Vinod Subramanian",
       "Vivek"
    ],
    "doneList": [
-      "Pankaj Maurya"
+      "Pankaj Maurya",
+      "Dikshita Khandke"
    ]
 }
