@@ -12,6 +12,9 @@ export default class Router extends Component {
         this.resetStandUpDataAfterADay = this.resetStandUpDataAfterADay.bind(this)
         this.changeRoute = this.changeRoute.bind(this)
         this.refineEventList = this.refineEventList.bind(this)
+        this.loadLatestData = this.loadLatestData.bind(this)
+        this.loadThenUpdate = this.loadThenUpdate.bind(this)
+        this.compareNums = this.compareNums.bind(this)
     }
 
     componentWillMount(){
@@ -30,29 +33,62 @@ export default class Router extends Component {
         this.setState({route:route})
     }
 
+    loadLatestData(){
+        axios.get('/sUpdata', {
+            params: { }
+        })
+        .then( (response) => {
+            this.resetStandUpDataAfterADay(response.data)
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
+
+    loadThenUpdate(obj){
+        axios.post('add-content',obj)
+        .then((response)=>{
+            this.resetStandUpDataAfterADay(response.data)
+        })
+        .catch((err)=> console.log(err))
+    }
+
+    compareNums(num1 , num2){
+        if(num1 == num2)
+            return 0;
+        else if(num1 > num2)
+            return 1;
+        else
+            return -1;
+    }
+
     refineEventList(events){
         var temp 
         events = events.filter((val)=>{
             var today = new Date()
             var eventDate = new Date(val.date)
-            if(today.getFullYear()>eventDate.getFullYear())
-                temp = "false";
-            else if (today.getMonth()>eventDate.getMonth())
-                temp = "false";
-            else if(today.getDate()>eventDate.getDate())
-                temp = "false";
-            else if(today.getDate() == eventDate.getDate())
+            var check
+            check = this.compareNums(today.getFullYear(),eventDate.getFullYear())
+            if(check == 0)
+                check = this.compareNums(today.getMonth(),eventDate.getMonth())
+            if(check == 0)
+                check = this.compareNums(today.getDate(),eventDate.getDate())
+            if(check == 0)
                 temp = "Today"
-            else if((today.getDate()+1) == eventDate.getDate())
-                temp = "Tomorrow"
-            else 
-                temp = "true"
-            if(temp == "Today" || temp == "Tomorrow"){
-                val.date = temp
-                return val
-            }     
-            else if(temp == "true")
-                return val
+            if(check == -1){
+                if((today.getDate()+1) == eventDate.getDate())
+                    temp = "Tomorrow"
+                else
+                    temp = "can'tDetermine"
+            }
+            if(check !=1){
+                if(temp == "Today" || temp == "Tomorrow"){
+                    val.refinedDate = temp
+                    return val
+                }     
+                else if(temp == "can'tDetermine")
+                    return val
+            }
         })
         return events;
     }
@@ -64,8 +100,8 @@ export default class Router extends Component {
         }
         else{
             var resetData = data
-            resetData.newFaces = ["None"]
-            resetData.interestings = []
+            resetData.lastModifiedNewFaces != today ? resetData.newFaces = ["None"] : ""
+            resetData.lastModifiedInterestings != today ? resetData.interestings = [] : ""
             var events = resetData.events
             resetData.events = this.refineEventList(events)
             this.setState({standUpData : resetData,route :"standUp"},()=>{
@@ -80,7 +116,7 @@ export default class Router extends Component {
     render(){
         switch(this.state.route){
             case "standUp" : 
-                return (<StandUpHome standUpData={this.state.standUpData} route={this.state.route} changeRoute={this.changeRoute} refineEventList={this.refineEventList}/>);
+                return (<StandUpHome standUpData={this.state.standUpData} route={this.state.route} changeRoute={this.changeRoute} refineEventList={this.refineEventList} loadLatestData={this.loadLatestData} loadThenUpdate={this.loadThenUpdate}/>);
 
             case "retro" : 
                 return (<RetroHome standUpData={this.state.standUpData} route={this.state.route} changeRoute={this.changeRoute}/>);

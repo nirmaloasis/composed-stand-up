@@ -1,31 +1,52 @@
 {
-   "date": "Fri Jul 07 2017",
+   "date": "Mon Jul 0 2017",
    "newFaces": [
       "None"
    ],
+   "lastModifiedNewFaces": "Mon Jun 25 2017",
+   "lastModifiedInterestings": "Sun Jul 09 2017",
    "helps": [
-      {
-         "askingHelp": "Divya",
-         "helpText": "B'day money collection",
-         "date": "Mon Jun 25 2017",
-         "helpedBy": "Anish"
-      },
       {
          "askingHelp": "Animesh",
          "helpText": "Vote for Trip",
          "date": "Mon Jun 25 2017",
+         "helpedBy": "None"
+      },
+      {
+         "askingHelp": "sdvsdv",
+         "helpText": "afsdvzd",
+         "date": "Mon Jul 10 2017",
+         "helpedBy": "Ashish"
+      },
+      {
+         "askingHelp": "asc",
+         "helpText": "dvsddvcas",
+         "date": "Mon Jul 10 2017",
          "helpedBy": "None"
       }
    ],
    "interestings": [],
    "events": [
       {
+         "mentioningEvent": "Abdul",
+         "eventText": "Moving to new Lab",
+         "date": "Thu Aug 3 2017",
+         "refinedDate": ""
+      },
+      {
          "mentioningEvent": "Meenu",
          "eventText": "Sodexo distribution",
-         "date": "Mon Jul 31 2017"
+         "date": "Mon Jul 31 2017",
+         "refinedDate": ""
+      },
+      {
+         "mentioningEvent": "sdzvsv",
+         "eventText": "fsdvsdv",
+         "date": "Tue Jul 11 2017",
+         "refinedDate": "Tomorrow"
       }
    ],
-   "currentFacilitator": "Raja Madhu",
+   "currentFacilitator": "Lavanya Gowlla",
    "notDoneList": [
       "Abdul Ahad",
       "Abhishek Kumar",
@@ -35,6 +56,7 @@
       "Ashish Verma",
       "Bharat Rathad",
       "Chandramouli M S",
+      "Dikshita Khandke",
       "Dinesh kumar Suvendrian",
       "Divya Chandrasekaran",
       "Geeta Hubli",
@@ -47,30 +69,29 @@
       "Kapil Taneja",
       "Krishn Kant Nayak",
       "Kumar Sameer Ranjan",
-      "Lavanya Gowlla",
       "Meenu Sharma",
       "Mukesh Pandit",
       "Naveen Telker",
       "Nirmal PS",
       "Praveen Kumar K",
+      "Raja Madhu",
       "Rakesh Dutta",
       "Rakesh Shastry",
-      "Ramandeep Kaur",
       "Rohit Kumar",
       "Senthil Basuva Raj",
       "Shashank Goyal",
       "Shree Lakshmi",
       "Shreyansh Kant",
-      "Thirupathi M",
-      "Vinod Subramanian",
       "Srinivas Readdy",
       "Sumit Kumar",
       "Swapnil Shah",
-      "Vinit Rohela",
+      "Thirupathi M",
+      "Vinod Subramanian",
       "Vivek"
    ],
    "doneList": [
       "Pankaj Maurya",
-      "Dikshita Khandke"
+      "Vinit Rohela",
+      "Ramandeep Kaur"
    ]
 }

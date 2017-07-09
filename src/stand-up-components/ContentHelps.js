@@ -4,51 +4,59 @@ import axios from 'axios'
 export default class ContentHelps extends React.Component {
     constructor(props){
         super(props)
-        this.state = {helpItems:this.props.standUpData.helps}
+        this.state = {}
         this.addHelp = this.addHelp.bind(this)
         this.addHelpingName = this.addHelpingName.bind(this)
         this.closeHelp = this.closeHelp.bind(this)
     }
 
     componentWillMount(){
-        console.log("Content Componenet=>>>>>",this.props)
     }
+    
     addHelp(event){
-        var askingHelp = this.memberSelected.value
-        var helpText = this.textInput.value
-        var date = new Date().toDateString()
-        var helpedBy = "None"
-        var helpItems = this.props.standUpData.helps
-        debugger
-        var newHelp = {askingHelp,helpText,date,helpedBy}
-        helpItems.push(newHelp)
-        this.setState({helpItems},()=>{
+        if(this.memberSelected.value == ""){
+            this.memberSelected.focus()
+        }
+        else if(this.textInput.value == ""){
+            this.textInput.focus()
+        }
+        else{
+            var askingHelp = this.memberSelected.value
+            var helpText = this.textInput.value
+            var date = new Date().toDateString()
+            var helpedBy = "None"
+            var helpItems = this.props.standUpData.helps
+            var newHelp = {askingHelp,helpText,date,helpedBy}
+            helpItems.push(newHelp)
             this.memberSelected.value = ""
             this.textInput.value = ""
-        })
+            this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
+        }
     }
 
     addHelpingName(event){
-        debugger
         var helpingPerson = event.target.parentElement.parentElement.querySelector("#helpedByList").value 
-        var helpId = event.target.parentElement.parentElement.querySelector("#helpContent").getAttribute('data-id') -1;
-        var helpItems = this.props.standUpData.helps
-        helpItems[helpId].helpedBy = helpingPerson
-        this.setState({},()=>{})
+        if(helpingPerson == ""){
+            event.target.parentElement.parentElement.querySelector("#helpedByList").focus()
+        }
+        else{
+            var helpId = event.target.parentElement.parentElement.querySelector("#helpContent").getAttribute('data-id') -1;
+            var helpItems = this.props.standUpData.helps
+            helpItems[helpId].helpedBy = helpingPerson
+            this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
+        }
     }
 
     closeHelp(event){
-        var helpItems = this.state.helpItems
+        var helpItems = this.props.standUpData.helps
         var id = event.target.parentElement.parentElement.getAttribute("data-id")
         helpItems.splice(id-1 ,1)
-        this.setState(helpItems,()=>{
-            
-        })
+        this.props.loadThenUpdate({content : helpItems, contentType : "helps"})          
     }
 
   render() {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","Kapil","KK","Sameer","Lavanya","Meenu","Mukesh","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
-    var helpItems = this.state.helpItems
+    var helpItems = this.props.standUpData.helps
     return (
     <div id="standUpContent">
         <div id="itemsHeading">{this.props.heading}</div>

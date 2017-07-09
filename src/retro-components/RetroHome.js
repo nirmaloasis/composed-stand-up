@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import axios from 'axios'
-import  TodayFacilitator from '../home-components/TodayFacilitator.js'
 import  Header from '../home-components/Header.js'
 
 export default class RetroHome extends Component {
@@ -18,7 +17,6 @@ export default class RetroHome extends Component {
                 <Header standUpData={this.props.standUpData} changeRoute={this.props.changeRoute} route={this.props.route}/>
                 <div id="newDateWrap">
                     <div  id="div92per">
-                        <TodayFacilitator standUpData={this.props.standUpData}/>
                         <span id="todayDate">{new Date().toDateString()}</span>
                     </div>
                 </div>

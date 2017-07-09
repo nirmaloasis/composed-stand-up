@@ -99,7 +99,7 @@
 }
 
 
-#helpSection{
+#helpSection,#interestingSection{
     padding: 10px;
     background: white;
     margin: 30px;
@@ -127,7 +127,7 @@
 
 }   
 
-#helpTextArea{
+#helpTextArea,#InterestingTextArea,#eventTextArea{
     width: 70%;
     height: 25px;
     padding: 0px;
@@ -340,7 +340,7 @@ input{
     float: right;
 }
 
-#clap{
+.ClapBtn{
     padding: 5px 35px;
     border: 1px solid #254b6e;
     color: white;
@@ -356,7 +356,6 @@ input{
 #clapWrap{
     text-align: center;
     margin: 50px;
-    margin-bottom: 20px;
 }
 
 .PickDateWrap{
@@ -367,7 +366,7 @@ input{
     min-height: 30px;
 }
 
-#searchDivExtra{
+.SearchDivExtra{
     padding-right: 10px;
     float: right;  
 }
@@ -378,11 +377,69 @@ input{
     top: 5px;
 }
 
-#datepickerExtra{
+#searchDivExtra input{
     width: 100px;
     border: 0;
     border-bottom: 1px solid #686868;
     height: 23px;
     margin-left: 10px;
     font-size: 14px
+}
+
+#disableClap{
+    pointer-events: none;
+}
+
+#disabledCursor{
+    cursor: not-allowed;
+    padding: 5px 35px;
+    background: #254b6e;
+    border: 1px solid #254b6e;
+    color: white;
+    background: #254b6e;
+    text-transform: capitalize;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px #888;
+    font-size: 30px;
+    font-family: cursive;
+}
+
+.ModalWrap{
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #ededed; /* Fallback color */
+}
+
+#modalContent{
+    color: brown;
+    text-align: center;
+    font-size: 150px;
+    font-weight: bold;  
+}
+
+#onCount{
+    text-align: center;
+    margin: 20px;
+    padding : 10px;
+    font-size: 80px;
+    color: #254b6e;
+}
+
+.ExpiredDate{
+    display: none;
+    position: absolute;
+    z-index: 1; 
+    padding-top: 10px;
+    left: 0; 
+    width: 50%;
+    overflow: auto;
+    background-color: white;
+    color: red;
 }

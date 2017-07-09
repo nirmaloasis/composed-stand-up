@@ -3,6 +3,8 @@
    "newFaces": [
       "None"
    ],
+   "lastModifiedNewFaces" : "Mon Jun 25 2017",
+   "lastModifiedInterestings" : "Mon Jun 25 2017",
    "helps": [
       {
          "askingHelp": "Divya",
@@ -35,27 +37,32 @@
       {
          "mentioningEvent": "Shashank",
          "eventText": "Game of thrones trailer released",
-         "date": "Mon Jul 5 2017"
+         "date": "Mon Jul 5 2017",
+         "refinedDate" : ""
       },
       {
          "mentioningEvent": "Abdul",
          "eventText": "Moving to new Lab",
-         "date": "Mon Aug 3 2017"
+         "date": "Thu Aug 3 2017",
+         "refinedDate" : ""
       },
       {
          "mentioningEvent": "Meenu",
          "eventText": "Sodexo distribution",
-         "date": "Mon Jul 4 2017"
+         "date": "Mon Jul 4 2017",
+         "refinedDate" : ""
       },
       {
          "mentioningEvent": "Abdul",
          "eventText": "Moving to new Lab",
-         "date": "Mon Jul 6 2017"
+         "date": "Sun Jul 09 2017",
+         "refinedDate" : "Today"
       },
       {
          "mentioningEvent": "Meenu",
          "eventText": "Sodexo distribution",
-         "date": "Mon Jul 31 2017"
+         "date": "Mon Jul 31 2017",
+         "refinedDate" : ""
       }
    ],
    "currentFacilitator": "Dikshita Khandke",

@@ -1,11 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
-import  TodayFacilitator from './TodayFacilitator.js'
 
 export default class Header extends React.Component {
     constructor(props){
         super(props)
-        this.state = {currentFacilitator : this.props.standUpData.currentFacilitator,errorMessage : ""}
+        this.state = {currentFacilitator : this.props.standUpData.currentFacilitator,setFlag : false}
         this.startStandUp = this.startStandUp.bind(this)
         this.startRetro = this.startRetro.bind(this)
         this.facilitatorNotPresent = this.facilitatorNotPresent.bind(this)
@@ -33,9 +32,8 @@ export default class Header extends React.Component {
             standUpData : this.props.standUpData,
             notPresent : true
         })
-        .then((response)=>{
-            this.setState({currentFacilitator : response.data})
-        })
+        .then((response)=> this.setState({currentFacilitator : response.data , setFlag : true},()=>{
+        }))
         .catch(function (error) {
             var errorMessage = error
             this.setState({errorMessage})
@@ -44,6 +42,7 @@ export default class Header extends React.Component {
     }
 
   render() {
+      console.log("header()=>>>>")
       var route = this.props.route
       var tabStyleClicked = {
                         background: "white",
@@ -53,6 +52,9 @@ export default class Header extends React.Component {
                         background: "#254b6e",
                         color : "white"
                      };
+    var currentFacilitator 
+    currentFacilitator = this.state.setFlag ? this.state.currentFacilitator : this.props.standUpData.currentFacilitator
+    this.state.setFlag = false
     return (
         <div id="headerWrapper">
             <div id="header92">
@@ -67,7 +69,7 @@ export default class Header extends React.Component {
                     <div id="headerRightAlign">
                         <span id="todaysFacilitator">
                             <span id="rightBar">
-                                Today's Facilitator : {this.state.currentFacilitator}
+                                Today's Facilitator : {currentFacilitator}
                                 <span id="notPresent" onClick={this.facilitatorNotPresent}>not present ?</span>
                             </span>
                         </span>

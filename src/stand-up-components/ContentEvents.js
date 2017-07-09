@@ -5,7 +5,7 @@ import axios from 'axios'
 export default class ContentEvents extends React.Component {
     constructor(props){
         super(props)
-        this.state = {events : this.props.standUpData.events}
+        this.state = {}
         this.addEvent = this.addEvent.bind(this)
         this.closeInteresting = this.closeInteresting.bind(this)
         this.pickDate = this.pickDate.bind(this)
@@ -14,52 +14,110 @@ export default class ContentEvents extends React.Component {
     }
 
     componentDidMount(){
-         $("#datepicker").datepicker();
+        // $("#datepicker").datepicker();
+        // $(".PickDateExtra").datepicker()
     }
     
     addEvent(event){
-        debugger
-        var mentioningEvent = this.memberSelected.value
-        var eventText = this.textInput.value
-        var getDate = this.dateInput.value
-        var date
-        getDate == "" ? date = "" : date = new Date(getDate).toDateString()
-        var newEvent = [{mentioningEvent,eventText,date}]
-        var events = this.props.standUpData.events
-        getDate == "" ? "" : newEvent = this.props.refineEventList(newEvent)
-        newEvent.length == 0 ? "" : events.push(newEvent[0])
-        this.setState({events},()=>{
-            getDate == "" ?  $("#datepickerExtra").datepicker() : ""
-            this.memberSelected.value = ""
-            this.textInput.value = ""
-            this.dateInput.value = ""
-        })
+        if(this.memberSelected.value== ""){
+            document.getElementById("eventContent").querySelector("#listMembers").focus()
+        }
+        else if(this.textInput.value == ""){
+            document.getElementById("eventTextArea").focus()
+        }
+        else{
+            var getDate = this.dateInput.value
+            if(getDate =="" || (Object.prototype.toString.call(new Date(getDate)) === '[object Date]' && isFinite(new Date(getDate)))){
+                var mentioningEvent = this.memberSelected.value
+                var eventText = this.textInput.value
+                var date
+                getDate == "" ? date = "" : date = new Date(getDate).toDateString()
+                debugger
+                var newEvent = [{mentioningEvent,eventText,date}]
+                var events = this.props.standUpData.events
+                getDate == "" ? "" : newEvent = this.props.refineEventList(newEvent)
+                if(newEvent.length == 0){
+                    document.getElementById("eventDateExpired").innerText = "Event Date is Expired."
+                    document.getElementById("eventDateExpired").style.display = "block"
+                    setTimeout(()=>{
+                        document.getElementById("eventDateExpired").style.display = "none"
+                    },2000)
+                }
+                else{
+                    events.push(newEvent[0])
+                    this.setState({events},()=>{
+                        this.memberSelected.value = ""
+                        this.textInput.value = ""
+                        this.dateInput.value = ""
+                        this.props.loadThenUpdate({content : events, contentType : "events"}) 
+                    }) 
+                } 
+            }
+            else{
+                document.getElementById("eventDateExpired").innerText = "Invalid Date."
+                document.getElementById("eventDateExpired").style.display = "block"
+                    setTimeout(()=>{
+                        document.getElementById("eventDateExpired").style.display = "none"
+                },2000)
+            }
+        }
     }
 
     closeInteresting(event){
-        event.target.parentElement.parentElement.style.display = "none";
+        var events = this.props.standUpData.events
+        var id = event.target.parentElement.parentElement.getAttribute("data-id")
+        events.splice(id-1 ,1)
+        this.props.loadThenUpdate({content : events, contentType : "events"})           
     }
 
     pickDate(){
-        $("#datepicker").datepicker();
+        $("#datepicker").datepicker().datepicker("show")
     }
 
-    pickDateExtra(){
-        $("#datepickerExtra").datepicker();
+    pickDateExtra(event){
+       // var strId = "#" + event.target.parentElement.id + " " + "#datepickerExtra"
+       var strId = "#"+ event.target.id
+        $(strId).datepicker().datepicker("show")
     }
 
     addEventExtra(event){
-        debugger
-        var events = this.state.events
-        var date = this.dateInputExtra.value
-        var id =  event.target.parentElement.parentElement.parentElement.getAttribute('data-id') -1;
-        events[id].date = new Date(date).toDateString()
-        this.setState({},()=>{})
+        if(this.dateInputExtra.value == ""){
+            event.target.parentElement.getElementsByClassName('PickDateExtra')[0].focus()
+        }
+        else{
+            var date = this.dateInputExtra.value
+            var inputExtra = event.target.parentElement.parentElement.querySelector('#eventDateExpiredExtra')
+            if(date == "" || (Object.prototype.toString.call(new Date(date)) === '[object Date]' && isFinite(new Date(date)))){
+                var events = this.props.standUpData.events
+                var id =  event.target.parentElement.parentElement.parentElement.getAttribute('data-id') -1;
+                events[id].date = new Date(date).toDateString() 
+                var temp = this.props.refineEventList(events)
+                if(temp.length < events.length){
+                    inputExtra.innerText = "Event Date is Expired."
+                    inputExtra.style.display = "block"
+                    events[id].date = ""
+                    setTimeout(()=>{
+                        inputExtra.style.display = "none"
+                        this.props.loadThenUpdate({content : events, contentType : "events"})
+                    },2000)
+                }
+                else{
+                    this.props.loadThenUpdate({content : events, contentType : "events"})
+                }  
+            }
+            else{
+                inputExtra.innerText = "Invalid Date."
+                inputExtra.style.display = "block"
+                    setTimeout(()=>{
+                        inputExtra.style.display = "none"
+                },2000)        
+            }              
+        }
     }
 
   render() {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","Kapil","KK","Sameer","Lavanya","Meenu","Mukesh","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
-    var events = this.state.events
+    var events = this.props.standUpData.events
     return (
     <div id="standUpContent">
         <div id="itemsHeading">{this.props.heading}</div>
@@ -74,12 +132,15 @@ export default class ContentEvents extends React.Component {
                         </div> : 
                         <span id="helpItemReadOnly">{ '"'+ val.eventText + '"'}</span>
                     </div>
-                    {val.date != "" ? <div id="eventDate">{ " - "+ val.date}</div> : 
+                    {val.date != "" ? <div id="eventDate">{ val.refinedDate ? " - "+val.refinedDate : " - "+ val.date}</div> : 
                     <div id="searchDiv">
-                        <span id="searchDivExtra">
+                        <span id="searchDivExtra" className="SearchDivExtra">
                             <span id="searchSpanExtra"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
-                            <input type="text" id="datepickerExtra" placeholder="Pick Date" ref={(input) => { this.dateInputExtra = input}} onClick={this.pickDateExtra}/>                    
+                            <input type="text" id={"datepickerExtra"+i} className="PickDateExtra" placeholder="Pick Date" ref={(input) => { this.dateInputExtra = input}} onClick={this.pickDateExtra}/>                    
                             <span id="addHelper" onClick={this.addEventExtra}>+</span>
+                        </span>
+                        <span id="eventDateExpiredExtra" className="ExpiredDate">
+                            Event Date is Expired.
                         </span>
                     </div>}
                 </div>
@@ -97,12 +158,15 @@ export default class ContentEvents extends React.Component {
                         </datalist>
                     </div>
                 </div> : 
-                <input id="helpTextArea" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInput = input}} />       
+                <input id="eventTextArea" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInput = input}} />       
                 <span id="addHelp" onClick={this.addEvent}>+</span> 
             </div>
             <div id="searchDiv">
                 <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
                 <input type="text" id="datepicker" placeholder="Pick Date" ref={(input) => { this.dateInput = input}} onClick={this.pickDate}/>                    
+                <span id="eventDateExpired" className="ExpiredDate">
+                    Event Date is Expired.
+                </span>
             </div>
         </div>
     </div>
