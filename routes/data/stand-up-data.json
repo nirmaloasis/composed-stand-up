@@ -1,26 +1,32 @@
 {
-   "date": "Mon Jul 0 2017",
+   "date": "Fri Jul 07 2017",
    "newFaces": [
       "None"
    ],
-   "lastModifiedNewFaces": "Mon Jun 25 2017",
-   "lastModifiedInterestings": "Sun Jul 09 2017",
+   "lastModifiedNewFaces": "Wed Jul 05 2017",
+   "lastModifiedInterestings": "Wed Jul 05 2017",
    "helps": [
       {
-         "askingHelp": "Animesh",
-         "helpText": "Vote for Trip",
-         "date": "Mon Jun 25 2017",
+         "askingHelp": "Anish",
+         "helpText": "Pay 200Rs for BirthDay celebration",
+         "date": "Fri Jul 07 2017",
+         "helpedBy": "All"
+      },
+      {
+         "askingHelp": "All",
+         "helpText": "Lab Movement",
+         "date": "Mon Jul 10 2017",
          "helpedBy": "None"
       },
       {
-         "askingHelp": "sdvsdv",
-         "helpText": "afsdvzd",
+         "askingHelp": "Meenu",
+         "helpText": "New Database setup",
          "date": "Mon Jul 10 2017",
-         "helpedBy": "Ashish"
+         "helpedBy": "None"
       },
       {
-         "askingHelp": "asc",
-         "helpText": "dvsddvcas",
+         "askingHelp": "Divya",
+         "helpText": "Block-chain study",
          "date": "Mon Jul 10 2017",
          "helpedBy": "None"
       }
@@ -28,25 +34,18 @@
    "interestings": [],
    "events": [
       {
-         "mentioningEvent": "Abdul",
-         "eventText": "Moving to new Lab",
-         "date": "Thu Aug 3 2017",
-         "refinedDate": ""
+         "mentioningEvent": "Vinod",
+         "eventText": "Python meet-up",
+         "date": "Sat Jul 15 2017"
       },
       {
-         "mentioningEvent": "Meenu",
-         "eventText": "Sodexo distribution",
-         "date": "Mon Jul 31 2017",
-         "refinedDate": ""
-      },
-      {
-         "mentioningEvent": "sdzvsv",
-         "eventText": "fsdvsdv",
+         "mentioningEvent": "Jimit",
+         "eventText": "Team outing",
          "date": "Tue Jul 11 2017",
          "refinedDate": "Tomorrow"
       }
    ],
-   "currentFacilitator": "Lavanya Gowlla",
+   "currentFacilitator": "Dikshita Khandke",
    "notDoneList": [
       "Abdul Ahad",
       "Abhishek Kumar",
@@ -56,7 +55,6 @@
       "Ashish Verma",
       "Bharat Rathad",
       "Chandramouli M S",
-      "Dikshita Khandke",
       "Dinesh kumar Suvendrian",
       "Divya Chandrasekaran",
       "Geeta Hubli",
@@ -69,6 +67,7 @@
       "Kapil Taneja",
       "Krishn Kant Nayak",
       "Kumar Sameer Ranjan",
+      "Lavanya Gowlla",
       "Meenu Sharma",
       "Mukesh Pandit",
       "Naveen Telker",
@@ -77,21 +76,21 @@
       "Raja Madhu",
       "Rakesh Dutta",
       "Rakesh Shastry",
+      "Ramandeep Kaur",
       "Rohit Kumar",
       "Senthil Basuva Raj",
       "Shashank Goyal",
       "Shree Lakshmi",
       "Shreyansh Kant",
+      "Thirupathi M",
+      "Vinod Subramanian",
       "Srinivas Readdy",
       "Sumit Kumar",
       "Swapnil Shah",
-      "Thirupathi M",
-      "Vinod Subramanian",
+      "Vinit Rohela",
       "Vivek"
    ],
    "doneList": [
-      "Pankaj Maurya",
-      "Vinit Rohela",
-      "Ramandeep Kaur"
+      "Pankaj Maurya"
    ]
 }

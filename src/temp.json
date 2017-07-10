@@ -1,21 +1,33 @@
 {
-   "date": "Mon Jun 25 2017",
+   "date": "Fri Jul 07 2017",
    "newFaces": [
       "None"
    ],
-   "lastModifiedNewFaces" : "Mon Jun 25 2017",
-   "lastModifiedInterestings" : "Mon Jun 25 2017",
+   "lastModifiedNewFaces": "Wed Jul 05 2017",
+   "lastModifiedInterestings": "Mon Jul 10 2017",
    "helps": [
       {
-         "askingHelp": "Divya",
-         "helpText": "B'day money collection",
-         "date": "Mon Jun 25 2017",
-         "helpedBy": "Anish"
+         "askingHelp": "Anish",
+         "helpText": "Pay 200Rs for BirthDay celebration",
+         "date": "Fri Jul 07 2017",
+         "helpedBy": "All"
       },
       {
-         "askingHelp": "Animesh",
-         "helpText": "Vote for Trip",
-         "date": "Mon Jun 25 2017",
+         "askingHelp": "All",
+         "helpText": "Lab Movement",
+         "date": "Mon Jul 10 2017",
+         "helpedBy": "None"
+      },
+      {
+         "askingHelp": "Meenu",
+         "helpText": "New Database setup",
+         "date": "Mon Jul 10 2017",
+         "helpedBy": "None"
+      },
+      {
+         "askingHelp": "Divya",
+         "helpText": "Block-chain study",
+         "date": "Mon Jul 10 2017",
          "helpedBy": "None"
       }
    ],
@@ -35,34 +47,15 @@
    ],
    "events": [
       {
-         "mentioningEvent": "Shashank",
-         "eventText": "Game of thrones trailer released",
-         "date": "Mon Jul 5 2017",
-         "refinedDate" : ""
+         "mentioningEvent": "Vinod",
+         "eventText": "Python meet-up",
+         "date": "Sat Jul 15 2017"
       },
       {
-         "mentioningEvent": "Abdul",
-         "eventText": "Moving to new Lab",
-         "date": "Thu Aug 3 2017",
-         "refinedDate" : ""
-      },
-      {
-         "mentioningEvent": "Meenu",
-         "eventText": "Sodexo distribution",
-         "date": "Mon Jul 4 2017",
-         "refinedDate" : ""
-      },
-      {
-         "mentioningEvent": "Abdul",
-         "eventText": "Moving to new Lab",
-         "date": "Sun Jul 09 2017",
-         "refinedDate" : "Today"
-      },
-      {
-         "mentioningEvent": "Meenu",
-         "eventText": "Sodexo distribution",
-         "date": "Mon Jul 31 2017",
-         "refinedDate" : ""
+         "mentioningEvent": "Jimit",
+         "eventText": "Team outing",
+         "date": "Tue Jul 11 2017",
+         "refinedDate": "Tomorrow"
       }
    ],
    "currentFacilitator": "Dikshita Khandke",
