@@ -1,26 +1,44 @@
 {
-   "date": "Wed Jul 12 2017",
+   "date": "Wed Jul 11 2017",
    "newFaces": [
-      "ram"
+      "None"
    ],
-   "lastModifiedNewFaces": "Wed Jul 12 2017",
-   "lastModifiedInterestings": "Wed Jul 12 2017",
+   "lastModifiedNewFaces": "Wed Jul 11 2017",
+   "lastModifiedInterestings": "Wed Jul 11 2017",
    "helps": [
       {
-         "askingHelp": "All",
+         "askingHelp": "Meenu",
+         "helpText": "DR steps this July",
+         "date": "Wed Jul 12 2017",
+         "helpedBy": "None"
+      },
+      {
+         "askingHelp": "Anish",
+         "helpText": "Pay 200 Rs for birthday celebration",
+         "date": "Wed Jul 12 2017",
+         "helpedBy": "All"
+      },
+      {
+         "askingHelp": "Divya",
+         "helpText": "Read new women security rules",
+         "date": "Wed Jul 12 2017",
+         "helpedBy": "All"
+      },
+      {
+         "askingHelp": "Abdul",
          "helpText": "Lab Movement",
-         "date": "Mon Jul 10 2017",
-         "helpedBy": "ramesh"
+         "date": "Wed Jul 12 2017",
+         "helpedBy": "None"
       },
       {
          "askingHelp": "Meenu",
          "helpText": "New Database setup",
-         "date": "Mon Jul 10 2017",
-         "helpedBy": "Ramesh"
+         "date": "Wed Jul 12 2017",
+         "helpedBy": "None"
       },
       {
          "askingHelp": "Vinod",
-         "helpText": "skdj uihks iuksbf uiukbf",
+         "helpText": "Volunteer for CSR NGO website-dev",
          "date": "Wed Jul 12 2017",
          "helpedBy": "None"
       }
@@ -28,34 +46,36 @@
    "interestings": [],
    "events": [
       {
-         "mentioningEvent": "Vinod",
+         "mentioningEvent": "Senthil",
          "eventText": "Python meet-up",
          "date": "Sat Jul 15 2017"
       },
       {
-         "mentioningEvent": "Animesh",
-         "eventText": "Tom telepresence session for all managers",
-         "date": "Thu Jul 13 2017",
-         "refinedDate": "Tomorrow"
+         "mentioningEvent": "Senthil",
+         "eventText": "Learning Day",
+         "date": "Fri Jul 28 2017"
       },
       {
-         "mentioningEvent": "sadasd",
-         "eventText": "sdsdgs",
-         "date": "Tue Jul 18 2017"
+         "mentioningEvent": "All",
+         "eventText": "Potluck ",
+         "date": ""
       }
    ],
-   "currentFacilitator": "Animesh Parial",
+   "currentFacilitator": "Pankaj Maurya",
    "notDoneList": [
       "Abdul Ahad",
       "Abhishek Kumar",
+      "Animesh Parial",
       "Anish Kumar",
       "Anusha Pakalakunja",
       "Ashish Verma",
       "Bharat Rathad",
       "Chandramouli M S",
+      "Dikshita Khandke",
       "Dinesh kumar Suvendrian",
       "Divya Chandrasekaran",
       "Geeta Hubli",
+      "Harish Onkarappa",
       "Hemasundara Naidu",
       "Himanshu Kumar",
       "Jimit Mehta",
@@ -75,6 +95,7 @@
       "Rakesh Shastry",
       "Ramandeep Kaur",
       "Rohit Kumar",
+      "Senthil Basuva Raj",
       "Shashank Goyal",
       "Shree Lakshmi",
       "Shreyansh Kant",
@@ -86,10 +107,5 @@
       "Vinit Rohela",
       "Vivek"
    ],
-   "doneList": [
-      "Pankaj Maurya",
-      "Dikshita Khandke",
-      "Harish Onkarappa",
-      "Senthil Basuva Raj"
-   ]
+   "doneList": []
 }
