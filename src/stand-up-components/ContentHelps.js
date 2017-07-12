@@ -8,6 +8,8 @@ export default class ContentHelps extends React.Component {
         this.addHelp = this.addHelp.bind(this)
         this.addHelpingName = this.addHelpingName.bind(this)
         this.closeHelp = this.closeHelp.bind(this)
+        this.enterKeyAddHelp = this.enterKeyAddHelp.bind(this)
+        this.enterKeyAddHelper = this.enterKeyAddHelper.bind(this)
     }
 
     componentWillMount(){
@@ -54,6 +56,16 @@ export default class ContentHelps extends React.Component {
         this.props.loadThenUpdate({content : helpItems, contentType : "helps"})          
     }
 
+    enterKeyAddHelp(event){
+        if(event.keyCode == 13)
+            document.getElementById("addHelp").click()
+    }
+
+    enterKeyAddHelper(event){
+        if(event.keyCode == 13)
+            document.getElementById("addHelper").click()
+    }
+
   render() {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","Kapil","KK","Sameer","Lavanya","Meenu","Mukesh","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
     var helpItems = this.props.standUpData.helps
@@ -68,6 +80,7 @@ export default class ContentHelps extends React.Component {
                          {
                              val.helpedBy == "None" ? 
                              <div id="addHelperSection">
+                                <div id="closeHelpDiv"><div id="closeHelp" onClick={this.closeHelp}>+</div></div>
                                 <div id="helpContent" data-id={i+1}>
                                     <div id={val.askingHelp.length>6?"askingHelpReadOnlyFont" :"askingHelpReadOnly"}>
                                         {val.askingHelp}
@@ -77,7 +90,7 @@ export default class ContentHelps extends React.Component {
                                 <div id="addHelperWrap">
                                     <span id="searchDiv">
                                         <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
-                                        <input id="helpedByList" list="memberList" placeholder="Helped By" ref={(input) => { this.memberSelected = input}}/>
+                                        <input id="helpedByList" list="memberList" placeholder="Volunteer" ref={(input) => { this.memberSelected = input}} onKeyUp={this.enterKeyAddHelper}/>
                                         <datalist id="memberList">
                                             {membersList.map((val,i)=><option key={i} value={val}/>)}
                                         </datalist>
@@ -95,7 +108,7 @@ export default class ContentHelps extends React.Component {
                                     <span id="helpItemReadOnly">{ '"'+ val.helpText + '"'}</span>
                                 </div>
                                 <div id="helpedByPerson">
-                                    <span>Helped By</span><span>{" - "+ val.helpedBy}</span>
+                                    <span>Volunteer</span><span>{" - "+ val.helpedBy}</span>
                                 </div>
                             </div>
                          }
@@ -108,13 +121,13 @@ export default class ContentHelps extends React.Component {
             <div id="askingHelp">
                 <div id="searchDiv">
                     <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
-                    <input id="listMembers" list="memberList" placeholder="Name" ref={(input) => { this.memberSelected = input}}/>
+                    <input id="listMembers" list="memberList" placeholder="Name" ref={(input) => { this.memberSelected = input}} onKeyUp={this.enterKeyAddHelp}/>
                     <datalist id="memberList">
                         {membersList.map((val,i)=><option key={i} value={val}/>)}
                     </datalist>
                 </div>
             </div> : 
-            <input id="helpTextArea" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInput = input}} /> 
+            <input id="helpTextArea" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInput = input}} onKeyUp={this.enterKeyAddHelp} /> 
             <span id="addHelp" onClick={this.addHelp}>+</span>                              
         </div> 
     </div>

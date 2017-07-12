@@ -11,11 +11,17 @@ export default class ContentEvents extends React.Component {
         this.pickDate = this.pickDate.bind(this)
         this.pickDateExtra = this.pickDateExtra.bind(this)
         this.addEventExtra = this.addEventExtra.bind(this)
+        this.enterKeyAddEvent = this.enterKeyAddEvent.bind(this)
     }
 
     componentDidMount(){
         // $("#datepicker").datepicker();
         // $(".PickDateExtra").datepicker()
+    }
+
+    enterKeyAddEvent(event){
+        if(event.keyCode == 13)
+            document.getElementById("addEvent").click()
     }
     
     addEvent(event){
@@ -137,7 +143,7 @@ export default class ContentEvents extends React.Component {
                         <span id="searchDivExtra" className="SearchDivExtra">
                             <span id="searchSpanExtra"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
                             <input type="text" id={"datepickerExtra"+i} className="PickDateExtra" placeholder="Pick Date" ref={(input) => { this.dateInputExtra = input}} onClick={this.pickDateExtra}/>                    
-                            <span id="addHelper" onClick={this.addEventExtra}>+</span>
+                            <span id="addDate" onClick={this.addEventExtra}>+</span>
                         </span>
                         <span id="eventDateExpiredExtra" className="ExpiredDate">
                             Event Date is Expired.
@@ -152,14 +158,14 @@ export default class ContentEvents extends React.Component {
                 <div id="askingHelp">
                     <div id="searchDiv">
                         <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
-                        <input id="listMembers" list="memberList" placeholder="Name" ref={(input) => { this.memberSelected = input}}/>
+                        <input id="listMembers" list="memberList" placeholder="Name" ref={(input) => { this.memberSelected = input}} onKeyUp={this.enterKeyAddEvent}/>
                         <datalist id="memberList">
                             {membersList.map((val,i)=><option key={i} value={val}/>)}
                         </datalist>
                     </div>
                 </div> : 
-                <input id="eventTextArea" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInput = input}} />       
-                <span id="addHelp" onClick={this.addEvent}>+</span> 
+                <input id="eventTextArea" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInput = input}} onKeyUp={this.enterKeyAddEvent}/>       
+                <span id="addEvent" onClick={this.addEvent}>+</span> 
             </div>
             <div id="searchDiv">
                 <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>

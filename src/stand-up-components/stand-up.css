@@ -58,9 +58,9 @@
     min-height: 500px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
+    margin-top: 50px;
     text-align: center;
-    box-shadow: 0 0 1.2px #686868;
+    box-shadow: 0 1px 3px #888;
     background: white;
     font-size: 17px;
 }
@@ -68,10 +68,12 @@
 #leftContainer,#middleontainer{
     width: 33.33%;
     border-right: 1px solid #254b6e;
+    background: rgb(250,250,250)
 }
 
 #rightContainer{
     width: 33.33%;
+    background: rgb(250,250,250)
 }
 
 
@@ -138,7 +140,7 @@
     border-bottom: 1px dotted #6d6d6d;
 }
 
-#addHelp{
+#addHelp,#addEvent,#addInteresting{
     width: 24px;
     height: 24px;
     font-size: 20px;
@@ -188,7 +190,7 @@ input{
     height: 25px;
 }
 
-#addHelper{
+#addHelper,#addDate{
     width: 15px;
     height: 15px;
     font-size: 14px;
@@ -321,7 +323,6 @@ input{
 }
 
 #addHelperSection{
-    padding: 15px 10px 10px 10px;
     background: white;
     margin: 30px;
     box-shadow: 0 1px 3px #888;
@@ -334,10 +335,15 @@ input{
 #helpContent{
     display: flex;
     align-items: center;
+    padding: 1px 10px 0px 10px;
+    min-height: 30px;
+    padding: 10px;
+    padding-bottom: 0;
 }
 
 #addHelperWrap{
     float: right;
+    padding-bottom: 3px;
 }
 
 .ClapBtn{

@@ -6,10 +6,16 @@ export default class NewFaces extends React.Component {
         super(props)
         this.state = {listOfNewFaces : this.props.standUpData.newFaces}
         this.addNewFaces = this.addNewFaces.bind(this)
+        this.enterKeyAddNewFaces = this.enterKeyAddNewFaces.bind(this)
     }
 
     componentWillMount(){
 
+    }
+
+    enterKeyAddNewFaces(event){
+        if(event.keyCode == 13)
+            document.getElementById("addFace").click()
     }
 
     addNewFaces(event){
@@ -46,7 +52,7 @@ export default class NewFaces extends React.Component {
                     </span>
                 </span>
                 <span id="addNewFaces">
-                    <input id="inputAddFace" type="text" name="newFace" required placeholder="Add new Faces" ref={(input) => { this.textInput = input}}/> 
+                    <input id="inputAddFace" type="text" name="newFace" required placeholder="Add new Faces" ref={(input) => { this.textInput = input}} onKeyUp={this.enterKeyAddNewFaces}/> 
                     <span id="addFace" onClick={this.addNewFaces}>+</span> 
                 </span>
                 <span id="todayDate">{new Date().toDateString()}</span>

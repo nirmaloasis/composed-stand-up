@@ -1,33 +1,27 @@
 {
-   "date": "Fri Jul 07 2017",
+   "date": "Wed Jul 12 2017",
    "newFaces": [
-      "None"
+      "ram"
    ],
-   "lastModifiedNewFaces": "Wed Jul 05 2017",
-   "lastModifiedInterestings": "Wed Jul 05 2017",
+   "lastModifiedNewFaces": "Wed Jul 12 2017",
+   "lastModifiedInterestings": "Wed Jul 12 2017",
    "helps": [
-      {
-         "askingHelp": "Anish",
-         "helpText": "Pay 200Rs for BirthDay celebration",
-         "date": "Fri Jul 07 2017",
-         "helpedBy": "All"
-      },
       {
          "askingHelp": "All",
          "helpText": "Lab Movement",
          "date": "Mon Jul 10 2017",
-         "helpedBy": "None"
+         "helpedBy": "ramesh"
       },
       {
          "askingHelp": "Meenu",
          "helpText": "New Database setup",
          "date": "Mon Jul 10 2017",
-         "helpedBy": "None"
+         "helpedBy": "Ramesh"
       },
       {
-         "askingHelp": "Divya",
-         "helpText": "Block-chain study",
-         "date": "Mon Jul 10 2017",
+         "askingHelp": "Vinod",
+         "helpText": "skdj uihks iuksbf uiukbf",
+         "date": "Wed Jul 12 2017",
          "helpedBy": "None"
       }
    ],
@@ -39,17 +33,21 @@
          "date": "Sat Jul 15 2017"
       },
       {
-         "mentioningEvent": "Jimit",
-         "eventText": "Team outing",
-         "date": "Tue Jul 11 2017",
+         "mentioningEvent": "Animesh",
+         "eventText": "Tom telepresence session for all managers",
+         "date": "Thu Jul 13 2017",
          "refinedDate": "Tomorrow"
+      },
+      {
+         "mentioningEvent": "sadasd",
+         "eventText": "sdsdgs",
+         "date": "Tue Jul 18 2017"
       }
    ],
-   "currentFacilitator": "Dikshita Khandke",
+   "currentFacilitator": "Animesh Parial",
    "notDoneList": [
       "Abdul Ahad",
       "Abhishek Kumar",
-      "Animesh Parial",
       "Anish Kumar",
       "Anusha Pakalakunja",
       "Ashish Verma",
@@ -58,7 +56,6 @@
       "Dinesh kumar Suvendrian",
       "Divya Chandrasekaran",
       "Geeta Hubli",
-      "Harish Onkarappa",
       "Hemasundara Naidu",
       "Himanshu Kumar",
       "Jimit Mehta",
@@ -78,7 +75,6 @@
       "Rakesh Shastry",
       "Ramandeep Kaur",
       "Rohit Kumar",
-      "Senthil Basuva Raj",
       "Shashank Goyal",
       "Shree Lakshmi",
       "Shreyansh Kant",
@@ -91,6 +87,9 @@
       "Vivek"
    ],
    "doneList": [
-      "Pankaj Maurya"
+      "Pankaj Maurya",
+      "Dikshita Khandke",
+      "Harish Onkarappa",
+      "Senthil Basuva Raj"
    ]
 }

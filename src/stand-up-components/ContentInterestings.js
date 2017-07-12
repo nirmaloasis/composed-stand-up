@@ -8,11 +8,17 @@ export default class ContentInterestings extends React.Component {
         this.state = {}
         this.addInteresting = this.addInteresting.bind(this)
         this.closeInteresting = this.closeInteresting.bind(this)
+        this.enterKeyAddInteresting = this.enterKeyAddInteresting.bind(this)
     }
 
     componentWillMount(){
     }
     
+    enterKeyAddInteresting(event){
+        if(event.keyCode == 13)
+            document.getElementById("addInteresting").click()
+    }
+
     addInteresting(event){
         if(this.memberSelected.value == ""){
             this.memberSelected.focus()
@@ -64,14 +70,14 @@ export default class ContentInterestings extends React.Component {
             <div id="askingHelp">
                 <div id="searchDiv">
                     <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
-                    <input id="listMembers" list="memberList" placeholder="Name" ref={(input) => { this.memberSelected = input}}/>
+                    <input id="listMembers" list="memberList" placeholder="Name" ref={(input) => { this.memberSelected = input}} onKeyUp={this.enterKeyAddInteresting}/>
                     <datalist id="memberList">
                         {membersList.map((val,i)=><option key={i} value={val}/>)}
                     </datalist>
                 </div>
             </div> : 
-            <input id="InterestingTextArea" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInput = input}} /> 
-            <span id="addHelp" onClick={this.addInteresting}>+</span>                              
+            <input id="InterestingTextArea" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInput = input}} onKeyUp={this.enterKeyAddInteresting}/> 
+            <span id="addInteresting" onClick={this.addInteresting}>+</span>                              
         </div> 
     </div>
     );
