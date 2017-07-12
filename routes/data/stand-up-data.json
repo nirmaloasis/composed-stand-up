@@ -1,16 +1,16 @@
 {
-   "date": "Wed Jul 11 2017",
+   "date": "Wed Jul 12 2017",
    "newFaces": [
       "None"
    ],
    "lastModifiedNewFaces": "Wed Jul 11 2017",
-   "lastModifiedInterestings": "Wed Jul 11 2017",
+   "lastModifiedInterestings": "Wed Jul 12 2017",
    "helps": [
       {
          "askingHelp": "Meenu",
          "helpText": "DR steps this July",
          "date": "Wed Jul 12 2017",
-         "helpedBy": "None"
+         "helpedBy": "Vinod"
       },
       {
          "askingHelp": "Anish",
@@ -31,19 +31,48 @@
          "helpedBy": "None"
       },
       {
-         "askingHelp": "Meenu",
-         "helpText": "New Database setup",
+         "askingHelp": "Vinod",
+         "helpText": "CSR needs Volunteers to develop NGO websites. Details on Slack",
          "date": "Wed Jul 12 2017",
          "helpedBy": "None"
       },
       {
-         "askingHelp": "Vinod",
-         "helpText": "Volunteer for CSR NGO website-dev",
+         "askingHelp": "All",
+         "helpText": "Where are the Pics ? They are in Meenu's mac machine. Reach out !!",
+         "date": "Wed Jul 12 2017",
+         "helpedBy": "None"
+      },
+      {
+         "askingHelp": "Anish",
+         "helpText": "Flyway like tool for Casandra? Jimit suggests to post into DB channel",
+         "date": "Wed Jul 12 2017",
+         "helpedBy": "None"
+      },
+      {
+         "askingHelp": "Raman",
+         "helpText": "Any on needs Office windows laptop ?",
          "date": "Wed Jul 12 2017",
          "helpedBy": "None"
       }
    ],
-   "interestings": [],
+   "interestings": [
+      {
+         "tellingInteresting": "Divya",
+         "interestingText": "Stable version of ES 8 is released"
+      },
+      {
+         "tellingInteresting": "Parag",
+         "interestingText": "India paid 5 CR to Phippines to fight ISIS -"
+      },
+      {
+         "tellingInteresting": "Shashank",
+         "interestingText": "Alibaba backed PayTm to plan to buy bigbasket"
+      },
+      {
+         "tellingInteresting": "Vinod",
+         "interestingText": "Amazon Prime - Prime day called prime because of the dates which were prime numbers"
+      }
+   ],
    "events": [
       {
          "mentioningEvent": "Senthil",
@@ -59,9 +88,15 @@
          "mentioningEvent": "All",
          "eventText": "Potluck ",
          "date": ""
+      },
+      {
+         "mentioningEvent": "All",
+         "eventText": "Pay 200 Rupees To Anees",
+         "date": "Thu Jul 13 2017",
+         "refinedDate": "Tomorrow"
       }
    ],
-   "currentFacilitator": "Pankaj Maurya",
+   "currentFacilitator": "Raja Madhu",
    "notDoneList": [
       "Abdul Ahad",
       "Abhishek Kumar",
@@ -90,7 +125,6 @@
       "Naveen Telker",
       "Nirmal PS",
       "Praveen Kumar K",
-      "Raja Madhu",
       "Rakesh Dutta",
       "Rakesh Shastry",
       "Ramandeep Kaur",
@@ -99,13 +133,15 @@
       "Shashank Goyal",
       "Shree Lakshmi",
       "Shreyansh Kant",
-      "Thirupathi M",
-      "Vinod Subramanian",
       "Srinivas Readdy",
       "Sumit Kumar",
       "Swapnil Shah",
+      "Thirupathi M",
       "Vinit Rohela",
+      "Vinod Subramanian",
       "Vivek"
    ],
-   "doneList": []
+   "doneList": [
+      "Pankaj Maurya"
+   ]
 }
