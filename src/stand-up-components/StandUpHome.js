@@ -6,6 +6,9 @@ import NewFaces from "../home-components/NewFaces.js"
 import ContentHelps from './ContentHelps'
 import ContentInterestings from './ContentInterestings'
 import ContentEvents from './ContentEvents'
+import ModalHelps from './ModalHelps'
+// import ModalInterestings from './ModalInterestings'
+// import ModalEvents from './ModalEvents'
 
 export default class StandUpHome extends Component {
     constructor(props){
@@ -57,6 +60,8 @@ export default class StandUpHome extends Component {
         var newFaces = this.props.standUpData.newFaces.map((val,key)=><span key={key}>{" "+val}</span>)
         return (
             <div>
+                {/*<ModalInterestings heading="Interestings" standUpData = {this.props.standUpData} loadThenUpdate={this.props.loadThenUpdate}/>
+                <ModalEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/>*/}
                 <Header standUpData={this.props.standUpData} changeRoute={this.props.changeRoute} route={this.props.route} />
                 <div id="newDateWrap">
                     <div  id="div92per">
@@ -64,7 +69,7 @@ export default class StandUpHome extends Component {
                     </div>
                 </div>
                 <div id="standUpcontentWrapper"> 
-                    <span id="leftContainer"><ContentHelps heading="Helps" standUpData = {this.props.standUpData}  loadThenUpdate={this.props.loadThenUpdate}/></span>
+                    <span id="leftContainer"><ModalHelps heading="Helps" standUpData = {this.props.standUpData}  loadThenUpdate={this.props.loadThenUpdate}/><ContentHelps heading="Helps" standUpData = {this.props.standUpData}  loadThenUpdate={this.props.loadThenUpdate}/></span>
                     <span id="middleontainer"><ContentInterestings heading="Interestings" standUpData = {this.props.standUpData} loadThenUpdate={this.props.loadThenUpdate}/></span>
                     <span id="rightContainer"><ContentEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/></span>
                 </div>

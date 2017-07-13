@@ -1,8 +1,9 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin: 0;
-  background-color: rgb(235,235,235);
-  min-width: 1440px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: rgb(200,200,200);
+    min-width: 1440px;
+    overflow: hidden;
 }
 
 #headerWrapper{
@@ -74,7 +75,7 @@ body {
 }
 
 #todaysFacilitator{
-    font-size: 16px;
+    font-size: 20px;
     color: white;
 }
 
@@ -99,7 +100,7 @@ body {
 
 #newDateWrap{
     width: 100%;
-    font-size: 18px;
+    font-size: 20px;
     background: white;
     box-shadow: 0px 0.4px #686868;
     border-bottom: .062rem solid #cccccc;

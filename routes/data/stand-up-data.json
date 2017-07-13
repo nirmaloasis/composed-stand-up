@@ -4,7 +4,7 @@
       "None"
    ],
    "lastModifiedNewFaces": "Wed Jul 11 2017",
-   "lastModifiedInterestings": "Wed Jul 12 2017",
+   "lastModifiedInterestings": "Thu Jul 13 2017",
    "helps": [
       {
          "askingHelp": "Meenu",
@@ -55,24 +55,7 @@
          "helpedBy": "None"
       }
    ],
-   "interestings": [
-      {
-         "tellingInteresting": "Divya",
-         "interestingText": "Stable version of ES 8 is released"
-      },
-      {
-         "tellingInteresting": "Parag",
-         "interestingText": "India paid 5 CR to Phippines to fight ISIS -"
-      },
-      {
-         "tellingInteresting": "Shashank",
-         "interestingText": "Alibaba backed PayTm to plan to buy bigbasket"
-      },
-      {
-         "tellingInteresting": "Vinod",
-         "interestingText": "Amazon Prime - Prime day called prime because of the dates which were prime numbers"
-      }
-   ],
+   "interestings": [],
    "events": [
       {
          "mentioningEvent": "Senthil",
@@ -93,15 +76,14 @@
          "mentioningEvent": "All",
          "eventText": "Pay 200 Rupees To Anees",
          "date": "Thu Jul 13 2017",
-         "refinedDate": "Tomorrow"
+         "refinedDate": "Today"
       }
    ],
-   "currentFacilitator": "Raja Madhu",
+   "currentFacilitator": "Anish Kumar",
    "notDoneList": [
       "Abdul Ahad",
       "Abhishek Kumar",
       "Animesh Parial",
-      "Anish Kumar",
       "Anusha Pakalakunja",
       "Ashish Verma",
       "Bharat Rathad",
@@ -125,6 +107,7 @@
       "Naveen Telker",
       "Nirmal PS",
       "Praveen Kumar K",
+      "Raja Madhu",
       "Rakesh Dutta",
       "Rakesh Shastry",
       "Ramandeep Kaur",

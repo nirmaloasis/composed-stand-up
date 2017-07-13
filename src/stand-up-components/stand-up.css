@@ -55,25 +55,28 @@
 #standUpcontentWrapper{
     display: flex;
     width: 92%;
-    min-height: 500px;
+    height: 530px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
     text-align: center;
     box-shadow: 0 1px 3px #888;
     background: white;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 #leftContainer,#middleontainer{
     width: 33.33%;
     border-right: 1px solid #254b6e;
-    background: rgb(250,250,250)
+    background: rgb(235,235,235);
+    position: relative;
+    overflow-y: scroll;
 }
 
 #rightContainer{
     width: 33.33%;
-    background: rgb(250,250,250)
+    background: rgb(235,235,235);
+    overflow-y: scroll;
 }
 
 
@@ -92,12 +95,13 @@
 #itemsHeading{
     padding: 10px;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 1px;
     word-spacing: 8px;
     text-align: center;
     border-bottom: 1px solid #254b6e;
     color: #254b6e;
+    cursor: pointer;
 }
 
 
@@ -207,6 +211,7 @@ input{
     float: right;
     padding: 0px;
     margin: 0px;
+    font-weight: bold;
 }
 
 #closeHelp{
@@ -224,6 +229,15 @@ input{
     color: #254b6e;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+#closeHelpSectionModal{
+    background: white;
+    margin: 0px 30px 30px 30px;
+    box-shadow: 0 1px 3px #888;
+    color: #254b6e;
+    overflow-y: auto;
+    overflow-x: hidden; 
 }
 
 #closeEventSection{
@@ -268,7 +282,7 @@ input{
 
 #helpedByPerson{
     border: 0;
-    font-size: 14px;
+    font-size: 16px;
     color: #254b6e;
     text-align: right;
     padding: 0px 15px 5px 0px;
@@ -287,7 +301,7 @@ input{
 #eventDate{
     text-align: right;
     padding: 0px 15px 5px 0px;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 #searchDiv{
@@ -448,4 +462,53 @@ input{
     overflow: auto;
     background-color: white;
     color: red;
+}
+
+.modal-dialog{
+    overflow-y: initial !important;
+    opacity: 1;
+    margin: 4% 8%;
+    border: 1px solid;
+    box-shadow: 0 1px 3px #888;
+    background: rgb(235,235,235);
+}
+.modal-body{
+    height: 600px;
+    overflow-y: auto;
+}
+
+.StandUpContentModal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    font-size: 35px;
+    opacity: .96;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: rgb(200,200,200);
+    height: 1000px;
+}
+
+#modalHelpHeading{
+    color: white;
+    padding: 10px;
+    background: #254b6e;
+    margin-bottom: 20px;
+}
+
+#closeHelpSectionModal #closeHelpContent{
+    min-height: 60px;
+}
+
+#zoomHelp #helpedByPerson{
+    font-size: 25px;
+}
+
+#closeModal{
+    font-weight: bold;
+    color: red;
+    font-size: 30px;
+    transform: rotate(45deg);
+    cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
+import ModalHelps from './ModalHelps'
 
 export default class ContentHelps extends React.Component {
     constructor(props){
@@ -10,6 +11,7 @@ export default class ContentHelps extends React.Component {
         this.closeHelp = this.closeHelp.bind(this)
         this.enterKeyAddHelp = this.enterKeyAddHelp.bind(this)
         this.enterKeyAddHelper = this.enterKeyAddHelper.bind(this)
+        this.zoomInHelp = this.zoomInHelp.bind(this)
     }
 
     componentWillMount(){
@@ -66,12 +68,17 @@ export default class ContentHelps extends React.Component {
             document.getElementById("addHelper").click()
     }
 
+    zoomInHelp(event){
+        document.getElementById('zoomHelp').style.display = "block"
+        debugger
+    }
+
   render() {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","Kapil","KK","Sameer","Lavanya","Meenu","Mukesh","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
     var helpItems = this.props.standUpData.helps
     return (
     <div id="standUpContent">
-        <div id="itemsHeading">{this.props.heading}</div>
+        <div id="itemsHeading" onClick={this.zoomInHelp}>{this.props.heading}</div>
         {   
             helpItems.length > 0 ?
             helpItems.map((val,i)=>{
