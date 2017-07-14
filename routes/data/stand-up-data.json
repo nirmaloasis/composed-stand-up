@@ -1,17 +1,11 @@
 {
-   "date": "Wed Jul 12 2017",
+   "date": "Fri Jul 14 2017",
    "newFaces": [
       "None"
    ],
    "lastModifiedNewFaces": "Wed Jul 11 2017",
-   "lastModifiedInterestings": "Thu Jul 13 2017",
+   "lastModifiedInterestings": "Fri Jul 14 2017",
    "helps": [
-      {
-         "askingHelp": "Meenu",
-         "helpText": "DR steps this July",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "Vinod"
-      },
       {
          "askingHelp": "Anish",
          "helpText": "Pay 200 Rs for birthday celebration",
@@ -19,48 +13,40 @@
          "helpedBy": "All"
       },
       {
-         "askingHelp": "Divya",
-         "helpText": "Read new women security rules",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "All"
-      },
-      {
          "askingHelp": "Abdul",
          "helpText": "Lab Movement",
          "date": "Wed Jul 12 2017",
-         "helpedBy": "None"
+         "helpedBy": "Abdul"
       },
       {
          "askingHelp": "Vinod",
          "helpText": "CSR needs Volunteers to develop NGO websites. Details on Slack",
          "date": "Wed Jul 12 2017",
-         "helpedBy": "None"
+         "helpedBy": "All"
       },
       {
-         "askingHelp": "All",
-         "helpText": "Where are the Pics ? They are in Meenu's mac machine. Reach out !!",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "None"
-      },
-      {
-         "askingHelp": "Anish",
-         "helpText": "Flyway like tool for Casandra? Jimit suggests to post into DB channel",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "None"
-      },
-      {
-         "askingHelp": "Raman",
-         "helpText": "Any on needs Office windows laptop ?",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "None"
+         "askingHelp": "Geeta",
+         "helpText": "Vote for Potluck.",
+         "date": "Fri Jul 14 2017",
+         "helpedBy": "All"
       }
    ],
-   "interestings": [],
+   "interestings": [
+      {
+         "tellingInteresting": "Meenu",
+         "interestingText": "cluster galexy found "
+      },
+      {
+         "tellingInteresting": "Chandra",
+         "interestingText": "umbrella sharing"
+      }
+   ],
    "events": [
       {
          "mentioningEvent": "Senthil",
          "eventText": "Python meet-up",
-         "date": "Sat Jul 15 2017"
+         "date": "Sat Jul 15 2017",
+         "refinedDate": "Tomorrow"
       },
       {
          "mentioningEvent": "Senthil",
@@ -69,24 +55,24 @@
       },
       {
          "mentioningEvent": "All",
-         "eventText": "Potluck ",
+         "eventText": "Potluck",
          "date": ""
       },
       {
          "mentioningEvent": "All",
-         "eventText": "Pay 200 Rupees To Anees",
-         "date": "Thu Jul 13 2017",
+         "eventText": "Update Kronos and fill your Timesheets",
+         "date": "Fri Jul 14 2017",
          "refinedDate": "Today"
       }
    ],
-   "currentFacilitator": "Anish Kumar",
+   "currentFacilitator": "Shreyansh Kant",
    "notDoneList": [
       "Abdul Ahad",
       "Abhishek Kumar",
       "Animesh Parial",
+      "Anish Kumar",
       "Anusha Pakalakunja",
       "Ashish Verma",
-      "Bharat Rathad",
       "Chandramouli M S",
       "Dikshita Khandke",
       "Dinesh kumar Suvendrian",
@@ -99,8 +85,8 @@
       "John Paul",
       "Jotsna M Babu",
       "Kapil Taneja",
-      "Krishn Kant Nayak",
       "Kumar Sameer Ranjan",
+      "Krishn Kant Nayak",
       "Lavanya Gowlla",
       "Meenu Sharma",
       "Mukesh Pandit",
@@ -115,16 +101,16 @@
       "Senthil Basuva Raj",
       "Shashank Goyal",
       "Shree Lakshmi",
-      "Shreyansh Kant",
       "Srinivas Readdy",
       "Sumit Kumar",
-      "Swapnil Shah",
       "Thirupathi M",
       "Vinit Rohela",
       "Vinod Subramanian",
       "Vivek"
    ],
    "doneList": [
-      "Pankaj Maurya"
+      "Pankaj Maurya",
+      "Bharat Rathad",
+      "Swapnil Shah"
    ]
 }

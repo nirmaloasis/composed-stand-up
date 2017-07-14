@@ -7,8 +7,8 @@ import ContentHelps from './ContentHelps'
 import ContentInterestings from './ContentInterestings'
 import ContentEvents from './ContentEvents'
 import ModalHelps from './ModalHelps'
-// import ModalInterestings from './ModalInterestings'
-// import ModalEvents from './ModalEvents'
+import ModalInterestings from './ModalInterestings'
+import ModalEvents from './ModalEvents'
 
 export default class StandUpHome extends Component {
     constructor(props){
@@ -70,8 +70,8 @@ export default class StandUpHome extends Component {
                 </div>
                 <div id="standUpcontentWrapper"> 
                     <span id="leftContainer"><ModalHelps heading="Helps" standUpData = {this.props.standUpData}  loadThenUpdate={this.props.loadThenUpdate}/><ContentHelps heading="Helps" standUpData = {this.props.standUpData}  loadThenUpdate={this.props.loadThenUpdate}/></span>
-                    <span id="middleontainer"><ContentInterestings heading="Interestings" standUpData = {this.props.standUpData} loadThenUpdate={this.props.loadThenUpdate}/></span>
-                    <span id="rightContainer"><ContentEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/></span>
+                    <span id="middleontainer"><ModalInterestings heading="Interestings" standUpData = {this.props.standUpData} loadThenUpdate={this.props.loadThenUpdate}/><ContentInterestings heading="Interestings" standUpData = {this.props.standUpData} loadThenUpdate={this.props.loadThenUpdate}/></span>
+                    <span id="rightContainer"><ModalEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/><ContentEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/></span>
                 </div>
                 <div id="clapWrap">
                     <span className="ClapBtn" id={disable ? "disabledCursor" : "" } title={ disable ? "Todays Stand-up is done" : ""}>

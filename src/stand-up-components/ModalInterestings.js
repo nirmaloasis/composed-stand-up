@@ -1,0 +1,92 @@
+import React, { Component, PropTypes } from 'react';
+import axios from 'axios'
+
+export default class ModalInterestings extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {}
+        this.addInteresting = this.addInteresting.bind(this)
+        this.closeInteresting = this.closeInteresting.bind(this)
+        this.enterKeyAddInteresting = this.enterKeyAddInteresting.bind(this)
+        this.closeModal = this.closeModal.bind(this)
+    }
+
+    enterKeyAddInteresting(event){
+        if(event.keyCode == 13)
+            document.getElementById("addInteresting").click()
+    }
+
+    addInteresting(event){
+        if(this.memberSelected.value == ""){
+            this.memberSelected.focus()
+        }
+        else if(this.textInput.value == ""){
+            this.textInput.focus()
+        }
+        else{
+            var tellingInteresting = this.memberSelected.value
+            var interestingText = this.textInput.value
+            var newInteresting = {tellingInteresting,interestingText}
+            var interestings = this.props.standUpData.interestings
+            interestings.push(newInteresting)
+            this.memberSelected.value = ""
+            this.textInput.value = ""
+            this.props.loadThenUpdate({content : interestings, contentType : "interestings"})    
+        }
+    }
+
+    closeInteresting(event){
+        var interestings = this.props.standUpData.interestings
+        var id = event.target.parentElement.parentElement.getAttribute("data-id")
+        interestings.splice(id-1 ,1)
+        this.props.loadThenUpdate({content : interestings, contentType : "interestings"})           
+    }
+
+    closeModal(event){
+        if(event.target.id == 'zoomInterestings' || event.target.id == 'closeModal' )
+            document.getElementById('zoomInterestings').style.display = "none"
+    }
+
+  render() {
+    var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","Kapil","KK","Sameer","Lavanya","Meenu","Mukesh","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
+    var interestings = this.props.standUpData.interestings
+    return (
+        <div className="StandUpContentModal" id="zoomInterestings" onClick={this.closeModal}>
+            <div className="modal-dialog">
+                <div id="closeHelpDiv"><div id="closeModal" onClick={this.closeModal}>+</div></div>
+                <div id="modalHelpHeading">{this.props.heading}</div>
+                <div className="modal-body">
+                    {
+                        interestings.map((val,i)=>{
+                            return(
+                            <div id="closeHelpSection" key={i} data-id={i+1}>
+                                <div id="closeHelpDiv"><div id="closeHelp" onClick={this.closeInteresting}>+</div></div>
+                                <div id="closeInterestingContent">
+                                    <div id={val.tellingInteresting.length>6?"askingHelpReadOnlyFont" :"askingHelpReadOnly"}>
+                                        {val.tellingInteresting}
+                                    </div> : 
+                                    <span id="helpItemReadOnly">{ '"'+ val.interestingText + '"'}</span>
+                                </div>
+                            </div>
+                            )
+                        })
+                    }
+                    <div id="interestingSection">
+                        <div id="askingHelp">
+                            <div id="searchDiv">
+                                <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
+                                <input id="listMembers" list="memberList" placeholder="Name" ref={(input) => { this.memberSelected = input}} onKeyUp={this.enterKeyAddInteresting}/>
+                                <datalist id="memberList">
+                                    {membersList.map((val,i)=><option key={i} value={val}/>)}
+                                </datalist>
+                            </div>
+                        </div> : 
+                        <input id="InterestingTextArea" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInput = input}} onKeyUp={this.enterKeyAddInteresting}/> 
+                        <span id="addInteresting" onClick={this.addInteresting}>+</span>                              
+                    </div> 
+                </div>
+            </div>
+        </div>
+    );
+  }
+}

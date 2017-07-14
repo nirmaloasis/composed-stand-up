@@ -9,6 +9,7 @@ export default class ContentInterestings extends React.Component {
         this.addInteresting = this.addInteresting.bind(this)
         this.closeInteresting = this.closeInteresting.bind(this)
         this.enterKeyAddInteresting = this.enterKeyAddInteresting.bind(this)
+        this.zoomInInterestings = this.zoomInInterestings.bind(this)
     }
 
     componentWillMount(){
@@ -45,12 +46,16 @@ export default class ContentInterestings extends React.Component {
         this.props.loadThenUpdate({content : interestings, contentType : "interestings"})           
     }
 
+    zoomInInterestings(event){
+        document.getElementById('zoomInterestings').style.display = "block"
+    }
+
   render() {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","Kapil","KK","Sameer","Lavanya","Meenu","Mukesh","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
     var interestings = this.props.standUpData.interestings
     return (
     <div id="standUpContent">
-        <div id="itemsHeading">{this.props.heading}</div>
+        <div id="itemsHeading" onClick={this.zoomInInterestings}>{this.props.heading}</div>
         {
             interestings.map((val,i)=>{
                 return(

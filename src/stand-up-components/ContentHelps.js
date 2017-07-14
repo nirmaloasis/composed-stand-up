@@ -70,7 +70,6 @@ export default class ContentHelps extends React.Component {
 
     zoomInHelp(event){
         document.getElementById('zoomHelp').style.display = "block"
-        debugger
     }
 
   render() {

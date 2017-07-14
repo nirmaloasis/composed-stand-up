@@ -1,4 +1,3 @@
-
 import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
 
@@ -12,7 +11,7 @@ export default class ContentEvents extends React.Component {
         this.pickDateExtra = this.pickDateExtra.bind(this)
         this.addEventExtra = this.addEventExtra.bind(this)
         this.enterKeyAddEvent = this.enterKeyAddEvent.bind(this)
-        this.zoomInEvents = this.zoomInEvents.bind(this)
+        this.closeModal = this.closeModal.bind(this)
     }
 
     componentDidMount(){
@@ -27,10 +26,10 @@ export default class ContentEvents extends React.Component {
     
     addEvent(event){
         if(this.memberSelected.value== ""){
-            document.getElementById("eventContent").querySelector("#listMembers").focus()
+            document.getElementById("eventContentModal").querySelector("#listMembers").focus()
         }
         else if(this.textInput.value == ""){
-            document.getElementById("eventTextAreaModal").focus()
+            document.getElementById("eventTextArea").focus()
         }
         else{
             var getDate = this.dateInput.value
@@ -44,10 +43,10 @@ export default class ContentEvents extends React.Component {
                 var events = this.props.standUpData.events
                 getDate == "" ? "" : newEvent = this.props.refineEventList(newEvent)
                 if(newEvent.length == 0){
-                    document.getElementById("eventDateExpired").innerText = "Event Date is Expired."
-                    document.getElementById("eventDateExpired").style.display = "block"
+                    document.getElementById("eventDateExpiredModal").innerText = "Event Date is Expired."
+                    document.getElementById("eventDateExpiredModal").style.display = "block"
                     setTimeout(()=>{
-                        document.getElementById("eventDateExpired").style.display = "none"
+                        document.getElementById("eventDateExpiredModal").style.display = "none"
                     },2000)
                 }
                 else{
@@ -61,10 +60,10 @@ export default class ContentEvents extends React.Component {
                 } 
             }
             else{
-                document.getElementById("eventDateExpired").innerText = "Invalid Date."
-                document.getElementById("eventDateExpired").style.display = "block"
+                document.getElementById("eventDateExpiredModal").innerText = "Invalid Date."
+                document.getElementById("eventDateExpiredModal").style.display = "block"
                     setTimeout(()=>{
-                        document.getElementById("eventDateExpired").style.display = "none"
+                        document.getElementById("eventDateExpiredModal").style.display = "none"
                 },2000)
             }
         }
@@ -78,11 +77,10 @@ export default class ContentEvents extends React.Component {
     }
 
     pickDate(){
-        $("#datepicker").datepicker().datepicker("show")
+        $("#datepickerModal").datepicker().datepicker("show")
     }
 
     pickDateExtra(event){
-       // var strId = "#" + event.target.parentElement.id + " " + "#datepickerExtra"
        var strId = "#"+ event.target.id
         $(strId).datepicker().datepicker("show")
     }
@@ -122,64 +120,70 @@ export default class ContentEvents extends React.Component {
         }
     }
 
-    zoomInEvents(event){
-        document.getElementById('zoomEvents').style.display = "block"       
+    closeModal(event){
+        if(event.target.id == 'zoomEvents' || event.target.id == 'closeModal' )
+            document.getElementById('zoomEvents').style.display = "none"
     }
 
   render() {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","Kapil","KK","Sameer","Lavanya","Meenu","Mukesh","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
     var events = this.props.standUpData.events
     return (
-    <div id="standUpContent">
-        <div id="itemsHeading" onClick={this.zoomInEvents}>{this.props.heading}</div>
-        {
-            events.map((val,i)=>{
-                return(
-                <div id="closeEventSection" className={val.date=="" ?"PickDateWrap":""} key={i} data-id={i+1}>
-                    <div id="closeHelpDiv"><div id="closeHelp" onClick={this.closeInteresting}>+</div></div>
-                    <div id={val.date=="" ?"closeEventEmptyDate":"closeEventContent"}>
-                        <div id={val.mentioningEvent.length>6?"askingHelpReadOnlyFont" :"askingHelpReadOnly"}>
-                            {val.mentioningEvent}
+        <div className="StandUpContentModal" id="zoomEvents" onClick={this.closeModal}>
+            <div className="modal-dialog">
+                <div id="closeHelpDiv"><div id="closeModal" onClick={this.closeModal}>+</div></div>
+                <div id="modalHelpHeading">{this.props.heading}</div>
+                <div className="modal-body">
+                {
+                    events.map((val,i)=>{
+                        return(
+                        <div id="closeEventSection" className={val.date=="" ?"PickDateWrap":""} key={i} data-id={i+1}>
+                            <div id="closeHelpDiv"><div id="closeHelp" onClick={this.closeInteresting}>+</div></div>
+                            <div id={val.date=="" ?"closeEventEmptyDate":"closeEventContent"}>
+                                <div id={val.mentioningEvent.length>6?"askingHelpReadOnlyFont" :"askingHelpReadOnly"}>
+                                    {val.mentioningEvent}
+                                </div> : 
+                                <span id="helpItemReadOnly">{ '"'+ val.eventText + '"'}</span>
+                            </div>
+                            {val.date != "" ? <div id="eventDate">{ val.refinedDate ? " - "+val.refinedDate : " - "+ val.date}</div> : 
+                            <div id="searchDiv">
+                                <span id="searchDivExtra" className="SearchDivExtra">
+                                    <span id="searchSpanExtra"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
+                                    <input type="text" id={"datepickerExtraModal"+i} className="PickDateExtra" placeholder="Pick Date" ref={(input) => { this.dateInputExtra = input}} onClick={this.pickDateExtra}/>                    
+                                    <span id="addDate" onClick={this.addEventExtra}>+</span>
+                                </span>
+                                <span id="eventDateExpiredExtra" className="ExpiredDate">
+                                    Event Date is Expired.
+                                </span>
+                            </div>}
+                        </div>
+                        )
+                    })
+                }
+                <div id="eventSection">
+                    <div id="eventContentModal">
+                        <div id="askingHelp">
+                            <div id="searchDiv">
+                                <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
+                                <input id="listMembers" list="memberList" placeholder="Name" ref={(input) => { this.memberSelected = input}} onKeyUp={this.enterKeyAddEvent}/>
+                                <datalist id="memberList">
+                                    {membersList.map((val,i)=><option key={i} value={val}/>)}
+                                </datalist>
+                            </div>
                         </div> : 
-                        <span id="helpItemReadOnly">{ '"'+ val.eventText + '"'}</span>
+                        <input id="eventTextArea" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInput = input}} onKeyUp={this.enterKeyAddEvent}/>       
+                        <span id="addEvent" onClick={this.addEvent}>+</span> 
                     </div>
-                    {val.date != "" ? <div id="eventDate">{ val.refinedDate ? " - "+val.refinedDate : " - "+ val.date}</div> : 
-                    <div id="searchDiv">
-                        <span id="searchDivExtra" className="SearchDivExtra">
-                            <span id="searchSpanExtra"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
-                            <input type="text" id={"datepickerExtra"+i} className="PickDateExtra" placeholder="Pick Date" ref={(input) => { this.dateInputExtra = input}} onClick={this.pickDateExtra}/>                    
-                            <span id="addDate" onClick={this.addEventExtra}>+</span>
-                        </span>
-                        <span id="eventDateExpiredExtra" className="ExpiredDate">
-                            Event Date is Expired.
-                        </span>
-                    </div>}
-                </div>
-                )
-            })
-        }
-        <div id="eventSection">
-            <div id="eventContent">
-                <div id="askingHelp">
                     <div id="searchDiv">
                         <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
-                        <input id="listMembers" list="memberList" placeholder="Name" ref={(input) => { this.memberSelected = input}} onKeyUp={this.enterKeyAddEvent}/>
-                        <datalist id="memberList">
-                            {membersList.map((val,i)=><option key={i} value={val}/>)}
-                        </datalist>
+                        <input type="text" id="datepickerModal" placeholder="Pick Date" ref={(input) => { this.dateInput = input}} onClick={this.pickDate}/>                    
+                        <span id="eventDateExpiredModal" className="ExpiredDate">
+                            Event Date is Expired.
+                        </span>
                     </div>
-                </div> : 
-                <input id="eventTextAreaModal" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInput = input}} onKeyUp={this.enterKeyAddEvent}/>       
-                <span id="addEvent" onClick={this.addEvent}>+</span> 
-            </div>
-            <div id="searchDiv">
-                <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
-                <input type="text" id="datepicker" placeholder="Pick Date" ref={(input) => { this.dateInput = input}} onClick={this.pickDate}/>                    
-                <span id="eventDateExpired" className="ExpiredDate">
-                    Event Date is Expired.
-                </span>
-            </div>
-        </div>
+                </div>
+            </div>  
+        </div>  
     </div>
     );
   }
