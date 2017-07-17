@@ -126,7 +126,8 @@
     border: 1px solid #254b6e;
     border-radius: 4px;
     cursor: pointer;
-}
+    }
+
 
 .AddItemModal{
     font-size: 30px;
@@ -222,10 +223,25 @@ input{
     float: right;
 }
 
+#helpItemReadOnly{
+    color: #686868;
+}
+
+#askingHelpReadOnlyFont{
+color: #254b6e;
+}
+
 #eventDate{
     text-align: right;
     padding: 0px 15px 5px 0px;
     font-size: 15px;
+}
+
+#eventDateModal{
+    text-align: right;
+    padding: 0px 15px 5px 0px;
+    font-size: 25px;
+    color: #254b6e;
 }
 
 #searchDiv{
@@ -457,4 +473,13 @@ input{
 
 .ModalContentHelp{
     width: 80%
+}
+
+.ModalDate{
+    font-size: 25px;
+    color: #254b6e;
+}
+
+.DatePickerModal{
+    font-size: 25px;
 }
