@@ -69,7 +69,7 @@ export default class Header extends React.Component {
                     <div id="headerRightAlign">
                         <span id="todaysFacilitator">
                             <span id="rightBar">
-                                Today's Facilitator : {currentFacilitator}
+                                Facilitator : {currentFacilitator}
                                 <span id="notPresent" onClick={this.facilitatorNotPresent}>not present ?</span>
                             </span>
                         </span>

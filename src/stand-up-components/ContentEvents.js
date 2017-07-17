@@ -30,7 +30,6 @@ export default class ContentEvents extends React.Component {
     }
 
     addEditedEvent(event,i,val){
-        debugger
        var element = event.target.parentElement.parentElement
         if(element.querySelector("#editEventMember").value== ""){
             element.querySelector("#editEventMember").focus()
@@ -135,6 +134,7 @@ export default class ContentEvents extends React.Component {
 
     editHelp(event,i){
         this.setState({action : "edit",helpId : i},()=>{
+            document.getElementById("editEventText"+i).focus()
         })
     }
 
@@ -158,41 +158,36 @@ export default class ContentEvents extends React.Component {
         $(strId).datepicker().datepicker("show")
     }
 
-    addEventExtra(event,i){
+    addEventExtra(event,i,val){
         debugger
-        if(this.dateInputExtra.value == ""){
-            event.target.parentElement.getElementsByClassName('PickDateExtra')[0].focus()
-        }
-        else{
-            var date = this.dateInputExtra.value
-            var inputExtra = event.target.parentElement.parentElement.querySelector('#eventDateExpiredExtra')
-            if(date == "" || (Object.prototype.toString.call(new Date(date)) === '[object Date]' && isFinite(new Date(date)))){
-                var events = this.props.standUpData.events
-                var id =  i
-                events[id].date = new Date(date).toDateString() 
-                var temp = this.props.refineEventList(events)
-                this.state.action = "normal"
-                if(temp.length < events.length){
-                    inputExtra.innerText = "Event Date is Expired."
-                    inputExtra.style.display = "block"
-                    events[id].date = ""
-                    setTimeout(()=>{
-                        inputExtra.style.display = "none"
-                        this.props.loadThenUpdate({content : events, contentType : "events"})
-                    },2000)
-                }
-                else{
+        var date = document.getElementById("datepickerExtra"+i).value
+        var inputExtra = event.target.parentElement.parentElement.querySelector('#eventDateExpiredExtra')
+        if(date == "" || (Object.prototype.toString.call(new Date(date)) === '[object Date]' && isFinite(new Date(date)))){
+            var events = this.props.standUpData.events
+            var id =  i
+            events[id].date = new Date(date).toDateString
+            var temp = this.props.refineEventList(events)
+            this.state.action = "normal"
+            if(temp.length < events.length){
+                inputExtra.innerText = "Event Date is Expired."
+                inputExtra.style.display = "block"
+                events[id].date = ""
+                setTimeout(()=>{
+                    inputExtra.style.display = "none"
                     this.props.loadThenUpdate({content : events, contentType : "events"})
-                }  
+                },2000)
             }
             else{
-                inputExtra.innerText = "Invalid Date."
-                inputExtra.style.display = "block"
-                    setTimeout(()=>{
-                        inputExtra.style.display = "none"
-                },2000)        
-            }              
+                this.props.loadThenUpdate({content : events, contentType : "events"})
+            }  
         }
+        else{
+            inputExtra.innerText = "Invalid Date."
+            inputExtra.style.display = "block"
+                setTimeout(()=>{
+                    inputExtra.style.display = "none"
+            },2000)        
+        }              
         this.state.action = "normal"
     }
 
@@ -234,7 +229,7 @@ export default class ContentEvents extends React.Component {
                             <div >
                                 <div className="TileContent" id="eventAddTile">
                                     <input  id="editEventMember" className="MemberList" list="memberList" placeholder="Name" defaultValue={val.mentioningEvent}  onKeyUp={this.enterKeyEditEvent}/>
-                                    <datalist>
+                                    <datalist id="memberList">
                                         {membersList.map((val,i)=><option key={i} value={val}/>)}
                                     </datalist> : 
                                     <input id={"editEventText"+i} className="MainAddContent" defaultValue={val.eventText} placeholder={"Add new " + this.props.heading} onKeyUp={this.enterKeyEditEvent} /> 
@@ -254,14 +249,14 @@ export default class ContentEvents extends React.Component {
                                 </div> :  
                             <div>
                                 <div className="TileContent">
-                                    <div id="askingHelpReadOnlyFont">{val.mentioningEvent}</div> : 
-                                    <span id="helpItemReadOnly">{ '"'+ val.eventText + '"'}</span>
+                                    <div id="askingHelpReadOnly">{val.mentioningEvent}</div> : 
+                                    <span className="HelpText" id="helpItemReadOnly">{ '"'+ val.eventText + '"'}</span>
                                 </div>
                                 {val.date != "" ? <div id="eventDate">{ val.refinedDate ? " - "+val.refinedDate : " - "+ val.date}</div> : 
                                 <div id="searchDiv">
                                     <span id="searchDivExtra" className="SearchDivExtra">
                                         <input type="text" id={"datepickerExtra"+i} className="PickDateExtra" placeholder="Pick Date" ref={(input) => { this.dateInputExtra = input}} onClick={this.pickDateExtra}/>                    
-                                        <span id="addDate" className="AddLittleIcon" onClick={(event)=>this.addEventExtra(event,i)}>+</span>
+                                        <span id="addDate" className="AddLittleIcon" onClick={(event)=>this.addEventExtra(event,i,val)}>+</span>
                                     </span>
                                     <span id="eventDateExpiredExtra" className="ExpiredDate">
                                         Event Date is Expired.
@@ -274,9 +269,9 @@ export default class ContentEvents extends React.Component {
             })
         }
         <div  className="InfoTilesWrapper EventTilePaddingB">
-            <div className="TileContent" id="helpAddTile">
+            <div className="TileContent EventPadding">
                 <input className="MemberList" list="memberList" placeholder="Name" ref={(input) => { this.memberSelectedEvent = input}} onKeyUp={this.enterKeyAddEvent}/>
-                <datalist>
+                <datalist id="memberList">
                     {membersList.map((val,i)=><option key={i} value={val}/>)}
                 </datalist> : 
                 <input id="EventTextArea" className="MainAddContent" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInputEvent = input}} onKeyUp={this.enterKeyAddEvent} /> 

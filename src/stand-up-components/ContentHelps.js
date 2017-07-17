@@ -157,15 +157,15 @@ export default class ContentHelps extends React.Component {
                                     <div>
                                         <div className="TileContent" id="helpEditTile">
                                             <input className="MemberList" id="askingHelp" list="memberList" placeholder="Name" defaultValue={val.askingHelp} onKeyUp={this.enterKeyEditedHelp}/>
-                                            <datalist>
+                                            <datalist id="memberList">
                                                 {membersList.map((val,i)=><option key={i} value={val}/>)}
                                             </datalist> : 
-                                            <input id={"helpTextArea"+i} className="MainAddContent" defaultValue={'"'+val.helpText+'"'} onKeyUp={this.enterKeyEditedHelp}/> 
+                                            <input id={"helpTextArea"+i} className="MainAddContent" defaultValue={val.helpText} onKeyUp={this.enterKeyEditedHelp}/> 
                                             <span id="addEditedHelp" className="AddItem" onClick={(event)=>this.addEditedHelp(event,i)} >+</span> 
                                         </div>
                                         <div id="helpedByPerson">
                                             <input className="MemberList" id="helpedBy" list="memberList" placeholder="Volunteer" defaultValue={val.helpedBy == "None"?"":val.helpedBy} onKeyUp={this.enterKeyEditedHelp}/>
-                                            <datalist>
+                                            <datalist id="memberList">
                                             {membersList.map((val,i)=><option key={i} value={val}/>)}
                                             </datalist>
                                         </div>
@@ -186,7 +186,7 @@ export default class ContentHelps extends React.Component {
                                         { val.helpedBy == "None" ? 
                                             <span>
                                                 <input className="MemberList" id={"memberListHelp"+i} list="memberList" placeholder="Volunteer" onKeyUp={this.enterKeyAddHelper}/>
-                                                <datalist>
+                                                <datalist id="memberList">
                                                 {membersList.map((val,i)=><option key={i} value={val}/>)}
                                                 </datalist>
                                                 <span className="AddLittleIcon" id="addHelper" onClick={(event)=>this.addHelpingName(event,i)}>+</span>

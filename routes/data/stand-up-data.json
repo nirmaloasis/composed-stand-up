@@ -1,5 +1,5 @@
 {
-   "date": "Fri Jul 14 2017",
+   "date": "Mon Jul 17 2017",
    "newFaces": [
       "None"
    ],
@@ -8,13 +8,28 @@
    "helps": [
       {
          "askingHelp": "Anish",
-         "helpText": "Pay 200 Rs for birthday celebrationcszcszv",
+         "helpText": "Pay 200 Rs + fine  for birthday celebration",
          "date": "Mon Jul 17 2017",
-         "helpedBy": "All"
+         "helpedBy": "All",
+         "helpDetails": "hjbjb"
       },
       {
-         "askingHelp": "as",
-         "helpText": "scasc",
+         "askingHelp": "All",
+         "helpText": "Lab Movement",
+         "date": "Mon Jul 17 2017",
+         "helpedBy": "abdul",
+         "helpDetails": ""
+      },
+      {
+         "askingHelp": "Abhishek",
+         "helpText": " Screen - Saver is not working",
+         "date": "Mon Jul 17 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
+      },
+      {
+         "askingHelp": "Senthil",
+         "helpText": "Kibana log clear -off after 10 days",
          "date": "Mon Jul 17 2017",
          "helpedBy": "None",
          "helpDetails": ""
@@ -22,49 +37,59 @@
    ],
    "interestings": [
       {
-         "tellingInteresting": "sg,v es",
-         "interestingText": "sdfkns., s.",
-         "interestingDetail": "kjb nkn nkl\n"
-      },
-      {
-         "tellingInteresting": "v dz,v ",
-         "interestingText": "ksdbjv",
+         "tellingInteresting": "Saurabh",
+         "interestingText": "windows 10 will not allow password changing policy from lock screen due to security issues.",
          "interestingDetail": ""
       },
       {
-         "tellingInteresting": "ab,a",
-         "interestingText": "sdnflkns ",
-         "interestingDetail": ""
-      },
-      {
-         "tellingInteresting": "x x xc",
-         "interestingText": " cxc",
-         "interestingDetail": ""
-      },
-      {
-         "tellingInteresting": " dsx x",
-         "interestingText": "fdsxsd",
+         "tellingInteresting": "Harshal",
+         "interestingText": "WhatsApp supports any type of file format",
          "interestingDetail": ""
       }
    ],
    "events": [
       {
          "mentioningEvent": "Senthil",
-         "eventText": "Learning Day",
+         "eventText": "Learning Day for Entire ASPL",
          "date": "Fri Jul 28 2017",
-         "eventDetails": "sdcd sdvsdvsdcsac"
+         "eventDetails": "editing"
       },
       {
-         "mentioningEvent": "scas",
-         "eventText": "szcsac",
+         "mentioningEvent": "All",
+         "eventText": "Rohit's BirthDay Celebration 3pm done",
+         "date": "Mon Jul 17 2017",
+         "eventDetails": "",
+         "refinedDate": "Today"
+      },
+      {
+         "mentioningEvent": "Geeta",
+         "eventText": "Vote for Potluck ",
+         "date": "Mon Jul 17 2017",
+         "eventDetails": "Poll is open in slack.\n",
+         "refinedDate": "Today"
+      },
+      {
+         "mentioningEvent": "Meenu",
+         "eventText": "production freeze ",
          "date": "Tue Jul 25 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "jimit",
+         "eventText": "table tennis tournament ",
+         "date": "Sat Jul 29 2017",
+         "eventDetails": "Nomination is ending this week."
+      },
+      {
+         "mentioningEvent": "Naveen",
+         "eventText": "ISAM Changes ",
+         "date": "Wed Jul 26 2017",
          "eventDetails": ""
       }
    ],
-   "currentFacilitator": "Shreyansh Kant",
+   "currentFacilitator": "Geeta Hubli",
    "notDoneList": [
       "Abdul Ahad",
-      "Abhishek Kumar",
       "Animesh Parial",
       "Anish Kumar",
       "Anusha Pakalakunja",
@@ -73,7 +98,6 @@
       "Dikshita Khandke",
       "Dinesh kumar Suvendrian",
       "Divya Chandrasekaran",
-      "Geeta Hubli",
       "Harish Onkarappa",
       "Hemasundara Naidu",
       "Himanshu Kumar",
@@ -81,8 +105,8 @@
       "John Paul",
       "Jotsna M Babu",
       "Kapil Taneja",
-      "Kumar Sameer Ranjan",
       "Krishn Kant Nayak",
+      "Kumar Sameer Ranjan",
       "Lavanya Gowlla",
       "Meenu Sharma",
       "Mukesh Pandit",
@@ -97,6 +121,7 @@
       "Senthil Basuva Raj",
       "Shashank Goyal",
       "Shree Lakshmi",
+      "Shreyansh Kant",
       "Srinivas Readdy",
       "Sumit Kumar",
       "Thirupathi M",
@@ -107,6 +132,7 @@
    "doneList": [
       "Pankaj Maurya",
       "Bharat Rathad",
-      "Swapnil Shah"
+      "Swapnil Shah",
+      "Abhishek Kumar"
    ]
 }

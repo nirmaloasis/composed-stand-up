@@ -131,7 +131,7 @@ export default class ModalInterestings extends React.Component {
                                 this.state.action == "edit" && this.state.intId == i ?
                                 <div className="TileContent" id="interestingEditTile">
                                     <input id="interestingTeller" className="MemberList ModalNameListSize MemberListModalFont" defaultValue={val.tellingInteresting} list="memberList" placeholder="Name" onKeyUp={this.enterKeyEditInteresting}/>
-                                    <datalist>
+                                    <datalist id="memberList">
                                         {membersList.map((val,i)=><option key={i} value={val}/>)}
                                     </datalist> : 
                                     <input id={"InterestingTextAreaModal"+i} className="MainAddContent ModalContentHelp MemberListModalFont" defaultValue={val.interestingText} placeholder={"Add new " + this.props.heading}  onKeyUp={this.enterKeyEditInteresting} /> 
@@ -156,7 +156,7 @@ export default class ModalInterestings extends React.Component {
                     <div  className="InfoTilesWrapper">
                         <div className="TileContent" id="helpAddTile">
                             <input className="MemberList ModalNameListSize MemberListModalFont" list="memberList" placeholder="Name" ref={(input) => { this.memberInterestingModal = input}} onKeyUp={this.enterKeyAddHelp}/>
-                            <datalist>
+                            <datalist id="memberList">
                                 {membersList.map((val,i)=><option key={i} value={val}/>)}
                             </datalist> : 
                             <input id="helpTextArea" className="MainAddContent ModalContentHelp MemberListModalFont" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInputInterestingModal = input}} onKeyUp={this.enterKeyAddHelp} /> 

@@ -3,6 +3,7 @@
     margin: 20px;
     box-shadow: 0 1px 3px #888;
     overflow: auto;
+    border-radius: 5px;
 }
 
 .EditCloseIcon{
@@ -76,4 +77,14 @@
 
 .EventTilePaddingB{
     padding-bottom: 5px;
+}
+
+.EventPadding{
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.EventPaddingModal{
+    padding-top: 20px;
+    padding-bottom: 10px;
 }

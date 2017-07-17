@@ -162,7 +162,7 @@ export default class ModalHelps extends React.Component {
                                     <div>
                                         <div className="TileContent" id="helpEditTile">
                                             <input className="MemberList ModalNameListSize MemberListModalFont" id="askingHelp" list="memberList" placeholder="Name" defaultValue={val.askingHelp} onKeyUp={this.enterKeyEditedHelp}/>
-                                            <datalist>
+                                            <datalist id="memberList">
                                                 {membersList.map((val,i)=><option key={i} value={val}/>)}
                                             </datalist> : 
                                             <input id={"helpTextArea"+i} className="MainAddContent ModalContentHelp MemberListModalFont" defaultValue={val.helpText} onKeyUp={this.enterKeyEditedHelp}/> 
@@ -170,7 +170,7 @@ export default class ModalHelps extends React.Component {
                                         </div>
                                         <div id="helpedByPerson">
                                             <input className="MemberList ModalNameListSize MemberListModalFont" id="helpedBy" list="memberList" placeholder="Volunteer" defaultValue={val.helpedBy == "None"?"":val.helpedBy} onKeyUp={this.enterKeyEditedHelp}/>
-                                            <datalist>
+                                            <datalist id="memberList">
                                             {membersList.map((val,i)=><option key={i} value={val}/>)}
                                             </datalist>
                                         </div>
@@ -191,7 +191,7 @@ export default class ModalHelps extends React.Component {
                                                 { val.helpedBy == "None" ? 
                                                     <span>
                                                         <input className="MemberList ModalNameListSize MemberListModalFont" id={"helpedByModal"+i} list="memberList" placeholder="Volunteer" onKeyUp={this.enterKeyAddHelper}/>
-                                                        <datalist>
+                                                        <datalist id="memberList">
                                                         {membersList.map((val,i)=><option key={i} value={val}/>)}
                                                         </datalist>
                                                         <span className="AddLittleIcon" id="addHelperModal" onClick={(event)=>this.addHelpingName(event,i)}>+</span>
@@ -211,7 +211,7 @@ export default class ModalHelps extends React.Component {
                     <div  className="InfoTilesWrapper">
                         <div className="TileContent" id="helpAddTile">
                             <input className="MemberList ModalNameListSize MemberListModalFont" list="memberList" placeholder="Name" ref={(input) => { this.memberSelectedHelpModal = input}} onKeyUp={this.enterKeyAddHelp}/>
-                            <datalist>
+                            <datalist id="memberList">
                                 {membersList.map((val,i)=><option key={i} value={val}/>)}
                             </datalist> : 
                             <input id="helpTextArea" className="MainAddContent ModalContentHelp MemberListModalFont" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInputHelpModal = input}} onKeyUp={this.enterKeyAddHelp} /> 

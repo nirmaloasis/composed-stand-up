@@ -126,7 +126,7 @@ export default class ContentInterestings extends React.Component {
                                 this.state.action == "edit" && this.state.intId == i ?
                                 <div className="TileContent" id="interestingEditTile">
                                     <input id="interestingTeller" className="MemberList" defaultValue={val.tellingInteresting} list="memberList" placeholder="Name" onKeyUp={this.enterKeyEditInteresting}/>
-                                    <datalist>
+                                    <datalist id="memberList">
                                         {membersList.map((val,i)=><option key={i} value={val}/>)}
                                     </datalist> : 
                                     <input id={"InterestingTextArea"+i} className="MainAddContent" defaultValue={val.interestingText} placeholder={"Add new " + this.props.heading}  onKeyUp={this.enterKeyEditInteresting} /> 
@@ -151,7 +151,7 @@ export default class ContentInterestings extends React.Component {
             <div  className="InfoTilesWrapper">
                 <div className="TileContent" id="interestingAddTile">
                     <input className="MemberList" list="memberList" placeholder="Name" ref={(input) => { this.memberSelectedInteresting = input}} onKeyUp={this.enterKeyAddInteresting}/>
-                    <datalist>
+                    <datalist id="memberList">
                         {membersList.map((val,i)=><option key={i} value={val}/>)}
                     </datalist> : 
                     <input id="InterestingTextArea" className="MainAddContent" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInputInteresing = input}} onKeyUp={this.enterKeyAddInteresting} /> 

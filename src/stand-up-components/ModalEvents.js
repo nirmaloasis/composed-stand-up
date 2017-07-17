@@ -19,7 +19,7 @@ export default class ContentEvents extends React.Component {
 
     enterKeyAddEvent(event){
         if(event.keyCode == 13)
-            document.getElementById("addEvent").click()
+            document.getElementById("addEventModal").click()
     }
 
     enterKeyEditEvent(event){
@@ -28,19 +28,18 @@ export default class ContentEvents extends React.Component {
     }
 
     addEditedEvent(event,i,val){
-        debugger
        var element = event.target.parentElement.parentElement
         if(element.querySelector("#editEventMember").value== ""){
             element.querySelector("#editEventMember").focus()
         }
-        else if(element.querySelector("#editEventText"+i).value== ""){
-            element.querySelector("#editEventText"+i).focus()
+        else if(element.querySelector("#editEventTextModal"+i).value== ""){
+            element.querySelector("#editEventTextModal"+i).focus()
         }
         else{
             var getDate = element.querySelector("#datepickerModalEdit").value
             if(getDate =="" || (Object.prototype.toString.call(new Date(getDate)) === '[object Date]' && isFinite(new Date(getDate)))){
                 var mentioningEvent = element.querySelector("#editEventMember").value
-                var eventText = element.querySelector("#editEventText"+i).value
+                var eventText = element.querySelector("#editEventTextModal"+i).value
                 var date
                 getDate == "" ? date = "" : date = new Date(getDate).toDateString()
                 var eventDetails = val.eventDetails
@@ -48,10 +47,10 @@ export default class ContentEvents extends React.Component {
                 var events = this.props.standUpData.events
                 getDate == "" ? "" : newEvent = this.props.refineEventList(newEvent)
                 if(newEvent.length == 0){
-                    element.querySelector("#eventDateExpired").innerText = "Event Date is Expired."
-                    element.querySelector("#eventDateExpired").style.display = "block"
+                    element.querySelector("#eventDateExpiredModal").innerText = "Event Date is Expired."
+                    element.querySelector("#eventDateExpiredModal").style.display = "block"
                     setTimeout(()=>{
-                        element.querySelector("#eventDateExpired").style.display = "none"
+                        element.querySelector("#eventDateExpiredModal").style.display = "none"
                     },2000)
                 }
                 else{
@@ -61,10 +60,10 @@ export default class ContentEvents extends React.Component {
                 } 
             }
             else{
-                element.querySelector("#eventDateExpired").innerText = "Invalid Date."
-                element.querySelector("#eventDateExpired").style.display = "block"
+                element.querySelector("#eventDateExpiredModal").innerText = "Invalid Date."
+                element.querySelector("#eventDateExpiredModal").style.display = "block"
                     setTimeout(()=>{
-                        element.querySelector("#eventDateExpired").style.display = "none"
+                        element.querySelector("#eventDateExpiredModal").style.display = "none"
                 },2000)
             }
         }
@@ -91,10 +90,10 @@ export default class ContentEvents extends React.Component {
                 getDate == "" ? "" : newEvent = this.props.refineEventList(newEvent)
                 this.state.action = "normal"
                 if(newEvent.length == 0){
-                    document.getElementById("eventDateExpired").innerText = "Event Date is Expired."
-                    document.getElementById("eventDateExpired").style.display = "block"
+                    document.getElementById("eventDateExpiredModal").innerText = "Event Date is Expired."
+                    document.getElementById("eventDateExpiredModal").style.display = "block"
                     setTimeout(()=>{
-                        document.getElementById("eventDateExpired").style.display = "none"
+                        document.getElementById("eventDateExpiredModal").style.display = "none"
                     },2000)
                 }
                 else{
@@ -109,10 +108,10 @@ export default class ContentEvents extends React.Component {
                 } 
             }
             else{
-                document.getElementById("eventDateExpired").innerText = "Invalid Date."
-                document.getElementById("eventDateExpired").style.display = "block"
+                document.getElementById("eventDateExpiredModal").innerText = "Invalid Date."
+                document.getElementById("eventDateExpiredModal").style.display = "block"
                     setTimeout(()=>{
-                        document.getElementById("eventDateExpired").style.display = "none"
+                        document.getElementById("eventDateExpiredModal").style.display = "none"
                 },2000)
             }
         }
@@ -133,6 +132,7 @@ export default class ContentEvents extends React.Component {
 
     editHelp(event,i){
         this.setState({action : "edit",helpId : i},()=>{
+            document.getElementById("editEventTextModal"+i).focus()
         })
     }
 
@@ -163,7 +163,7 @@ export default class ContentEvents extends React.Component {
         }
         else{
             var date = this.dateInputExtra.value
-            var inputExtra = event.target.parentElement.parentElement.querySelector('#eventDateExpiredExtra')
+            var inputExtra = event.target.parentElement.parentElement.querySelector('#eventDateExpiredModalExtra')
             if(date == "" || (Object.prototype.toString.call(new Date(date)) === '[object Date]' && isFinite(new Date(date)))){
                 var events = this.props.standUpData.events
                 var id =  i
@@ -237,28 +237,28 @@ export default class ContentEvents extends React.Component {
                             <div >
                                 <div className="TileContent" id="eventAddTile">
                                     <input  id="editEventMember" className="MemberList ModalNameListSize MemberListModalFont" list="memberList" placeholder="Name" defaultValue={val.mentioningEvent}  onKeyUp={this.enterKeyEditEvent}/>
-                                    <datalist>
+                                    <datalist id="memberList">
                                         {membersList.map((val,i)=><option key={i} value={val}/>)}
                                     </datalist> : 
-                                    <input id={"editEventText"+i} className="MainAddContent ModalContentHelp MemberListModalFont" defaultValue={val.eventText} placeholder={"Add new " + this.props.heading} onKeyUp={this.enterKeyEditEvent} /> 
+                                    <input id={"editEventTextModal"+i} className="MainAddContent ModalContentHelp MemberListModalFont" defaultValue={val.eventText} placeholder={"Add new " + this.props.heading} onKeyUp={this.enterKeyEditEvent} /> 
                                     <span id="addEditedEvent" className="AddItem AddItemModal" onClick={(event)=>this.addEditedEvent(event,i,val)}>+</span> 
                                 </div>
                                 <div id="searchDiv">
                                     <input type="text" id={"datepickerModalEdit"}  className="DatePicker DatePickerModal" placeholder="Pick Date" defaultValue={val.date} onClick={this.datepickerEdit} onKeyUp={this.enterKeyEditEvent}/>                    
-                                    <span id={"eventDateExpired"} className="ExpiredDate">
+                                    <span id={"eventDateExpiredModal"} className="ExpiredDateModal">
                                         Event Date is Expired.
                                     </span>
                                 </div>
                             </div> : 
                             this.state.action == "details" && this.state.helpId == i ?
                                 <div className="TileContent" id="helpEditTile">
-                                    <textarea id="eventDescriptionModal" className="itemDetals" placeholder="Add description of the help..." defaultValue={val.eventDetails}></textarea>
+                                    <textarea id="eventDescriptionModal" className="itemDetals itemDetalsModal" placeholder="Add description of the Event..." defaultValue={val.eventDetails}></textarea>
                                     <div><span id="addHelpDetails" className="AddItem AddItemModal" onClick={(event)=>this.addHelpDetails(event,i,val)}>+</span></div>
                                 </div> :  
                             <div>
                                 <div className="TileContent">
-                                    <div id="askingHelpReadOnlyFont">{val.mentioningEvent}</div> : 
-                                    <span id="helpItemReadOnly">{ '"'+ val.eventText + '"'}</span>
+                                    <div id="askingHelpReadOnly">{val.mentioningEvent}</div> : 
+                                    <span className="HelpText" id="helpItemReadOnly">{ '"'+ val.eventText + '"'}</span>
                                 </div>
                                 {val.date != "" ? <div id="eventDateModal" className="ModalDate"> { val.refinedDate ? " - "+val.refinedDate : " - "+ val.date}</div> : 
                                 <div id="searchDiv">
@@ -266,7 +266,7 @@ export default class ContentEvents extends React.Component {
                                         <input type="text" id={"datepickerModalExtra"+i} className="PickDateExtra" placeholder="Pick Date" ref={(input) => { this.dateInputExtra = input}} onClick={this.pickDateExtra}/>                    
                                         <span id="addDate" className="AddLittleIcon" onClick={(event)=>this.addEventExtra(event,i)}>+</span>
                                     </span>
-                                    <span id="eventDateExpiredExtra" className="ExpiredDate">
+                                    <span id="eventDateExpiredModalExtra" className="ExpiredDateModal">
                                         Event Date is Expired.
                                     </span>
                                 </div>}
@@ -277,17 +277,17 @@ export default class ContentEvents extends React.Component {
                  })
                 }
             <div  className="InfoTilesWrapper EventTilePaddingB">
-                <div className="TileContent" id="helpAddTile">
+                <div className="TileContent EventPaddingModal">
                     <input className="MemberList ModalNameListSize MemberListModalFont" list="memberList" placeholder="Name" ref={(input) => { this.memberSelectedEventModal = input}} onKeyUp={this.enterKeyAddEvent}/>
-                    <datalist>
+                    <datalist id="memberList">
                         {membersList.map((val,i)=><option key={i} value={val}/>)}
                     </datalist> : 
                     <input id="EventTextArea" className="MainAddContent ModalContentHelp MemberListModalFont" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInputEventModal = input}} onKeyUp={this.enterKeyAddEvent} /> 
-                    <span id="addEvent" className="AddItem AddItemModal" onClick={this.addEvent}>+</span> 
+                    <span id="addEventModal" className="AddItem AddItemModal" onClick={this.addEvent}>+</span> 
                 </div>
                 <div id="searchDiv">
                     <input type="text" id="datepickerModal" className="DatePicker DatePickerModal" placeholder="Pick Date" ref={(input) => { this.dateInputModal = input}} onClick={this.pickDate} onKeyUp={this.enterKeyAddEvent}/>                    
-                    <span id="eventDateExpired" className="ExpiredDate">
+                    <span id="eventDateExpiredModal" className="ExpiredDateModal">
                         Event Date is Expired.
                     </span>
                 </div>
