@@ -9,6 +9,7 @@ import ContentEvents from './ContentEvents'
 import ModalHelps from './ModalHelps'
 import ModalInterestings from './ModalInterestings'
 import ModalEvents from './ModalEvents'
+import InfoTile from './info-tile/InfoTile'
 
 export default class StandUpHome extends Component {
     constructor(props){
@@ -54,14 +55,11 @@ export default class StandUpHome extends Component {
     }
 
     render(){
-        console.log("standup()=>>>>")
         var today = new Date().toDateString()
         var disable = (this.props.standUpData.date == today)
         var newFaces = this.props.standUpData.newFaces.map((val,key)=><span key={key}>{" "+val}</span>)
         return (
             <div>
-                {/*<ModalInterestings heading="Interestings" standUpData = {this.props.standUpData} loadThenUpdate={this.props.loadThenUpdate}/>
-                <ModalEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/>*/}
                 <Header standUpData={this.props.standUpData} changeRoute={this.props.changeRoute} route={this.props.route} />
                 <div id="newDateWrap">
                     <div  id="div92per">
@@ -69,10 +67,13 @@ export default class StandUpHome extends Component {
                     </div>
                 </div>
                 <div id="standUpcontentWrapper"> 
-                    <span id="leftContainer"><ModalHelps heading="Helps" standUpData = {this.props.standUpData}  loadThenUpdate={this.props.loadThenUpdate}/><ContentHelps heading="Helps" standUpData = {this.props.standUpData}  loadThenUpdate={this.props.loadThenUpdate}/></span>
-                    <span id="middleontainer"><ModalInterestings heading="Interestings" standUpData = {this.props.standUpData} loadThenUpdate={this.props.loadThenUpdate}/><ContentInterestings heading="Interestings" standUpData = {this.props.standUpData} loadThenUpdate={this.props.loadThenUpdate}/></span>
-                    <span id="rightContainer"><ModalEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/><ContentEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/></span>
+                    <span id="leftContainer"><ContentHelps heading="Helps" standUpData = {this.props.standUpData}  loadThenUpdate={this.props.loadThenUpdate}/></span>
+                    <span id="middleontainer"><ContentInterestings heading="Interestings" standUpData = {this.props.standUpData} loadThenUpdate={this.props.loadThenUpdate}/></span>
+                    <span id="rightContainer"><ContentEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/></span>
                 </div>
+                <ModalHelps heading="Helps" standUpData = {this.props.standUpData}  loadThenUpdate={this.props.loadThenUpdate}/>
+                <ModalInterestings heading="Interestings" standUpData = {this.props.standUpData} loadThenUpdate={this.props.loadThenUpdate}/>
+                <ModalEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/>
                 <div id="clapWrap">
                     <span className="ClapBtn" id={disable ? "disabledCursor" : "" } title={ disable ? "Todays Stand-up is done" : ""}>
                         <span  id={disable ? "disableClap" : "clap" }  onClick={this.letUsClap}>let's clap</span>

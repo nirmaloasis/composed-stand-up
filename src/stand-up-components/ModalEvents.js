@@ -131,9 +131,12 @@ export default class ContentEvents extends React.Component {
     return (
         <div className="StandUpContentModal" id="zoomEvents" onClick={this.closeModal}>
             <div className="modal-dialog">
-                <div id="closeHelpDiv"><div id="closeModal" onClick={this.closeModal}>+</div></div>
-                <div id="modalHelpHeading">{this.props.heading}</div>
+                <div id="modalHelpHeading">
+                    {this.props.heading}
+                    <div id="closeModal" onClick={this.closeModal}>&times;</div>
+                </div>
                 <div className="modal-body">
+                <div className=""> 
                 {
                     events.map((val,i)=>{
                         return(
@@ -185,6 +188,7 @@ export default class ContentEvents extends React.Component {
             </div>  
         </div>  
     </div>
+ </div>   
     );
   }
 }

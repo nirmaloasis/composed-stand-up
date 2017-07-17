@@ -5,12 +5,17 @@ import ModalHelps from './ModalHelps'
 export default class ContentHelps extends React.Component {
     constructor(props){
         super(props)
-        this.state = {}
+        this.state = {action:"normal",helpId:""}
         this.addHelp = this.addHelp.bind(this)
         this.addHelpingName = this.addHelpingName.bind(this)
         this.closeHelp = this.closeHelp.bind(this)
         this.enterKeyAddHelp = this.enterKeyAddHelp.bind(this)
         this.enterKeyAddHelper = this.enterKeyAddHelper.bind(this)
+        this.editHelp = this.editHelp.bind(this)
+        this.addEditedHelp = this.addEditedHelp.bind(this)
+        this.enterKeyEditedHelp = this.enterKeyEditedHelp.bind(this)
+        this.helpDetails = this.helpDetails.bind(this)
+        this.addHelpDetails = this.addHelpDetails.bind(this)
         this.zoomInHelp = this.zoomInHelp.bind(this)
     }
 
@@ -18,43 +23,46 @@ export default class ContentHelps extends React.Component {
     }
     
     addHelp(event){
-        if(this.memberSelected.value == ""){
-            this.memberSelected.focus()
+        if(this.memberSelectedHelp.value == ""){
+            this.memberSelectedHelp.focus()
         }
-        else if(this.textInput.value == ""){
-            this.textInput.focus()
+        else if(this.textInputHelp.value == ""){
+            this.textInputHelp.focus()
         }
         else{
-            var askingHelp = this.memberSelected.value
-            var helpText = this.textInput.value
+            var askingHelp = this.memberSelectedHelp.value
+            var helpText = this.textInputHelp.value
             var date = new Date().toDateString()
             var helpedBy = "None"
             var helpItems = this.props.standUpData.helps
-            var newHelp = {askingHelp,helpText,date,helpedBy}
+            var newHelp = {askingHelp,helpText,date,helpedBy,helpDetails:""}
             helpItems.push(newHelp)
-            this.memberSelected.value = ""
-            this.textInput.value = ""
+            this.memberSelectedHelp.value = ""
+            this.textInputHelp.value = ""
+            this.state.action = "normal"
             this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
         }
     }
 
-    addHelpingName(event){
-        var helpingPerson = event.target.parentElement.parentElement.querySelector("#helpedByList").value 
-        if(helpingPerson == ""){
-            event.target.parentElement.parentElement.querySelector("#helpedByList").focus()
+    addHelpingName(event,i){
+        var helpingPerson = document.getElementById("memberListHelp"+i)
+        if( helpingPerson.value == ""){
+            helpingPerson.focus()
         }
         else{
-            var helpId = event.target.parentElement.parentElement.querySelector("#helpContent").getAttribute('data-id') -1;
+            var helpId = i
             var helpItems = this.props.standUpData.helps
-            helpItems[helpId].helpedBy = helpingPerson
+            helpItems[helpId].helpedBy = helpingPerson.value
+            this.state.action = "normal"
             this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
         }
     }
 
-    closeHelp(event){
+    closeHelp(event,i){
         var helpItems = this.props.standUpData.helps
-        var id = event.target.parentElement.parentElement.getAttribute("data-id")
-        helpItems.splice(id-1 ,1)
+        var id = i
+        helpItems.splice(id,1)
+        this.state.action = "normal"
         this.props.loadThenUpdate({content : helpItems, contentType : "helps"})          
     }
 
@@ -65,7 +73,63 @@ export default class ContentHelps extends React.Component {
 
     enterKeyAddHelper(event){
         if(event.keyCode == 13)
-            document.getElementById("addHelper").click()
+            event.target.parentElement.querySelector("#addHelper").click()
+    }
+
+    editHelp(event,i){
+        this.setState({action : "edit",helpId : i},()=>{
+            document.getElementById("helpTextArea"+i).focus()
+        })
+    }
+
+    addEditedHelp(event,i){
+        var parentElement  = event.target.parentElement.parentElement
+        var askingHelp = parentElement.querySelector("#askingHelp").value
+        var helpText = parentElement.querySelector("#helpTextArea"+i).value
+        if(askingHelp=="" || askingHelp=="None"){
+            parentElement.querySelector("#askingHelp").focus()
+        }
+        else if(helpText == ""){
+            parentElement.querySelector("#helpTextArea"+i).focus()
+        }
+        else{
+            var date = new Date().toDateString()
+            var helpedBy = parentElement.querySelector("#helpedBy").value =="" ? "None" : parentElement.querySelector("#helpedBy").value
+            var helpItems = this.props.standUpData.helps
+            var helpDetails = helpItems[i].helpDetails
+            var newHelp = {askingHelp,helpText,date,helpedBy,helpDetails}
+            helpItems[i] = newHelp
+            this.state.action = "normal"
+            this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
+        }
+    }
+
+    enterKeyEditedHelp(event){
+        if(event.keyCode == 13)
+            event.target.parentElement.parentElement.querySelector("#addEditedHelp").click()
+    }
+
+    helpDetails(event,i){
+        this.setState({action : "details",helpId : i},()=>{
+            document.getElementById("helpDescription").focus()
+        })
+    }
+
+    addHelpDetails(event,i,val){
+        if(document.getElementById("helpDescription").value == ""){
+            document.getElementById("helpDescription").focus()
+        }
+        else{
+            val.helpDetails = document.getElementById("helpDescription").value
+            var helpItems = this.props.standUpData.helps
+            helpItems[i] = val
+            this.state.action = "normal"
+            this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
+        }
+    }
+
+    returnToHomeTile(event){
+        this.setState({action : "normal"})
     }
 
     zoomInHelp(event){
@@ -76,66 +140,80 @@ export default class ContentHelps extends React.Component {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","Kapil","KK","Sameer","Lavanya","Meenu","Mukesh","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
     var helpItems = this.props.standUpData.helps
     return (
-    <div id="standUpContent">
-        <div id="itemsHeading" onClick={this.zoomInHelp}>{this.props.heading}</div>
-        {   
-            helpItems.length > 0 ?
-            helpItems.map((val,i)=>{
-                return (
-                     <div key={i}>
-                         {
-                             val.helpedBy == "None" ? 
-                             <div id="addHelperSection">
-                                <div id="closeHelpDiv"><div id="closeHelp" onClick={this.closeHelp}>+</div></div>
-                                <div id="helpContent" data-id={i+1}>
-                                    <div id={val.askingHelp.length>6?"askingHelpReadOnlyFont" :"askingHelpReadOnly"}>
-                                        {val.askingHelp}
-                                    </div> : 
-                                    <span id="helpItemReadOnly">{ '"'+ val.helpText + '"'}</span> 
-                                </div>
-                                <div id="addHelperWrap">
-                                    <span id="searchDiv">
-                                        <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
-                                        <input id="helpedByList" list="memberList" placeholder="Volunteer" ref={(input) => { this.memberSelected = input}} onKeyUp={this.enterKeyAddHelper}/>
-                                        <datalist id="memberList">
-                                            {membersList.map((val,i)=><option key={i} value={val}/>)}
-                                        </datalist>
-                                    </span>
-                                    <span id="addHelper" onClick={this.addHelpingName}>+</span>
-                                </div>
-                             </div>
-                             :
-                             <div id="closeHelpSection"  data-id={i+1}>
-                                <div id="closeHelpDiv"><div id="closeHelp" onClick={this.closeHelp}>+</div></div>
-                                <div id="closeHelpContent">
-                                    <div id={val.askingHelp.length>6?"askingHelpReadOnlyFont" :"askingHelpReadOnly"}>
-                                        {val.askingHelp}
-                                    </div> : 
-                                    <span id="helpItemReadOnly">{ '"'+ val.helpText + '"'}</span>
-                                </div>
-                                <div id="helpedByPerson">
-                                    <span>Volunteer</span><span>{" - "+ val.helpedBy}</span>
-                                </div>
+        <div id="standUpContent">
+            <div id="itemsHeading" onClick={this.zoomInHelp}>{this.props.heading}</div>
+            <div className="ForOverFlow">  
+                { helpItems.map((val,i)=>{
+                    return (
+                        <div key={i} className="InfoTilesWrapper" data-id={i}>
+                            <div className="EditCloseIcon">
+                                <span className="CloseTileIcon" onClick={(event)=>this.closeHelp(event,i)}>&times;<span className="ToolTipText">remove</span></span>
+                                <span className="IconsSpan" onClick={(event)=>this.editHelp(event,i)}><img className="Icons"  src="images/edit-icon.png" alt="edit" /><span className="ToolTipText">edit</span></span>
+                                <span className="IconsSpan" onClick={(event)=>this.helpDetails(event,i)}><img className="Icons" src="images/details.png" alt="details" /><span className="ToolTipText">details</span></span>
+                                <span className="IconsSpan" onClick={(event)=>this.returnToHomeTile(event,i)}><img className="Icons" src="images/home-icon.png" alt="return"/><span className="ToolTipText">return</span></span>
                             </div>
-                         }
-                    </div> 
-                )
-            }) :
-            ""
-        }
-        <div id="helpSection">
-            <div id="askingHelp">
-                <div id="searchDiv">
-                    <span id="searchSpan"><img id="searchLogo" src="images/search-logo.png" alt="img"/></span>
-                    <input id="listMembers" list="memberList" placeholder="Name" ref={(input) => { this.memberSelected = input}} onKeyUp={this.enterKeyAddHelp}/>
-                    <datalist id="memberList">
+                            {   
+                                this.state.action == "edit" && this.state.helpId == i ?
+                                    <div>
+                                        <div className="TileContent" id="helpEditTile">
+                                            <input className="MemberList" id="askingHelp" list="memberList" placeholder="Name" defaultValue={val.askingHelp} onKeyUp={this.enterKeyEditedHelp}/>
+                                            <datalist>
+                                                {membersList.map((val,i)=><option key={i} value={val}/>)}
+                                            </datalist> : 
+                                            <input id={"helpTextArea"+i} className="MainAddContent" defaultValue={'"'+val.helpText+'"'} onKeyUp={this.enterKeyEditedHelp}/> 
+                                            <span id="addEditedHelp" className="AddItem" onClick={(event)=>this.addEditedHelp(event,i)} >+</span> 
+                                        </div>
+                                        <div id="helpedByPerson">
+                                            <input className="MemberList" id="helpedBy" list="memberList" placeholder="Volunteer" defaultValue={val.helpedBy == "None"?"":val.helpedBy} onKeyUp={this.enterKeyEditedHelp}/>
+                                            <datalist>
+                                            {membersList.map((val,i)=><option key={i} value={val}/>)}
+                                            </datalist>
+                                        </div>
+                                    </div> : 
+                                this.state.action == "details" && this.state.helpId == i ?
+                                    <div className="TileContent" id="helpEditTile">
+                                        <textarea id="helpDescription" className="itemDetals" placeholder="Add description of the help..." defaultValue={val.helpDetails}></textarea>
+                                        <div><span id="addHelpDetails" className="AddItem" onClick={(event)=>this.addHelpDetails(event,i,val)}>+</span></div>
+                                    </div> :  
+                                <div>
+                                    <div className="TileContent">
+                                        <div id="askingHelpReadOnly">{val.askingHelp}</div> : 
+                                        <span id={"helpItemReadOnly"+i} className="HelpText">
+                                            {'"'+val.helpText+'"'}
+                                        </span>
+                                    </div>
+                                    <div id="helpedByPerson">
+                                        { val.helpedBy == "None" ? 
+                                            <span>
+                                                <input className="MemberList" id={"memberListHelp"+i} list="memberList" placeholder="Volunteer" onKeyUp={this.enterKeyAddHelper}/>
+                                                <datalist>
+                                                {membersList.map((val,i)=><option key={i} value={val}/>)}
+                                                </datalist>
+                                                <span className="AddLittleIcon" id="addHelper" onClick={(event)=>this.addHelpingName(event,i)}>+</span>
+                                            </span>
+                                            :
+                                            <span>
+                                                <span>Volunteer</span><span>{" - "+ val.helpedBy}</span>
+                                            </span> 
+                                        }
+                                    </div>
+                                </div>
+                            }   
+                        </div>
+                    )
+                })
+            }
+            <div  className="InfoTilesWrapper">
+                <div className="TileContent" id="helpAddTile">
+                    <input className="MemberList" list="memberList" placeholder="Name" ref={(input) => { this.memberSelectedHelp = input}} onKeyUp={this.enterKeyAddHelp}/>
+                    <datalist>
                         {membersList.map((val,i)=><option key={i} value={val}/>)}
-                    </datalist>
+                    </datalist> : 
+                    <input id="helpTextArea" className="MainAddContent" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInputHelp = input}} onKeyUp={this.enterKeyAddHelp} /> 
+                    <span id="addHelp" className="AddItem" onClick={this.addHelp}>+</span> 
                 </div>
-            </div> : 
-            <input id="helpTextArea" placeholder={"Add new " + this.props.heading} ref={(input) => { this.textInput = input}} onKeyUp={this.enterKeyAddHelp} /> 
-            <span id="addHelp" onClick={this.addHelp}>+</span>                              
-        </div> 
+            </div>
+        </div>     
     </div>
     );
   }

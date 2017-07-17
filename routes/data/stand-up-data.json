@@ -3,66 +3,74 @@
    "newFaces": [
       "None"
    ],
-   "lastModifiedNewFaces": "Wed Jul 11 2017",
-   "lastModifiedInterestings": "Fri Jul 14 2017",
+   "lastModifiedNewFaces": "Sun Jul 16 2017",
+   "lastModifiedInterestings": "Mon Jul 17 2017",
    "helps": [
       {
          "askingHelp": "Anish",
-         "helpText": "Pay 200 Rs for birthday celebration",
-         "date": "Wed Jul 12 2017",
+         "helpText": "Pay 200 Rs for birthday celebrationcszcszv",
+         "date": "Mon Jul 17 2017",
          "helpedBy": "All"
       },
       {
-         "askingHelp": "Abdul",
-         "helpText": "Lab Movement",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "Abdul"
-      },
-      {
-         "askingHelp": "Vinod",
-         "helpText": "CSR needs Volunteers to develop NGO websites. Details on Slack",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "All"
-      },
-      {
-         "askingHelp": "Geeta",
-         "helpText": "Vote for Potluck.",
-         "date": "Fri Jul 14 2017",
-         "helpedBy": "All"
+         "askingHelp": "as",
+         "helpText": "scasc",
+         "date": "Mon Jul 17 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
       }
    ],
    "interestings": [
       {
-         "tellingInteresting": "Meenu",
-         "interestingText": "cluster galexy found "
+         "tellingInteresting": "sg,v es",
+         "interestingText": "sdfkns., s.",
+         "interestingDetail": "kjb nkn nkl\n"
       },
       {
-         "tellingInteresting": "Chandra",
-         "interestingText": "umbrella sharing"
+         "tellingInteresting": "v dz,v ",
+         "interestingText": "ksdbjv",
+         "interestingDetail": ""
+      },
+      {
+         "tellingInteresting": "ab,a",
+         "interestingText": "sdnflkns ",
+         "interestingDetail": ""
+      },
+      {
+         "tellingInteresting": "x x xc",
+         "interestingText": " cxc",
+         "interestingDetail": ""
+      },
+      {
+         "tellingInteresting": " dsx x",
+         "interestingText": "fdsxsd",
+         "interestingDetail": ""
       }
    ],
    "events": [
       {
          "mentioningEvent": "Senthil",
-         "eventText": "Python meet-up",
-         "date": "Sat Jul 15 2017",
-         "refinedDate": "Tomorrow"
-      },
-      {
-         "mentioningEvent": "Senthil",
          "eventText": "Learning Day",
-         "date": "Fri Jul 28 2017"
+         "date": "Fri Jul 28 2017",
+         "eventDetails": "sdcd sdvsdvsdcsac"
       },
       {
-         "mentioningEvent": "All",
-         "eventText": "Potluck",
-         "date": ""
+         "mentioningEvent": "sdzcsd",
+         "eventText": "sczsdc",
+         "date": "Mon Jul 31 2017",
+         "eventDetails": "scszc sdzcsadc"
       },
       {
-         "mentioningEvent": "All",
-         "eventText": "Update Kronos and fill your Timesheets",
-         "date": "Fri Jul 14 2017",
-         "refinedDate": "Today"
+         "mentioningEvent": "Vivek",
+         "eventText": "xcx ",
+         "date": "Mon Jul 24 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "zxx ",
+         "eventText": "zx xc",
+         "date": "Mon Jul 31 2017",
+         "eventDetails": ""
       }
    ],
    "currentFacilitator": "Shreyansh Kant",

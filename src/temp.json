@@ -1,17 +1,11 @@
 {
-   "date": "Wed Jul 12 2017",
+   "date": "Fri Jul 14 2017",
    "newFaces": [
       "None"
    ],
    "lastModifiedNewFaces": "Wed Jul 11 2017",
-   "lastModifiedInterestings": "Wed Jul 12 2017",
+   "lastModifiedInterestings": "Fri Jul 14 2017",
    "helps": [
-      {
-         "askingHelp": "Meenu",
-         "helpText": "DR steps this July",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "Vinod"
-      },
       {
          "askingHelp": "Anish",
          "helpText": "Pay 200 Rs for birthday celebration",
@@ -19,84 +13,68 @@
          "helpedBy": "All"
       },
       {
-         "askingHelp": "Divya",
-         "helpText": "Read new women security rules",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "All"
-      },
-      {
          "askingHelp": "Abdul",
          "helpText": "Lab Movement",
          "date": "Wed Jul 12 2017",
-         "helpedBy": "None"
+         "helpedBy": "Abdul"
       },
       {
          "askingHelp": "Vinod",
          "helpText": "CSR needs Volunteers to develop NGO websites. Details on Slack",
          "date": "Wed Jul 12 2017",
-         "helpedBy": "None"
+         "helpedBy": "All"
       },
       {
-         "askingHelp": "All",
-         "helpText": "Where are the Pics ? They are in Meenu's mac machine. Reach out !!",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "None"
-      },
-      {
-         "askingHelp": "Anish",
-         "helpText": "Flyway like tool for Casandra? Jimit suggests to post into DB channel",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "None"
-      },
-      {
-         "askingHelp": "Raman",
-         "helpText": "Any on needs Office windows laptop ?",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "None"
+         "askingHelp": "Geeta",
+         "helpText": "Vote for Potluck.",
+         "date": "Fri Jul 14 2017",
+         "helpedBy": "All"
       }
    ],
    "interestings": [
       {
          "tellingInteresting": "Divya",
-         "interestingText": "Stable version of ES 8 is released"
+         "interestingText": "Stable version of ES 8 is released",
+         "interestingDetail" : "csa sefa"
       },
       {
          "tellingInteresting": "Parag",
-         "interestingText": "India paid 5 CR to Phippines to fight ISIS -"
+         "interestingText": "India paid 5 CR to Phippines to fight ISIS -",
+         "interestingDetail" : ""
       },
       {
          "tellingInteresting": "Shashank",
-         "interestingText": "Alibaba backed PayTm to plan to buy bigbasket"
+         "interestingText": "Alibaba backed PayTm to plan to buy bigbasket",
+         "interestingDetail" : ""
       },
       {
          "tellingInteresting": "Vinod",
-         "interestingText": "Amazon Prime - Prime day called prime because of the dates which were prime numbers"
+         "interestingText": "Amazon Prime - Prime day called prime because of the dates which were prime numbers",
+         "interestingDetail" : "csa sefa"
       }
    ],
    "events": [
       {
          "mentioningEvent": "Senthil",
          "eventText": "Python meet-up",
-         "date": "Sat Jul 15 2017"
+         "date": "Sat Jul 15 2017",
+         "refinedDate": "Today",
+         "eventDetails":""
       },
       {
          "mentioningEvent": "Senthil",
          "eventText": "Learning Day",
-         "date": "Fri Jul 28 2017"
+         "date": "Fri Jul 28 2017",
+         "eventDetails":""
       },
       {
          "mentioningEvent": "All",
-         "eventText": "Potluck ",
-         "date": ""
-      },
-      {
-         "mentioningEvent": "All",
-         "eventText": "Pay 200 Rupees To Anees",
-         "date": "Thu Jul 13 2017",
-         "refinedDate": "Tomorrow"
+         "eventText": "Potluck",
+         "date": "",
+         "eventDetails":"sfkh fesgew"
       }
    ],
-   "currentFacilitator": "Raja Madhu",
+   "currentFacilitator": "Shreyansh Kant",
    "notDoneList": [
       "Abdul Ahad",
       "Abhishek Kumar",
@@ -104,7 +82,6 @@
       "Anish Kumar",
       "Anusha Pakalakunja",
       "Ashish Verma",
-      "Bharat Rathad",
       "Chandramouli M S",
       "Dikshita Khandke",
       "Dinesh kumar Suvendrian",
@@ -117,14 +94,15 @@
       "John Paul",
       "Jotsna M Babu",
       "Kapil Taneja",
-      "Krishn Kant Nayak",
       "Kumar Sameer Ranjan",
+      "Krishn Kant Nayak",
       "Lavanya Gowlla",
       "Meenu Sharma",
       "Mukesh Pandit",
       "Naveen Telker",
       "Nirmal PS",
       "Praveen Kumar K",
+      "Raja Madhu",
       "Rakesh Dutta",
       "Rakesh Shastry",
       "Ramandeep Kaur",
@@ -132,16 +110,16 @@
       "Senthil Basuva Raj",
       "Shashank Goyal",
       "Shree Lakshmi",
-      "Shreyansh Kant",
       "Srinivas Readdy",
       "Sumit Kumar",
-      "Swapnil Shah",
       "Thirupathi M",
       "Vinit Rohela",
       "Vinod Subramanian",
       "Vivek"
    ],
    "doneList": [
-      "Pankaj Maurya"
+      "Pankaj Maurya",
+      "Bharat Rathad",
+      "Swapnil Shah"
    ]
 }

@@ -55,10 +55,9 @@
 #standUpcontentWrapper{
     display: flex;
     width: 92%;
-    height: 600px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 40px;
     text-align: center;
     box-shadow: 0 1px 3px #888;
     background: white;
@@ -68,15 +67,18 @@
 #leftContainer,#middleontainer{
     width: 33.33%;
     border-right: 1px solid #254b6e;
-    background: rgb(235,235,235);
+    background: whitesmoke;
     position: relative;
-    overflow-y: scroll;
 }
 
 #rightContainer{
     width: 33.33%;
-    background: rgb(235,235,235);
-    overflow-y: scroll;
+    background: whitesmoke;
+}
+
+.ForOverFlow{
+    height: 500px;
+    overflow-y: auto;
 }
 
 
@@ -104,24 +106,6 @@
     cursor: pointer;
 }
 
-
-#helpSection,#interestingSection{
-    padding: 10px;
-    background: white;
-    margin: 30px;
-    box-shadow: 0 1px 3px #888;
-    display: flex;
-    align-items: center;
-    min-height: 50px;
-    color: #254b6e;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-#askingHelp{
-    width: 25%;
-}
-
 #listMembers{
     border: 0;
     border-bottom: 1px solid #6d6d6d;
@@ -133,20 +117,8 @@
 
 }   
 
-#helpTextArea,#InterestingTextArea,#eventTextArea,#eventTextAreaModal{
-    width: 70%;
-    height: 25px;
-    padding: 0px;
-    margin-left: 10px;
-    border: 0;
-    font-size: 14px;
-    color: #6d6d6d;
-    border-bottom: 1px dotted #6d6d6d;
-}
-
-#addHelp,#addEvent,#addInteresting{
-    width: 24px;
-    height: 24px;
+.AddItem{
+    padding: 2px;
     font-size: 20px;
     margin-left: 4px;
     color: white;
@@ -154,6 +126,10 @@
     border: 1px solid #254b6e;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.AddItemModal{
+    font-size: 30px;
 }
 
 input{
@@ -164,71 +140,27 @@ input{
     padding-right: 10px;
     text-align: left;
     color: #254b6e;
+    text-transform: capitalize;
 }
 
-#askingHelpReadOnlyFont{
-    padding-right: 10px;
-    text-align: left;
-    color: #254b6e;
-    /*width: 65px;   */
-}
-
-#helpItemReadOnly{
+.HelpText{
     text-align: left;
     color: #686868;
     padding: 0px 10px;
 }
 
-#helpedByList{
-    width: 100px;
+.MemberList{
+    width: 25%;
     border: 0;
-    font-size: 14px;
+    font-size: 16px;
     border-bottom: 1px solid #686868;
-    height: 25px;
 }
 
-#helpedByListNoBorder{
-    width: 80px;
-    border: 0;
-    font-size: 14px;
-    height: 25px;
-}
-
-#addHelper,#addDate{
-    width: 15px;
-    height: 15px;
-    font-size: 14px;
-    background: white;
-    color: #254b6e;
-    margin: 0;
-    margin-left: 5px;
+.AddLittleIcon{
     border: 1px solid #254b6e;
     border-radius: 4px;
+    padding: 1.5px;
     cursor: pointer;
-}
-
-#closeHelpDiv{
-    float: right;
-    padding: 0px;
-    margin: 0px;
-    font-weight: bold;
-}
-
-#closeHelp{
-    font-size: 18px;
-    text-align: center;
-    transform: rotate(45deg);
-    color: brown;
-    cursor: pointer;
-}
-
-#closeHelpSection{
-    background: white;
-    margin: 30px;
-    box-shadow: 0 1px 3px #888;
-    color: #254b6e;
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
 #closeHelpSectionModal{
@@ -247,14 +179,6 @@ input{
     color: #254b6e;
     overflow-y: auto;
     overflow-x: hidden;
-}
-
-#closeHelpContent{
-    display: flex;
-    align-items: center;
-    min-height: 40px;
-    padding: 10px;
-    padding-bottom: 0;
 }
 
 #closeInterestingContent{
@@ -284,11 +208,11 @@ input{
     border: 0;
     font-size: 16px;
     color: #254b6e;
+    padding: 5px;
     text-align: right;
-    padding: 0px 15px 5px 0px;
 }
 
-#datepicker,#datepickerModal{
+.DatePicker,#datepickerModal{
     width: 100px;
     border: 0;
     border-bottom: 1px solid #686868;
@@ -334,30 +258,6 @@ input{
     display: flex;
     align-items: center;
     min-height: 35px;
-}
-
-#addHelperSection{
-    background: white;
-    margin: 30px;
-    box-shadow: 0 1px 3px #888;
-    min-height: 45px;
-    color: #254b6e;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-#helpContent{
-    display: flex;
-    align-items: center;
-    padding: 1px 10px 0px 10px;
-    min-height: 30px;
-    padding: 10px;
-    padding-bottom: 0;
-}
-
-#addHelperWrap{
-    float: right;
-    padding-bottom: 3px;
 }
 
 .ClapBtn{
@@ -458,7 +358,6 @@ input{
     z-index: 1; 
     padding-top: 10px;
     left: 0; 
-    width: 50%;
     overflow: auto;
     background-color: white;
     color: red;
@@ -466,8 +365,7 @@ input{
 
 .modal-dialog{
     overflow-y: initial !important;
-    opacity: 1;
-    margin: 4% 8%;
+    margin: 5% 7%;
     border: 1px solid;
     box-shadow: 0 1px 3px #888;
     background: rgb(235,235,235);
@@ -482,11 +380,10 @@ input{
     position: fixed;
     z-index: 1;
     font-size: 35px;
-    opacity: .96;
     left: 0;
     top: 0;
     width: 100%;
-    background: rgb(200,200,200);
+    background: rgba(0,0,0,0.4);
     height: 1000px;
 }
 
@@ -494,10 +391,11 @@ input{
     color: white;
     padding: 10px;
     background: #254b6e;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    text-align: center;
 }
 
-#closeHelpSectionModal #closeHelpContent{
+#closeHelpSectionModal{
     min-height: 60px;
 }
 
@@ -506,9 +404,57 @@ input{
 }
 
 #closeModal{
+    float: right;
     font-weight: bold;
     color: red;
     font-size: 30px;
-    transform: rotate(45deg);
     cursor: pointer;
+}
+
+.MainAddContent{
+    border: 0;
+    font-size: 16px;
+    padding-left: 10px;
+    border-bottom: 1px dotted;
+    width: 72%;
+}
+
+#helpAddTile{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+#interestingAddTile{
+    padding: 20px 10px;
+}
+
+#helpEditTile,#interestingEditTile{
+    padding: 10px;
+}
+
+.itemDetals{
+    border-radius: 5px;
+    width: 90%;
+    outline: none;
+    font-size: 18px;
+    color: #686868;
+    height: 80px;
+}
+
+.itemDetalsModal{
+    width: 96%;
+    font-size: 30px;
+    height: 120px;
+}
+
+.MemberListModalFont{
+    font-size: 30px;
+}
+
+.ModalNameListSize{
+    width: 15%;
+}
+
+.ModalContentHelp{
+    width: 80%
 }
