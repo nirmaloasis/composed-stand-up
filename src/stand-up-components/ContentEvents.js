@@ -146,16 +146,18 @@ export default class ContentEvents extends React.Component {
 
     pickDate(){
         $("#datepicker").datepicker().datepicker("show")
+        document.getElementById("ui-datepicker-div").style.fontSize = "15px"
     }
 
     datepickerEdit(){
         $("#datepickerEdit").datepicker().datepicker("show")
+        document.getElementById("ui-datepicker-div").style.fontSize = "15px"
     }
 
     pickDateExtra(event){
-       // var strId = "#" + event.target.parentElement.id + " " + "#datepickerExtra"
        var strId = "#"+ event.target.id
         $(strId).datepicker().datepicker("show")
+        document.getElementById("ui-datepicker-div").style.fontSize = "15px"
     }
 
     addEventExtra(event,i,val){
@@ -165,7 +167,7 @@ export default class ContentEvents extends React.Component {
         if(date == "" || (Object.prototype.toString.call(new Date(date)) === '[object Date]' && isFinite(new Date(date)))){
             var events = this.props.standUpData.events
             var id =  i
-            events[id].date = new Date(date).toDateString
+            events[id].date = new Date(date).toDateString()
             var temp = this.props.refineEventList(events)
             this.state.action = "normal"
             if(temp.length < events.length){
@@ -209,7 +211,7 @@ export default class ContentEvents extends React.Component {
     }
 
   render() {
-    var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","Kapil","KK","Sameer","Lavanya","Meenu","Mukesh","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
+    var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","KK","Sameer","Lavanya","Meenu","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
     var events = this.props.standUpData.events
     return (
         <div id="standUpContent">

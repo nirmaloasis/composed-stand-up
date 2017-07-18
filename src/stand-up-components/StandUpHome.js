@@ -24,6 +24,7 @@ export default class StandUpHome extends Component {
     }
 
     letUsClap(event){
+        debugger
         var standUpData = this.props.standUpData
         var today = new Date().toDateString()
         if(standUpData.date != today){
@@ -38,6 +39,10 @@ export default class StandUpHome extends Component {
                 this.counterFunction(clapCount,1,()=>{
                     this.props.loadLatestData()
                     document.getElementById('modalWrap').style.display = "none"
+                    document.getElementById('nextFacilitatorGen').style.display = "block"
+                    setTimeout(()=>{
+                        document.getElementById('nextFacilitatorGen').style.display = "none"
+                    },3000)
                 })
             })
             .catch(function (error) {
@@ -75,16 +80,19 @@ export default class StandUpHome extends Component {
                 <ModalInterestings heading="Interestings" standUpData = {this.props.standUpData} loadThenUpdate={this.props.loadThenUpdate}/>
                 <ModalEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/>
                 <div id="clapWrap">
-                    <span className="ClapBtn" id={disable ? "disabledCursor" : "" } title={ disable ? "Todays Stand-up is done" : ""}>
-                        <span  id={disable ? "disableClap" : "clap" }  onClick={this.letUsClap}>let's clap</span>
+                    <span className="ClapBtn" id={disable ? "disabledCursor" : "" } title={ disable ? "Todays Stand-up is done" : ""} onClick={this.letUsClap}>
+                        <span  id={disable ? "disableClap" : "clap" }>let's clap</span>
                     </span>
                 </div>
                 <div id="modalWrap" className="ModalWrap">
-                    <div id="onCount">
+                    <div className="OnCount">
                         On Count of : <span id="count"></span>
                     </div>
-                    <div id="modalContent">
+                    <div id="modalContent" className="ModalContent">
                     </div>
+                </div>
+                <div id="nextFacilitatorGen" className="ModalWrap ModalContent ModalFacilitator">
+                    <div>{"Next Facilitator : " + this.props.standUpData.currentFacilitator} </div>
                 </div>
             </div>
         );

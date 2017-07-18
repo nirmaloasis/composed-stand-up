@@ -4,7 +4,7 @@
       "None"
    ],
    "lastModifiedNewFaces": "Sun Jul 16 2017",
-   "lastModifiedInterestings": "Mon Jul 17 2017",
+   "lastModifiedInterestings": "Tue Jul 18 2017",
    "helps": [
       {
          "askingHelp": "Anish",
@@ -33,40 +33,22 @@
          "date": "Mon Jul 17 2017",
          "helpedBy": "None",
          "helpDetails": ""
-      }
-   ],
-   "interestings": [
-      {
-         "tellingInteresting": "Saurabh",
-         "interestingText": "windows 10 will not allow password changing policy from lock screen due to security issues.",
-         "interestingDetail": ""
       },
       {
-         "tellingInteresting": "Harshal",
-         "interestingText": "WhatsApp supports any type of file format",
-         "interestingDetail": ""
+         "askingHelp": "Pankaj",
+         "helpText": "Add your helps,interestings or events before the stand-up starts",
+         "date": "Tue Jul 18 2017",
+         "helpedBy": "all",
+         "helpDetails": ""
       }
    ],
+   "interestings": [],
    "events": [
       {
          "mentioningEvent": "Senthil",
          "eventText": "Learning Day for Entire ASPL",
          "date": "Fri Jul 28 2017",
          "eventDetails": "editing"
-      },
-      {
-         "mentioningEvent": "All",
-         "eventText": "Rohit's BirthDay Celebration 3pm done",
-         "date": "Mon Jul 17 2017",
-         "eventDetails": "",
-         "refinedDate": "Today"
-      },
-      {
-         "mentioningEvent": "Geeta",
-         "eventText": "Vote for Potluck ",
-         "date": "Mon Jul 17 2017",
-         "eventDetails": "Poll is open in slack.\n",
-         "refinedDate": "Today"
       },
       {
          "mentioningEvent": "Meenu",
@@ -104,12 +86,10 @@
       "Jimit Mehta",
       "John Paul",
       "Jotsna M Babu",
-      "Kapil Taneja",
       "Krishn Kant Nayak",
       "Kumar Sameer Ranjan",
       "Lavanya Gowlla",
       "Meenu Sharma",
-      "Mukesh Pandit",
       "Naveen Telker",
       "Nirmal PS",
       "Praveen Kumar K",

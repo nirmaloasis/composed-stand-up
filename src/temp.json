@@ -1,83 +1,77 @@
 {
-   "date": "Fri Jul 14 2017",
+   "date": "Mon Jul 17 2017",
    "newFaces": [
       "None"
    ],
-   "lastModifiedNewFaces": "Wed Jul 11 2017",
-   "lastModifiedInterestings": "Fri Jul 14 2017",
+   "lastModifiedNewFaces": "Sun Jul 16 2017",
+   "lastModifiedInterestings": "Tue Jul 18 2017",
    "helps": [
       {
          "askingHelp": "Anish",
-         "helpText": "Pay 200 Rs for birthday celebration",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "All"
+         "helpText": "Pay 200 Rs + fine  for birthday celebration",
+         "date": "Mon Jul 17 2017",
+         "helpedBy": "All",
+         "helpDetails": "hjbjb"
       },
       {
-         "askingHelp": "Abdul",
+         "askingHelp": "All",
          "helpText": "Lab Movement",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "Abdul"
+         "date": "Mon Jul 17 2017",
+         "helpedBy": "abdul",
+         "helpDetails": ""
       },
       {
-         "askingHelp": "Vinod",
-         "helpText": "CSR needs Volunteers to develop NGO websites. Details on Slack",
-         "date": "Wed Jul 12 2017",
-         "helpedBy": "All"
+         "askingHelp": "Abhishek",
+         "helpText": " Screen - Saver is not working",
+         "date": "Mon Jul 17 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
       },
       {
-         "askingHelp": "Geeta",
-         "helpText": "Vote for Potluck.",
-         "date": "Fri Jul 14 2017",
-         "helpedBy": "All"
+         "askingHelp": "Senthil",
+         "helpText": "Kibana log clear -off after 10 days",
+         "date": "Mon Jul 17 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
+      },
+      {
+         "askingHelp": "Pankaj",
+         "helpText": "Add your helps,interestings or events before the stand-up starts",
+         "date": "Tue Jul 18 2017",
+         "helpedBy": "all",
+         "helpDetails": ""
       }
    ],
-   "interestings": [
-      {
-         "tellingInteresting": "Divya",
-         "interestingText": "Stable version of ES 8 is released",
-         "interestingDetail" : "csa sefa"
-      },
-      {
-         "tellingInteresting": "Parag",
-         "interestingText": "India paid 5 CR to Phippines to fight ISIS -",
-         "interestingDetail" : ""
-      },
-      {
-         "tellingInteresting": "Shashank",
-         "interestingText": "Alibaba backed PayTm to plan to buy bigbasket",
-         "interestingDetail" : ""
-      },
-      {
-         "tellingInteresting": "Vinod",
-         "interestingText": "Amazon Prime - Prime day called prime because of the dates which were prime numbers",
-         "interestingDetail" : "csa sefa"
-      }
-   ],
+   "interestings": [],
    "events": [
       {
          "mentioningEvent": "Senthil",
-         "eventText": "Python meet-up",
-         "date": "Sat Jul 15 2017",
-         "refinedDate": "Today",
-         "eventDetails":""
-      },
-      {
-         "mentioningEvent": "Senthil",
-         "eventText": "Learning Day",
+         "eventText": "Learning Day for Entire ASPL",
          "date": "Fri Jul 28 2017",
-         "eventDetails":""
+         "eventDetails": "editing"
       },
       {
-         "mentioningEvent": "All",
-         "eventText": "Potluck",
-         "date": "",
-         "eventDetails":"sfkh fesgew"
+         "mentioningEvent": "Meenu",
+         "eventText": "production freeze ",
+         "date": "Tue Jul 25 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "jimit",
+         "eventText": "table tennis tournament ",
+         "date": "Sat Jul 29 2017",
+         "eventDetails": "Nomination is ending this week."
+      },
+      {
+         "mentioningEvent": "Naveen",
+         "eventText": "ISAM Changes ",
+         "date": "Wed Jul 26 2017",
+         "eventDetails": ""
       }
    ],
-   "currentFacilitator": "Shreyansh Kant",
+   "currentFacilitator": "Geeta Hubli",
    "notDoneList": [
       "Abdul Ahad",
-      "Abhishek Kumar",
       "Animesh Parial",
       "Anish Kumar",
       "Anusha Pakalakunja",
@@ -86,19 +80,16 @@
       "Dikshita Khandke",
       "Dinesh kumar Suvendrian",
       "Divya Chandrasekaran",
-      "Geeta Hubli",
       "Harish Onkarappa",
       "Hemasundara Naidu",
       "Himanshu Kumar",
       "Jimit Mehta",
       "John Paul",
       "Jotsna M Babu",
-      "Kapil Taneja",
-      "Kumar Sameer Ranjan",
       "Krishn Kant Nayak",
+      "Kumar Sameer Ranjan",
       "Lavanya Gowlla",
       "Meenu Sharma",
-      "Mukesh Pandit",
       "Naveen Telker",
       "Nirmal PS",
       "Praveen Kumar K",
@@ -110,6 +101,7 @@
       "Senthil Basuva Raj",
       "Shashank Goyal",
       "Shree Lakshmi",
+      "Shreyansh Kant",
       "Srinivas Readdy",
       "Sumit Kumar",
       "Thirupathi M",
@@ -120,6 +112,7 @@
    "doneList": [
       "Pankaj Maurya",
       "Bharat Rathad",
-      "Swapnil Shah"
+      "Swapnil Shah",
+      "Abhishek Kumar"
    ]
 }

@@ -301,6 +301,7 @@ body {
 
 #ui-datepicker-div{
     box-shadow: 0 1px 3px #888;
+    font-size: 20px;
 }
 
 .ui-datepicker-header{
