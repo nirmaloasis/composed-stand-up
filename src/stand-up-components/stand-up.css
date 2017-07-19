@@ -509,3 +509,14 @@ color: #254b6e;
     width: auto;
     padding: 6px;
 }
+
+.NotificationIcon{
+    position: absolute;
+    border-radius: 50%;
+    background: lawngreen;
+}
+
+.NotificationIconSpan{
+    position: relative;
+    padding-right: 10px;
+}

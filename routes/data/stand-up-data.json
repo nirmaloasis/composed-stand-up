@@ -1,54 +1,59 @@
 {
-   "date": "Mon Jul 17 2017",
+   "date": "Wed Jul 19 2017",
    "newFaces": [
       "None"
    ],
    "lastModifiedNewFaces": "Sun Jul 16 2017",
-   "lastModifiedInterestings": "Tue Jul 18 2017",
+   "lastModifiedInterestings": "Wed Jul 19 2017",
    "helps": [
-      {
-         "askingHelp": "Anish",
-         "helpText": "Pay 200 Rs + fine  for birthday celebration",
-         "date": "Mon Jul 17 2017",
-         "helpedBy": "All",
-         "helpDetails": "hjbjb"
-      },
-      {
-         "askingHelp": "All",
-         "helpText": "Lab Movement",
-         "date": "Mon Jul 17 2017",
-         "helpedBy": "abdul",
-         "helpDetails": ""
-      },
-      {
-         "askingHelp": "Abhishek",
-         "helpText": " Screen - Saver is not working",
-         "date": "Mon Jul 17 2017",
-         "helpedBy": "None",
-         "helpDetails": ""
-      },
-      {
-         "askingHelp": "Senthil",
-         "helpText": "Kibana log clear -off after 10 days",
-         "date": "Mon Jul 17 2017",
-         "helpedBy": "None",
-         "helpDetails": ""
-      },
       {
          "askingHelp": "Pankaj",
          "helpText": "Add your helps,interestings or events before the stand-up starts",
          "date": "Tue Jul 18 2017",
          "helpedBy": "all",
          "helpDetails": ""
+      },
+      {
+         "askingHelp": "Devendra",
+         "helpText": ".Net Docker in PCF?? ",
+         "date": "Wed Jul 19 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
       }
    ],
-   "interestings": [],
+   "interestings": [
+      {
+         "tellingInteresting": "Animesh",
+         "interestingText": "Grab offers hackers bug bounty - The Singapore ride-hailer will reward up to $10k to anyone who can identify security weaknesses in its platform.",
+         "interestingDetail": "https://www.techinasia.com/grab-public-bug-bounty"
+      },
+      {
+         "tellingInteresting": "Animesh",
+         "interestingText": "mAadhar mobile app launched for Android- Check it out if interested",
+         "interestingDetail": ""
+      },
+      {
+         "tellingInteresting": "Senthil",
+         "interestingText": "Govt p",
+         "interestingDetail": ""
+      },
+      {
+         "tellingInteresting": "Vinod",
+         "interestingText": "SBI RealEstate",
+         "interestingDetail": ""
+      },
+      {
+         "tellingInteresting": "Senthil",
+         "interestingText": "UK Free Wifi- Clean Toilet for free WiFI :P ",
+         "interestingDetail": ""
+      }
+   ],
    "events": [
       {
          "mentioningEvent": "Senthil",
          "eventText": "Learning Day for Entire ASPL",
          "date": "Fri Jul 28 2017",
-         "eventDetails": "editing"
+         "eventDetails": "Will do Dry Run today on friday. "
       },
       {
          "mentioningEvent": "Meenu",
@@ -66,10 +71,36 @@
          "mentioningEvent": "Naveen",
          "eventText": "ISAM Changes ",
          "date": "Wed Jul 26 2017",
+         "eventDetails": "Call recorder team has implemented in local. Reach out for help"
+      },
+      {
+         "mentioningEvent": "Vinod",
+         "eventText": "ABCC - Registration link in slack - Kick off 20th July",
+         "date": "Thu Jul 20 2017",
+         "eventDetails": "Nominate as individual. then form team.  90 mins test. Reg link is available to view. Abdul says its mandatory",
+         "refinedDate": "Tomorrow"
+      },
+      {
+         "mentioningEvent": "Chandra",
+         "eventText": "High5 demo day ",
+         "date": "Wed Jul 26 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "senthil",
+         "eventText": "Fire drill  at 3 pm",
+         "date": "Thu Jul 20 2017",
+         "eventDetails": "",
+         "refinedDate": "Tomorrow"
+      },
+      {
+         "mentioningEvent": "Animesh",
+         "eventText": "NPTEL certification  courses ",
+         "date": "Mon Jul 24 2017",
          "eventDetails": ""
       }
    ],
-   "currentFacilitator": "Geeta Hubli",
+   "currentFacilitator": "Rohit Kumar",
    "notDoneList": [
       "Abdul Ahad",
       "Animesh Parial",
@@ -95,9 +126,7 @@
       "Praveen Kumar K",
       "Raja Madhu",
       "Rakesh Dutta",
-      "Rakesh Shastry",
       "Ramandeep Kaur",
-      "Rohit Kumar",
       "Senthil Basuva Raj",
       "Shashank Goyal",
       "Shree Lakshmi",
@@ -113,6 +142,8 @@
       "Pankaj Maurya",
       "Bharat Rathad",
       "Swapnil Shah",
-      "Abhishek Kumar"
+      "Abhishek Kumar",
+      "Geeta Hubli",
+      "Rakesh Shastry"
    ]
 }
