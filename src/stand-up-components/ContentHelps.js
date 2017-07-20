@@ -18,9 +18,12 @@ export default class ContentHelps extends React.Component {
         this.helpDetails = this.helpDetails.bind(this)
         this.addHelpDetails = this.addHelpDetails.bind(this)
         this.zoomInHelp = this.zoomInHelp.bind(this)
+        this.EnableDescription = this.EnableDescription.bind(this)
     }
 
-    componentWillMount(){
+
+    EnableDescription(event){
+        debugger
     }
     
     addHelp(event){
@@ -167,15 +170,21 @@ export default class ContentHelps extends React.Component {
                                         </div>
                                     </div> : 
                                 this.state.action == "details" && this.state.helpId == i ?
-                                    <Linkify><div className="TileContent" id="helpEditTile">
-                                        <textarea id="helpDescription" className="itemDetals" placeholder="Add description of the help..." defaultValue={val.helpDetails}></textarea>
-                                        <div><span id="addHelpDetails" className="AddItem" onClick={(event)=>this.addHelpDetails(event,i,val)}>+</span></div>
-                                    </div> </Linkify>:  
+                                    <div className="TileContent" id="helpEditTile">
+                                        <div id="detailsReadable" onClick={this.EnableDescription}>
+                                            <Linkify >{val.helpDetails}</Linkify>
+                                        </div>
+                                        <div className="DetailsWritable" id="detailsWritable">
+                                            <textarea id="helpDescription" className="itemDetals" placeholder="Add description of the help..." defaultValue={val.helpDetails}></textarea>
+                                            <div><span id="addHelpDetails" className="AddItem" onClick={(event)=>this.addHelpDetails(event,i,val)}>+</span></div>
+                                        </div>
+                                    </div>
+                                    :  
                                 <div>
                                     <div className="TileContent">
                                         <div id="askingHelpReadOnly">{val.askingHelp}</div> : 
                                         <span id={"helpItemReadOnly"+i} className="HelpText">
-                                            <Linkify target="_blank">{'"'+val.helpText+'"'}</Linkify>
+                                            <Linkify >{'"'+val.helpText+'"'}</Linkify>
                                         </span>
                                     </div>
                                     <div id="helpedByPerson">

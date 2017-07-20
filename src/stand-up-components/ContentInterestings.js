@@ -1,6 +1,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
+import Linkify from 'react-linkify/dist/Linkify'
 
 export default class ContentInterestings extends React.Component {
     constructor(props){
@@ -140,7 +141,7 @@ export default class ContentInterestings extends React.Component {
                                 <div className="TileContent ContentInteresting">
                                     <div id="askingHelpReadOnly">{val.tellingInteresting}</div> : 
                                     <span id={"interestingItemReadOnly"+i} className="HelpText">
-                                        {'"'+val.interestingText+'"'}
+                                        "<Linkify>{val.interestingText}</Linkify>"
                                     </span>
                                 </div>
                             }   

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
 import './info-tile/InfoTile.css'
+import Linkify from 'react-linkify/dist/Linkify'
 
 export default class ModalHelps extends React.Component {
     constructor(props){
@@ -183,8 +184,8 @@ export default class ModalHelps extends React.Component {
                                         <div>
                                             <div className="TileContent">
                                                 <div id="askingHelpReadOnly">{val.askingHelp}</div> : 
-                                                <span id={"helpItemReadOnly"+i} className="HelpText">
-                                                    {val.helpText}
+                                                <span id={"helpItemReadOnly"+i} className="HelpText HelpTextModal">
+                                                    "<Linkify>{val.helpText}</Linkify>"
                                                 </span>
                                             </div>
                                             <div id="helpedByPerson">

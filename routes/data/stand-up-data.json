@@ -1,5 +1,5 @@
 {
-   "date": "Wed Jul 19 2017",
+   "date": "Thu Jul 20 2017",
    "newFaces": [
       "None"
    ],
@@ -11,21 +11,42 @@
          "helpText": "Add your helps,interestings or events before the stand-up starts",
          "date": "Tue Jul 18 2017",
          "helpedBy": "all",
+         "helpDetails": "https://stackoverflow.com"
+      },
+      {
+         "askingHelp": "Raja",
+         "helpText": "DR - If there are 4 instances, for CompoZed all 4 will be active, but for DR RO1, Ro2 will be switched off temporarily",
+         "date": "Thu Jul 20 2017",
+         "helpedBy": "None",
          "helpDetails": ""
       },
       {
-         "askingHelp": "Devendra",
-         "helpText": ".Net Docker in PCF??",
+         "askingHelp": "Vinod",
+         "helpText": "Feature Toggle ? - ",
+         "date": "Thu Jul 20 2017",
+         "helpedBy": "Raja",
+         "helpDetails": ""
+      },
+      {
+         "askingHelp": "Dinesh",
+         "helpText": "Cassandra not compatible.. Raja thinks Jenkins could help...",
          "date": "Thu Jul 20 2017",
          "helpedBy": "None",
-         "helpDetails": "From bengaluru , it's No ."
+         "helpDetails": ""
+      },
+      {
+         "askingHelp": "Senthil",
+         "helpText": "Volunteer for CF Lab Reach out to him",
+         "date": "Thu Jul 20 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
       }
    ],
    "interestings": [],
    "events": [
       {
          "mentioningEvent": "Senthil",
-         "eventText": "Learning Day for Entire ASPL",
+         "eventText": "Learning Day for Entire ASPL FG ",
          "date": "Fri Jul 28 2017",
          "eventDetails": "Will do Dry Run today on friday. "
       },
@@ -72,9 +93,15 @@
          "eventText": "NPTEL certification  courses ",
          "date": "Mon Jul 24 2017",
          "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Geeta",
+         "eventText": "Potluck",
+         "date": "Mon Jul 31 2017",
+         "eventDetails": ""
       }
    ],
-   "currentFacilitator": "Rohit Kumar",
+   "currentFacilitator": "Shashank Goyal",
    "notDoneList": [
       "Abdul Ahad",
       "Animesh Parial",
@@ -102,7 +129,6 @@
       "Rakesh Dutta",
       "Ramandeep Kaur",
       "Senthil Basuva Raj",
-      "Shashank Goyal",
       "Shree Lakshmi",
       "Shreyansh Kant",
       "Srinivas Readdy",
@@ -118,6 +144,7 @@
       "Swapnil Shah",
       "Abhishek Kumar",
       "Geeta Hubli",
-      "Rakesh Shastry"
+      "Rakesh Shastry",
+      "Rohit Kumar"
    ]
 }

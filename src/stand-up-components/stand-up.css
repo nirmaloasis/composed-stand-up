@@ -155,8 +155,6 @@ input{
 .HelpText a{
     color: #007AB8;
     font-size: 15px;
-    target-name:new;
-    target-new:tab;
 }
 
 .MemberList{
@@ -531,4 +529,24 @@ color: #254b6e;
     left: 0;
     width: 20px;
     height: 20px;
+}
+
+.HelpTextModal a{
+    font-size: 28px;
+}
+
+#detailsReadable{
+    text-align: left;
+    border: 1px solid #686868;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    color: #686868;
+    height: 80px;
+}
+
+#detailsReadable a{
+    color: #007AB8;
+    font-size: 15px;
 }

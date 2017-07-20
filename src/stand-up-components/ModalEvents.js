@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
+import Linkify from 'react-linkify/dist/Linkify'
 
 export default class ContentEvents extends React.Component {
     constructor(props){
@@ -255,7 +256,9 @@ export default class ContentEvents extends React.Component {
                             <div>
                                 <div className="TileContent">
                                     <div id="askingHelpReadOnly">{val.mentioningEvent}</div> : 
-                                    <span className="HelpText" id="helpItemReadOnly">{ '"'+ val.eventText + '"'}</span>
+                                    <span className="HelpText HelpTextModal" id="helpItemReadOnly">
+                                        "<Linkify>{val.eventText}</Linkify>"
+                                    </span>
                                 </div>
                                 {val.date != "" ? <div id="eventDateModal" className="ModalDate"> { val.refinedDate ? " - "+val.refinedDate : " - "+ val.date}</div> : 
                                 <div id="searchDiv">
