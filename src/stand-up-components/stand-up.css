@@ -148,6 +148,15 @@ input{
     text-align: left;
     color: #686868;
     padding: 0px 10px;
+    word-break: break-word;
+    word-wrap : break-word; 
+}
+
+.HelpText a{
+    color: #007AB8;
+    font-size: 15px;
+    target-name:new;
+    target-new:tab;
 }
 
 .MemberList{
@@ -512,11 +521,14 @@ color: #254b6e;
 
 .NotificationIcon{
     position: absolute;
-    border-radius: 50%;
-    background: lawngreen;
+    left: 0;
+    width: 12px;
+    height: 12px;
 }
 
-.NotificationIconSpan{
-    position: relative;
-    padding-right: 10px;
+.NotificationIconModal{
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
 }

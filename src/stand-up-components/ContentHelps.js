@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
 import ModalHelps from './ModalHelps'
+import Linkify from 'react-linkify/dist/Linkify'
 
 export default class ContentHelps extends React.Component {
     constructor(props){
@@ -116,16 +117,11 @@ export default class ContentHelps extends React.Component {
     }
 
     addHelpDetails(event,i,val){
-        if(document.getElementById("helpDescription").value == ""){
-            document.getElementById("helpDescription").focus()
-        }
-        else{
-            val.helpDetails = document.getElementById("helpDescription").value
-            var helpItems = this.props.standUpData.helps
-            helpItems[i] = val
-            this.state.action = "normal"
-            this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
-        }
+        val.helpDetails = document.getElementById("helpDescription").value
+        var helpItems = this.props.standUpData.helps
+        helpItems[i] = val
+        this.state.action = "normal"
+        this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
     }
 
     returnToHomeTile(event){
@@ -149,7 +145,7 @@ export default class ContentHelps extends React.Component {
                             <div className="EditCloseIcon">
                                 <span className="CloseTileIcon" onClick={(event)=>this.closeHelp(event,i)}>&times;<span className="ToolTipText">remove</span></span>
                                 <span className="IconsSpan" onClick={(event)=>this.editHelp(event,i)}><img className="Icons"  src="images/edit-icon.png" alt="edit" /><span className="ToolTipText">edit</span></span>
-                                <span className="IconsSpan NotificationIconSpan" onClick={(event)=>this.helpDetails(event,i)}><img className="Icons" src="images/details.png" alt="details" /><img className="Icons NotificationIcon" src="images/comment-icon.png" alt="details" /><span className="ToolTipText">details</span></span>
+                                <span className="IconsSpan" onClick={(event)=>this.helpDetails(event,i)}>{val.helpDetails ? <img className="NotificationIcon" src="images/comment-icon.png" alt="details" />: ""}<img className="Icons" src="images/details.png" alt="details" /><span className="ToolTipText">details</span></span>
                                 <span className="IconsSpan" onClick={(event)=>this.returnToHomeTile(event,i)}><img className="Icons" src="images/home-icon.png" alt="return"/><span className="ToolTipText">return</span></span>
                             </div>
                             {   
@@ -171,15 +167,15 @@ export default class ContentHelps extends React.Component {
                                         </div>
                                     </div> : 
                                 this.state.action == "details" && this.state.helpId == i ?
-                                    <div className="TileContent" id="helpEditTile">
+                                    <Linkify><div className="TileContent" id="helpEditTile">
                                         <textarea id="helpDescription" className="itemDetals" placeholder="Add description of the help..." defaultValue={val.helpDetails}></textarea>
                                         <div><span id="addHelpDetails" className="AddItem" onClick={(event)=>this.addHelpDetails(event,i,val)}>+</span></div>
-                                    </div> :  
+                                    </div> </Linkify>:  
                                 <div>
                                     <div className="TileContent">
                                         <div id="askingHelpReadOnly">{val.askingHelp}</div> : 
                                         <span id={"helpItemReadOnly"+i} className="HelpText">
-                                            {'"'+val.helpText+'"'}
+                                            <Linkify target="_blank">{'"'+val.helpText+'"'}</Linkify>
                                         </span>
                                     </div>
                                     <div id="helpedByPerson">

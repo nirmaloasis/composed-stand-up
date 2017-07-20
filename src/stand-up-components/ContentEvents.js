@@ -223,7 +223,7 @@ export default class ContentEvents extends React.Component {
                         <div className="EditCloseIcon">
                             <span className="CloseTileIcon" onClick={(event)=>this.closeHelp(event,i)}>&times;<span className="ToolTipText">remove</span></span>
                             <span className="IconsSpan" onClick={(event)=>this.editHelp(event,i)}><img className="Icons"  src="images/edit-icon.png" alt="edit" /><span className="ToolTipText">edit</span></span>
-                            <span className="IconsSpan" onClick={(event)=>this.helpDetails(event,i)}><img className="Icons" src="images/details.png" alt="details" /><span className="ToolTipText">details</span></span>
+                            <span className="IconsSpan" onClick={(event)=>this.helpDetails(event,i)}>{val.eventDetails ? <img className="NotificationIcon" src="images/comment-icon.png" alt="details" />: ""}<img className="Icons" src="images/details.png" alt="details" /><span className="ToolTipText">details</span></span>
                             <span className="IconsSpan" onClick={(event)=>this.returnToHomeTile(event,i)}><img className="Icons" src="images/home-icon.png" alt="return"/><span className="ToolTipText">return</span></span>
                         </div>
                         {   
