@@ -37,7 +37,8 @@
     "semantic-ui": "^2.2.11",
     "semantic-ui-react": "^0.71.0",
     "serve-favicon": "~2.4.2",
-    "sinon": "^1.17.7"
+    "sinon": "^1.17.7",
+    "socket.io": "^2.0.3"
   },
   "devDependencies": {
     "babel-browser": "^6.1.19",

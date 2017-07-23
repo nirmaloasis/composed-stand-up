@@ -2,11 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
 import ModalHelps from './ModalHelps'
 import Linkify from 'react-linkify/dist/Linkify'
+import io from 'socket.io-client'
 
 export default class ContentHelps extends React.Component {
     constructor(props){
         super(props)
-        this.state = {action:"normal",helpId:""}
+        console.log("called help constrtrt")
+        this.state = {helps:this.props.standUpData.helps,action:"normal",helpId:""}
         this.addHelp = this.addHelp.bind(this)
         this.addHelpingName = this.addHelpingName.bind(this)
         this.closeHelp = this.closeHelp.bind(this)
@@ -18,12 +20,13 @@ export default class ContentHelps extends React.Component {
         this.helpDetails = this.helpDetails.bind(this)
         this.addHelpDetails = this.addHelpDetails.bind(this)
         this.zoomInHelp = this.zoomInHelp.bind(this)
-        this.EnableDescription = this.EnableDescription.bind(this)
     }
 
-
-    EnableDescription(event){
-        debugger
+    componentWillMount(){
+        this.socket = io('/')
+        this.socket.on('add-content',(data)=>{
+            this.setState({helps : data.helps},()=>{})
+        })
     }
     
     addHelp(event){
@@ -38,13 +41,13 @@ export default class ContentHelps extends React.Component {
             var helpText = this.textInputHelp.value
             var date = new Date().toDateString()
             var helpedBy = "None"
-            var helpItems = this.props.standUpData.helps
+            var helpItems = this.state.helps
             var newHelp = {askingHelp,helpText,date,helpedBy,helpDetails:""}
             helpItems.push(newHelp)
             this.memberSelectedHelp.value = ""
             this.textInputHelp.value = ""
             this.state.action = "normal"
-            this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
+            this.socket.emit('add-content',{content : helpItems, contentType : "helps"})
         }
     }
 
@@ -55,19 +58,19 @@ export default class ContentHelps extends React.Component {
         }
         else{
             var helpId = i
-            var helpItems = this.props.standUpData.helps
+            var helpItems = this.state.helps
             helpItems[helpId].helpedBy = helpingPerson.value
             this.state.action = "normal"
-            this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
+            this.socket.emit('add-content',{content : helpItems, contentType : "helps"})
         }
     }
 
     closeHelp(event,i){
-        var helpItems = this.props.standUpData.helps
+        var helpItems = this.state.helps
         var id = i
         helpItems.splice(id,1)
         this.state.action = "normal"
-        this.props.loadThenUpdate({content : helpItems, contentType : "helps"})          
+        this.socket.emit('add-content',{content : helpItems, contentType : "helps"})         
     }
 
     enterKeyAddHelp(event){
@@ -99,12 +102,12 @@ export default class ContentHelps extends React.Component {
         else{
             var date = new Date().toDateString()
             var helpedBy = parentElement.querySelector("#helpedBy").value =="" ? "None" : parentElement.querySelector("#helpedBy").value
-            var helpItems = this.props.standUpData.helps
+            var helpItems = this.state.helps
             var helpDetails = helpItems[i].helpDetails
             var newHelp = {askingHelp,helpText,date,helpedBy,helpDetails}
             helpItems[i] = newHelp
             this.state.action = "normal"
-            this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
+            this.socket.emit('add-content',{content : helpItems, contentType : "helps"})
         }
     }
 
@@ -121,10 +124,10 @@ export default class ContentHelps extends React.Component {
 
     addHelpDetails(event,i,val){
         val.helpDetails = document.getElementById("helpDescription").value
-        var helpItems = this.props.standUpData.helps
+        var helpItems = this.state.helps
         helpItems[i] = val
         this.state.action = "normal"
-        this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
+        this.socket.emit('add-content',{content : helpItems, contentType : "helps"})
     }
 
     returnToHomeTile(event){
@@ -137,12 +140,11 @@ export default class ContentHelps extends React.Component {
 
   render() {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","KK","Sameer","Lavanya","Meenu","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
-    var helpItems = this.props.standUpData.helps
     return (
         <div id="standUpContent">
             <div id="itemsHeading" onClick={this.zoomInHelp}>{this.props.heading}</div>
             <div className="ForOverFlow">  
-                { helpItems.map((val,i)=>{
+                { this.state.helps.map((val,i)=>{
                     return (
                         <div key={i} className="InfoTilesWrapper" data-id={i}>
                             <div className="EditCloseIcon">
@@ -171,13 +173,8 @@ export default class ContentHelps extends React.Component {
                                     </div> : 
                                 this.state.action == "details" && this.state.helpId == i ?
                                     <div className="TileContent" id="helpEditTile">
-                                        <div id="detailsReadable" onClick={this.EnableDescription}>
-                                            <Linkify >{val.helpDetails}</Linkify>
-                                        </div>
-                                        <div className="DetailsWritable" id="detailsWritable">
-                                            <textarea id="helpDescription" className="itemDetals" placeholder="Add description of the help..." defaultValue={val.helpDetails}></textarea>
-                                            <div><span id="addHelpDetails" className="AddItem" onClick={(event)=>this.addHelpDetails(event,i,val)}>+</span></div>
-                                        </div>
+                                        <textarea id="helpDescription" className="itemDetals" placeholder="Add description of the help..." defaultValue={val.helpDetails}></textarea>
+                                        <div><span id="addHelpDetails" className="AddItem" onClick={(event)=>this.addHelpDetails(event,i,val)}>+</span></div>
                                     </div>
                                     :  
                                 <div>

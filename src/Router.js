@@ -3,7 +3,7 @@ import axios from 'axios'
 import Loader from './Loader'
 import StandUpHome from './stand-up-components/StandUpHome.js'
 import RetroHome from './retro-components/RetroHome.js'
-
+import io from 'socket.io-client'
 
 export default class Router extends Component {
     constructor(props){
@@ -13,20 +13,16 @@ export default class Router extends Component {
         this.changeRoute = this.changeRoute.bind(this)
         this.refineEventList = this.refineEventList.bind(this)
         this.loadLatestData = this.loadLatestData.bind(this)
-        this.loadThenUpdate = this.loadThenUpdate.bind(this)
+       
         this.compareNums = this.compareNums.bind(this)
     }
 
     componentWillMount(){
-        axios.get('/sUpdata', {
-            params: { }
+        this.socket = io('/')
+        this.socket.emit('sUpdata',"InitialData")
+        this.socket.on('sUpdata',(data)=>{
+            this.resetStandUpDataAfterADay(data)
         })
-        .then( (response) => {
-            this.resetStandUpDataAfterADay(response.data)
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
     }
 
     changeRoute(route){
@@ -34,24 +30,13 @@ export default class Router extends Component {
     }
 
     loadLatestData(){
-        axios.get('/sUpdata', {
-            params: { }
+        this.socket.emit('sUpdata',"InitialData")
+        this.socket.on('sUpdata',(data)=>{
+            this.resetStandUpDataAfterADay(data)
         })
-        .then( (response) => {
-            this.resetStandUpDataAfterADay(response.data)
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
     }
 
-    loadThenUpdate(obj){
-        axios.post('add-content',obj)
-        .then((response)=>{
-            this.resetStandUpDataAfterADay(response.data)
-        })
-        .catch((err)=> console.log(err))
-    }
+
 
     compareNums(num1 , num2){
         if(num1 == num2)
@@ -104,11 +89,9 @@ export default class Router extends Component {
             resetData.lastModifiedInterestings != today ? resetData.interestings = [] : ""
             var events = resetData.events
             resetData.events = this.refineEventList(events)
-            this.setState({standUpData : resetData,route :"standUp"},()=>{
-                axios.post('/reset-sUpdata',resetData)
-                .catch(function (error) {
-                    console.log(error);
-                });
+            this.socket.emit('reset-sUpdata',resetData)
+            this.socket.on('reset-sUpdata',(data)=>{
+                this.setState({standUpData : data,route :"standUp"},()=>{})
             })
         }
     }

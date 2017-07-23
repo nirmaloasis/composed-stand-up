@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
+import io from 'socket.io-client'
 
 export default class Header extends React.Component {
     constructor(props){
@@ -8,6 +9,13 @@ export default class Header extends React.Component {
         this.startStandUp = this.startStandUp.bind(this)
         this.startRetro = this.startRetro.bind(this)
         this.facilitatorNotPresent = this.facilitatorNotPresent.bind(this)
+    }
+
+    componentDidMount(){
+        this.socket = io('/')
+        this.socket.on('facilitator',(data)=>{
+            this.setState({currentFacilitator : data.currentFacilitator , setFlag : true},()=>{})
+        })
     }
 
     startStandUp(event){
@@ -28,17 +36,9 @@ export default class Header extends React.Component {
     }
 
     facilitatorNotPresent(event){
-        axios.post('/facilitator', {
-            standUpData : this.props.standUpData,
+        this.socket.emit('facilitator',{
             notPresent : true
         })
-        .then((response)=> this.setState({currentFacilitator : response.data , setFlag : true},()=>{
-        }))
-        .catch(function (error) {
-            var errorMessage = error
-            this.setState({errorMessage})
-            console.log(error);
-        });
     }
 
   render() {
@@ -52,9 +52,8 @@ export default class Header extends React.Component {
                         background: "#254b6e",
                         color : "white"
                      };
-    var currentFacilitator 
-    currentFacilitator = this.state.setFlag ? this.state.currentFacilitator : this.props.standUpData.currentFacilitator
-    this.state.setFlag = false
+    var currentFacilitator = (this.state.setFlag )? this.state.currentFacilitator : this.props.standUpData.currentFacilitator
+    this.state.setFlag = false 
     return (
         <div id="headerWrapper">
             <div id="header92">

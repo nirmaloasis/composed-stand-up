@@ -1,107 +1,41 @@
 {
-   "date": "Thu Jul 20 2017",
+   "date": "Mon Jul 17 2017",
    "newFaces": [
       "None"
    ],
    "lastModifiedNewFaces": "Sun Jul 16 2017",
-   "lastModifiedInterestings": "Thu Jul 20 2017",
+   "lastModifiedInterestings": "Mon Jul 24 2017",
    "helps": [
       {
-         "askingHelp": "Pankaj",
-         "helpText": "Add your helps,interestings or events before the stand-up starts",
-         "date": "Tue Jul 18 2017",
-         "helpedBy": "all",
-         "helpDetails": "https://stackoverflow.com"
-      },
-      {
-         "askingHelp": "Raja",
-         "helpText": "DR - If there are 4 instances, for CompoZed all 4 will be active, but for DR RO1, Ro2 will be switched off temporarily",
-         "date": "Thu Jul 20 2017",
-         "helpedBy": "None",
-         "helpDetails": ""
-      },
-      {
-         "askingHelp": "Vinod",
-         "helpText": "Feature Toggle ? - ",
-         "date": "Thu Jul 20 2017",
-         "helpedBy": "Raja",
-         "helpDetails": ""
-      },
-      {
-         "askingHelp": "Dinesh",
-         "helpText": "Cassandra not compatible.. Raja thinks Jenkins could help...",
-         "date": "Thu Jul 20 2017",
-         "helpedBy": "None",
-         "helpDetails": ""
-      },
-      {
-         "askingHelp": "Senthil",
-         "helpText": "Volunteer for CF Lab Reach out to him",
-         "date": "Thu Jul 20 2017",
+         "askingHelp": "b j b",
+         "helpText": "bjkbhk",
+         "date": "Mon Jul 24 2017",
          "helpedBy": "None",
          "helpDetails": ""
       }
    ],
-   "interestings": [],
+   "interestings": [
+      {
+         "tellingInteresting": "ergerg",
+         "interestingText": "rgerg",
+         "interestingDetail": ""
+      }
+   ],
    "events": [
       {
          "mentioningEvent": "Senthil",
-         "eventText": "Learning Day for Entire ASPL FG ",
+         "eventText": "Learning Day for Entire ASPL",
          "date": "Fri Jul 28 2017",
-         "eventDetails": "Will do Dry Run today on friday. "
-      },
-      {
-         "mentioningEvent": "Meenu",
-         "eventText": "production freeze ",
-         "date": "Tue Jul 25 2017",
-         "eventDetails": ""
+         "eventDetails": "editing"
       },
       {
          "mentioningEvent": "jimit",
          "eventText": "table tennis tournament ",
          "date": "Sat Jul 29 2017",
          "eventDetails": "Nomination is ending this week."
-      },
-      {
-         "mentioningEvent": "Naveen",
-         "eventText": "ISAM Changes ",
-         "date": "Wed Jul 26 2017",
-         "eventDetails": "Call recorder team has implemented in local. Reach out for help"
-      },
-      {
-         "mentioningEvent": "Vinod",
-         "eventText": "ABCC - Registration link in slack - Kick off 20th July",
-         "date": "Thu Jul 20 2017",
-         "eventDetails": "Nominate as individual. then form team.  90 mins test. Reg link is available to view. Abdul says its mandatory.",
-         "refinedDate": "Today"
-      },
-      {
-         "mentioningEvent": "Chandra",
-         "eventText": "High5 demo day ",
-         "date": "Wed Jul 26 2017",
-         "eventDetails": ""
-      },
-      {
-         "mentioningEvent": "senthil",
-         "eventText": "Fire drill  at 3 pm",
-         "date": "Thu Jul 20 2017",
-         "eventDetails": "",
-         "refinedDate": "Today"
-      },
-      {
-         "mentioningEvent": "Animesh",
-         "eventText": "NPTEL certification  courses ",
-         "date": "Mon Jul 24 2017",
-         "eventDetails": ""
-      },
-      {
-         "mentioningEvent": "Geeta",
-         "eventText": "Potluck",
-         "date": "Mon Jul 31 2017",
-         "eventDetails": ""
       }
    ],
-   "currentFacilitator": "Shashank Goyal",
+   "currentFacilitator": "Jotsna M Babu",
    "notDoneList": [
       "Abdul Ahad",
       "Animesh Parial",
@@ -112,12 +46,12 @@
       "Dikshita Khandke",
       "Dinesh kumar Suvendrian",
       "Divya Chandrasekaran",
+      "Geeta Hubli",
       "Harish Onkarappa",
       "Hemasundara Naidu",
       "Himanshu Kumar",
       "Jimit Mehta",
       "John Paul",
-      "Jotsna M Babu",
       "Krishn Kant Nayak",
       "Kumar Sameer Ranjan",
       "Lavanya Gowlla",
@@ -127,8 +61,11 @@
       "Praveen Kumar K",
       "Raja Madhu",
       "Rakesh Dutta",
+      "Rakesh Shastry",
       "Ramandeep Kaur",
+      "Rohit Kumar",
       "Senthil Basuva Raj",
+      "Shashank Goyal",
       "Shree Lakshmi",
       "Shreyansh Kant",
       "Srinivas Readdy",
@@ -142,9 +79,6 @@
       "Pankaj Maurya",
       "Bharat Rathad",
       "Swapnil Shah",
-      "Abhishek Kumar",
-      "Geeta Hubli",
-      "Rakesh Shastry",
-      "Rohit Kumar"
+      "Abhishek Kumar"
    ]
 }

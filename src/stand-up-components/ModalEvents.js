@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
 import Linkify from 'react-linkify/dist/Linkify'
+import io from 'socket.io-client'
 
-export default class ContentEvents extends React.Component {
+export default class ModalEvents extends React.Component {
     constructor(props){
         super(props)
-        this.state = {action:"normal",helpId:""}
+        this.state = {events : this.props.standUpData.events,action:"normal",helpId:""}
         this.addEvent = this.addEvent.bind(this)
         this.editHelp = this.editHelp.bind(this)
         this.closeHelp = this.closeHelp.bind(this)
@@ -16,6 +17,13 @@ export default class ContentEvents extends React.Component {
         this.pickDateExtra = this.pickDateExtra.bind(this)
         this.addEventExtra = this.addEventExtra.bind(this)
         this.enterKeyAddEvent = this.enterKeyAddEvent.bind(this)
+    }
+
+    componentDidMount(){
+        this.socket = io('/')
+        this.socket.on('add-content',(data)=>{
+            this.setState({events : data.events},()=>{})
+        })
     }
 
     enterKeyAddEvent(event){
@@ -45,7 +53,7 @@ export default class ContentEvents extends React.Component {
                 getDate == "" ? date = "" : date = new Date(getDate).toDateString()
                 var eventDetails = val.eventDetails
                 var newEvent = [{mentioningEvent,eventText,date,eventDetails}]
-                var events = this.props.standUpData.events
+                var events = this.state.events
                 getDate == "" ? "" : newEvent = this.props.refineEventList(newEvent)
                 if(newEvent.length == 0){
                     element.querySelector("#eventDateExpiredModal").innerText = "Event Date is Expired."
@@ -57,7 +65,7 @@ export default class ContentEvents extends React.Component {
                 else{
                     events[i] = newEvent[0]
                     this.state.action = "normal"
-                    this.props.loadThenUpdate({content : events, contentType : "events"})  
+                    this.socket.emit('add-content',{content : events, contentType : "events"})  
                 } 
             }
             else{
@@ -87,7 +95,7 @@ export default class ContentEvents extends React.Component {
                 getDate == "" ? date = "" : date = new Date(getDate).toDateString()
                 var eventDetails = ""
                 var newEvent = [{mentioningEvent,eventText,date,eventDetails}]
-                var events = this.props.standUpData.events
+                var events = this.state.events
                 getDate == "" ? "" : newEvent = this.props.refineEventList(newEvent)
                 this.state.action = "normal"
                 if(newEvent.length == 0){
@@ -104,7 +112,7 @@ export default class ContentEvents extends React.Component {
                         this.memberSelectedEventModal.value = ""
                         this.textInputEventModal.value = ""
                         this.dateInputModal.value = ""
-                        this.props.loadThenUpdate({content : events, contentType : "events"}) 
+                        this.socket.emit('add-content',{content : events, contentType : "events"}) 
                     }) 
                 } 
             }
@@ -120,11 +128,11 @@ export default class ContentEvents extends React.Component {
     }
 
     closeHelp(event,i){
-        var events = this.props.standUpData.events
+        var events = this.state.events
         var id = i
         events.splice(id,1)
         this.state.action = "normal"
-        this.props.loadThenUpdate({content : events, contentType : "events"})          
+        this.socket.emit('add-content',{content : events, contentType : "events"})          
     }
 
     returnToHomeTile(event){
@@ -160,11 +168,10 @@ export default class ContentEvents extends React.Component {
     }
 
     addEventExtra(event,i,val){
-        debugger
         var date = document.getElementById("datepickerModalExtra"+i).value
         var inputExtra = event.target.parentElement.parentElement.querySelector('#eventDateExpiredModalExtra')
         if(date == "" || (Object.prototype.toString.call(new Date(date)) === '[object Date]' && isFinite(new Date(date)))){
-            var events = this.props.standUpData.events
+            var events = this.state.events
             var id =  i
             events[id].date = new Date(date).toDateString()
             var temp = this.props.refineEventList(events)
@@ -175,11 +182,11 @@ export default class ContentEvents extends React.Component {
                 events[id].date = ""
                 setTimeout(()=>{
                     inputExtra.style.display = "none"
-                    this.props.loadThenUpdate({content : events, contentType : "events"})
+                    this.socket.emit('add-content',{content : events, contentType : "events"})
                 },2000)
             }
             else{
-                this.props.loadThenUpdate({content : events, contentType : "events"})
+                this.socket.emit('add-content',{content : events, contentType : "events"})
             }  
         }
         else{
@@ -198,10 +205,10 @@ export default class ContentEvents extends React.Component {
         }
         else{
             val.eventDetails = document.getElementById("eventDescriptionModal").value
-            var events = this.props.standUpData.events
+            var events = this.state.events
             events[i] = val
             this.state.action = "normal"
-            this.props.loadThenUpdate({content : events, contentType : "events"})
+            this.socket.emit('add-content',{content : events, contentType : "events"})
         }
     }
 
@@ -212,7 +219,7 @@ export default class ContentEvents extends React.Component {
 
   render() {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","KK","Sameer","Lavanya","Meenu","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
-    var events = this.props.standUpData.events
+    var events = this.state.events
     return (
         <div className="StandUpContentModal" id="zoomEvents" onClick={this.closeModal}>
             <div className="modal-dialog">

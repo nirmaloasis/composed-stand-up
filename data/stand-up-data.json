@@ -1,0 +1,119 @@
+{
+   "date": "Mon Jul 24 2017",
+   "newFaces": [
+      "None"
+   ],
+   "lastModifiedNewFaces": "Sun Jul 16 2017",
+   "lastModifiedInterestings": "Tue Jul 18 2017",
+   "helps": [
+      {
+         "askingHelp": "Anish",
+         "helpText": "Pay 200 Rs + fine  for birthday celebration",
+         "date": "Mon Jul 17 2017",
+         "helpedBy": "All",
+         "helpDetails": "hjbjb"
+      },
+      {
+         "askingHelp": "All",
+         "helpText": "Lab Movement",
+         "date": "Mon Jul 17 2017",
+         "helpedBy": "abdul",
+         "helpDetails": ""
+      },
+      {
+         "askingHelp": "Abhishek",
+         "helpText": " Screen - Saver is not working",
+         "date": "Mon Jul 17 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
+      },
+      {
+         "askingHelp": "Senthil",
+         "helpText": "Kibana log clear -off after 10 days",
+         "date": "Mon Jul 17 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
+      },
+      {
+         "askingHelp": "Pankaj",
+         "helpText": "Add your helps,interestings or events before the stand-up starts",
+         "date": "Tue Jul 18 2017",
+         "helpedBy": "all",
+         "helpDetails": ""
+      }
+   ],
+   "interestings": [],
+   "events": [
+      {
+         "mentioningEvent": "Senthil",
+         "eventText": "Learning Day for Entire ASPL",
+         "date": "Fri Jul 28 2017",
+         "eventDetails": "editing"
+      },
+      {
+         "mentioningEvent": "Meenu",
+         "eventText": "production freeze ",
+         "date": "Tue Jul 25 2017",
+         "eventDetails": "",
+         "refinedDate": "Tomorrow"
+      },
+      {
+         "mentioningEvent": "jimit",
+         "eventText": "table tennis tournament ",
+         "date": "Sat Jul 29 2017",
+         "eventDetails": "Nomination is ending this week."
+      },
+      {
+         "mentioningEvent": "Naveen",
+         "eventText": "ISAM Changes ",
+         "date": "Wed Jul 26 2017",
+         "eventDetails": ""
+      }
+   ],
+   "currentFacilitator": "Praveen Kumar K",
+   "notDoneList": [
+      "Abdul Ahad",
+      "Animesh Parial",
+      "Anish Kumar",
+      "Anusha Pakalakunja",
+      "Ashish Verma",
+      "Chandramouli M S",
+      "Dikshita Khandke",
+      "Dinesh kumar Suvendrian",
+      "Divya Chandrasekaran",
+      "Geeta Hubli",
+      "Harish Onkarappa",
+      "Hemasundara Naidu",
+      "Himanshu Kumar",
+      "Jimit Mehta",
+      "Jotsna M Babu",
+      "Kumar Sameer Ranjan",
+      "Lavanya Gowlla",
+      "Meenu Sharma",
+      "Naveen Telker",
+      "Raja Madhu",
+      "Rakesh Dutta",
+      "Rakesh Shastry",
+      "Ramandeep Kaur",
+      "Rohit Kumar",
+      "Senthil Basuva Raj",
+      "Shashank Goyal",
+      "Shree Lakshmi",
+      "Shreyansh Kant",
+      "Srinivas Readdy",
+      "Vinit Rohela",
+      "Vivek"
+   ],
+   "doneList": [
+      "Pankaj Maurya",
+      "Bharat Rathad",
+      "Swapnil Shah",
+      "Abhishek Kumar",
+      "Thirupathi M",
+      "John Paul",
+      "Nirmal PS",
+      "Sumit Kumar",
+      "Vinod Subramanian",
+      "Krishn Kant Nayak"
+   ]
+}

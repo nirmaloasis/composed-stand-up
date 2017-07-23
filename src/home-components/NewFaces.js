@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import axios from 'axios'
+import axios from 'axios'   
+import io from 'socket.io-client'
 
 export default class NewFaces extends React.Component {
     constructor(props){
@@ -9,8 +10,12 @@ export default class NewFaces extends React.Component {
         this.enterKeyAddNewFaces = this.enterKeyAddNewFaces.bind(this)
     }
 
-    componentWillMount(){
-
+    componentDidMount(){
+        this.socket = io('/')
+        this.socket.on('add-newFaces',(standUpData)=>{
+            debugger
+            this.setState({listOfNewFaces : standUpData.newFaces})
+        })
     }
 
     enterKeyAddNewFaces(event){
@@ -28,15 +33,8 @@ export default class NewFaces extends React.Component {
             listOfNewFaces.push(this.textInput.value)
             listOfNewFaces.indexOf("None") == -1 ?   "" : listOfNewFaces.splice(0,1)
             standUpData.newFaces = listOfNewFaces
-            this.setState({listOfNewFaces},() => {
-                this.textInput.value = "";
-                axios.post('/add-newFaces',standUpData)
-                .catch(function (error) {
-                    var errorMessage = error
-                    this.setState({errorMessage})
-                    console.log(error);
-                });
-            })
+            this.textInput.value = "";
+            this.socket.emit('add-newFaces',standUpData)
         }
     }
 

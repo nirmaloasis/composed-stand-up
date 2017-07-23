@@ -4,6 +4,7 @@ body {
     background-color: rgb(210,210,210);
     min-width: 1440px;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 #headerWrapper{

@@ -2,11 +2,12 @@ import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
 import './info-tile/InfoTile.css'
 import Linkify from 'react-linkify/dist/Linkify'
+import io from 'socket.io-client'
 
 export default class ModalInterestings extends React.Component {
     constructor(props){
         super(props)
-        this.state = {action:"normal",helpId:""}
+        this.state = {interestings : this.props.standUpData.interestings,action : "normal",intId:""}
         this.closeModal = this.closeModal.bind(this)
         this.addInterestingModal = this.addInterestingModal.bind(this)
         this.enterKeyAddHelp = this.enterKeyAddHelp.bind(this)
@@ -16,6 +17,13 @@ export default class ModalInterestings extends React.Component {
         this.returnToHomeTile = this.returnToHomeTile.bind(this)
         this.addEditedInteresting = this.addEditedInteresting.bind(this)
         this.addHelpDetails = this.addHelpDetails.bind(this)
+    }
+
+    componentDidMount(){
+        this.socket = io('/')
+        this.socket.on('add-content',(data)=>{
+            this.setState({interestings : data.interestings},()=>{})
+        })
     }
 
     closeModal(event){
@@ -29,7 +37,7 @@ export default class ModalInterestings extends React.Component {
         else if(this.textInputInterestingModal.value == "")
             this.textInputInterestingModal.focus()
         else{
-            var interestings = this.props.standUpData.interestings
+            var interestings = this.state.interestings
             var tellingInteresting = this.memberInterestingModal.value
             var interestingText = this.textInputInterestingModal.value
             var interestingDetail = ""
@@ -38,7 +46,7 @@ export default class ModalInterestings extends React.Component {
             this.memberInterestingModal.value = ""
             this.textInputInterestingModal.value = ""
             this.state.action = "normal"
-            this.props.loadThenUpdate({content : interestings, contentType : "interestings"})
+            this.socket.emit('add-content',{content : interestings, contentType : "interestings"})
         }
     }
 
@@ -52,11 +60,11 @@ export default class ModalInterestings extends React.Component {
     }
 
     closeHelp(event,i){
-        var interestings = this.props.standUpData.interestings
+        var interestings = this.state.interestings
         var id = i
         interestings.splice(id,1)
         this.state.action = "normal"
-        this.props.loadThenUpdate({content : interestings, contentType : "interestings"})          
+        this.socket.emit('add-content',{content : interestings, contentType : "interestings"})          
     }
 
     editHelp(event,i){
@@ -78,14 +86,14 @@ export default class ModalInterestings extends React.Component {
         else if(element.querySelector("#InterestingTextAreaModal"+i).value == "")
             element.querySelector("#InterestingTextAreaModal"+i).focus()
         else{
-            var interestings = this.props.standUpData.interestings
+            var interestings = this.state.interestings
             var tellingInteresting = element.querySelector("#interestingTeller").value
             var interestingText = element.querySelector("#InterestingTextAreaModal"+i).value
             var interestingDetail = interestings[i].interestingDetail
             var newInterestings = {tellingInteresting,interestingText,interestingDetail}
             interestings[i] = newInterestings
             this.state.action = "normal"
-            this.props.loadThenUpdate({content : interestings, contentType : "interestings"}) 
+            this.socket.emit('add-content',{content : interestings, contentType : "interestings"}) 
         }
     }
 
@@ -100,16 +108,16 @@ export default class ModalInterestings extends React.Component {
         }
         else{
             val.interestingDetail = document.getElementById("interestingDescriptionModal").value
-            var interestings = this.props.standUpData.interestings
+            var interestings = this.state.interestings
             interestings[i] = val
             this.state.action = "normal"
-            this.props.loadThenUpdate({content : interestings, contentType : "interestings"})
+            this.socket.emit('add-content',{content : interestings, contentType : "interestings"})
         }
     }
 
   render() {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","KK","Sameer","Lavanya","Meenu","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
-    var interestings = this.props.standUpData.interestings
+    var interestings = this.state.interestings
     return (
     <div className="StandUpContentModal" id="zoomInterestings" onClick={this.closeModal}>
         <div className="modal-dialog">

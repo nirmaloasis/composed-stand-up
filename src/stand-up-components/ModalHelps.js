@@ -2,11 +2,12 @@ import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
 import './info-tile/InfoTile.css'
 import Linkify from 'react-linkify/dist/Linkify'
+import io from 'socket.io-client'
 
 export default class ModalHelps extends React.Component {
     constructor(props){
         super(props)
-        this.state = {action:"normal",helpId:""}
+        this.state = {helps:this.props.standUpData.helps,action:"normal",helpId:""}
         this.closeModal = this.closeModal.bind(this)
         this.editHelp = this.editHelp.bind(this)
         this.addEditedHelp = this.addEditedHelp.bind(this)
@@ -19,6 +20,13 @@ export default class ModalHelps extends React.Component {
         this.enterKeyAddHelper = this.enterKeyAddHelper.bind(this)
         this.enterKeyAddHelp = this.enterKeyAddHelp.bind(this)
         this.addHelp = this.addHelp.bind(this)
+    }
+
+    componentWillMount(){
+        this.socket = io('/')
+        this.socket.on('add-content',(data)=>{
+            this.setState({helps : data.helps},()=>{})
+        })
     }
 
     closeModal(event){
@@ -46,12 +54,12 @@ export default class ModalHelps extends React.Component {
         else{
             var date = new Date().toDateString()
             var helpedBy = parentElement.querySelector("#helpedBy").value =="" ? "None" : parentElement.querySelector("#helpedBy").value
-            var helpItems = this.props.standUpData.helps
+            var helpItems = this.state.helps
             var helpDetails = helpItems[i].helpDetails
             var newHelp = {askingHelp,helpText,date,helpedBy,helpDetails}
             helpItems[i] = newHelp
             this.state.action = "normal"
-            this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
+            this.socket.emit('add-content',{content : helpItems, contentType : "helps"})
         }
     }
 
@@ -72,10 +80,10 @@ export default class ModalHelps extends React.Component {
         }
         else{
             val.helpDetails = document.getElementById("helpDescriptionModal").value
-            var helpItems = this.props.standUpData.helps
+            var helpItems = this.state.helps
             helpItems[i] = val
             this.state.action = "normal"
-            this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
+            this.socket.emit('add-content',{content : helpItems, contentType : "helps"})
         }
     }
 
@@ -84,11 +92,11 @@ export default class ModalHelps extends React.Component {
     }
 
     closeHelp(event,i){
-        var helpItems = this.props.standUpData.helps
+        var helpItems = this.state.helps
         var id = i
         helpItems.splice(id,1)
         this.state.action = "normal"
-        this.props.loadThenUpdate({content : helpItems, contentType : "helps"})          
+        this.socket.emit('add-content',{content : helpItems, contentType : "helps"})          
     }
 
     addHelpingName(event,i){
@@ -98,10 +106,10 @@ export default class ModalHelps extends React.Component {
         }
         else{
             var helpId = i
-            var helpItems = this.props.standUpData.helps
+            var helpItems = this.state.helps
             helpItems[helpId].helpedBy = helpingPerson.value
             this.state.action = "normal"
-            this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
+            this.socket.emit('add-content',{content : helpItems, contentType : "helps"})
         }
     }
 
@@ -122,13 +130,13 @@ export default class ModalHelps extends React.Component {
             var helpText = this.textInputHelpModal.value
             var date = new Date().toDateString()
             var helpedBy = "None"
-            var helpItems = this.props.standUpData.helps
+            var helpItems = this.state.helps
             var newHelp = {askingHelp,helpText,date,helpedBy,helpDetails:""}
             helpItems.push(newHelp)
             this.memberSelectedHelpModal.value = ""
             this.textInputHelpModal.value = ""
             this.state.action = "normal"
-            this.props.loadThenUpdate({content : helpItems , contentType : "helps"})
+            this.socket.emit('add-content',{content : helpItems, contentType : "helps"})
         }
     }
 
@@ -139,7 +147,7 @@ export default class ModalHelps extends React.Component {
 
   render() {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","KK","Sameer","Lavanya","Meenu","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
-    var helpItems = this.props.standUpData.helps
+    var helpItems = this.state.helps
     return (
     <div className="StandUpContentModal" id="zoomHelp" onClick={this.closeModal}>
         <div className="modal-dialog">
