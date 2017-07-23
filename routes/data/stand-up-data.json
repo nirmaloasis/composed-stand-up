@@ -4,15 +4,8 @@
       "None"
    ],
    "lastModifiedNewFaces": "Sun Jul 16 2017",
-   "lastModifiedInterestings": "Thu Jul 20 2017",
+   "lastModifiedInterestings": "Sat Jul 22 2017",
    "helps": [
-      {
-         "askingHelp": "Pankaj",
-         "helpText": "Add your helps,interestings or events before the stand-up starts",
-         "date": "Tue Jul 18 2017",
-         "helpedBy": "all",
-         "helpDetails": ""
-      },
       {
          "askingHelp": "Devendra",
          "helpText": ".Net Docker in PCF??",
@@ -48,24 +41,10 @@
          "eventDetails": "Call recorder team has implemented in local. Reach out for help"
       },
       {
-         "mentioningEvent": "Vinod",
-         "eventText": "ABCC - Registration link in slack - Kick off 20th July",
-         "date": "Thu Jul 20 2017",
-         "eventDetails": "Nominate as individual. then form team.  90 mins test. Reg link is available to view. Abdul says its mandatory.",
-         "refinedDate": "Today"
-      },
-      {
          "mentioningEvent": "Chandra",
          "eventText": "High5 demo day ",
          "date": "Wed Jul 26 2017",
          "eventDetails": ""
-      },
-      {
-         "mentioningEvent": "senthil",
-         "eventText": "Fire drill  at 3 pm",
-         "date": "Thu Jul 20 2017",
-         "eventDetails": "",
-         "refinedDate": "Today"
       },
       {
          "mentioningEvent": "Animesh",
