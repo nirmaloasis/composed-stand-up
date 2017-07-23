@@ -1,9 +1,9 @@
 {
    "date": "Wed Jul 19 2017",
    "newFaces": [
-      "None"
+      "sdvdsv"
    ],
-   "lastModifiedNewFaces": "Sun Jul 16 2017",
+   "lastModifiedNewFaces": "Sun Jul 23 2017",
    "lastModifiedInterestings": "Sat Jul 22 2017",
    "helps": [
       {
@@ -50,7 +50,8 @@
          "mentioningEvent": "Animesh",
          "eventText": "NPTEL certification  courses ",
          "date": "Mon Jul 24 2017",
-         "eventDetails": ""
+         "eventDetails": "",
+         "refinedDate": "Tomorrow"
       }
    ],
    "currentFacilitator": "Rohit Kumar",

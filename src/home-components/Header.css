@@ -1,0 +1,151 @@
+#headerWrapper{
+    width: 100%;
+    margin: 0;
+    background-color: #254b6e;
+    box-sizing: border-box;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#header92{
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+#compozedLogo{
+    font-family: fantasy;
+    color: white;
+    font-size: xx-large;
+}
+
+#adminSpan{
+    display: flex;
+    align-items: center;
+    float: right;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid white;
+    padding: 2px 5px 2px 5px;
+    border-radius: 4px;
+}
+
+#adminLink{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+#adminLogo{
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+}
+
+#menuDiv{
+    text-align: center;
+    font-size: 15px;
+    padding-left: 30px;
+}
+
+#headerRight{
+    float: right;
+    padding-top: 3px;
+}
+
+#headerRightAlign{
+    display: flex;
+    align-items: center;
+}
+
+#todaysFacilitator{
+    font-size: 20px;
+    color: white;
+}
+
+#rightBar{
+    float: right;
+    padding: 12px 25px 12px 0px;
+    margin-right: 25px;
+    border-right: 1px solid white;
+}
+
+
+
+.HeaderMenuItems{
+    margin: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 3px 10px 4px 10px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid white;
+}
+
+#newDateWrap{
+    width: 100%;
+    font-size: 20px;
+    background: white;
+    box-shadow: 0 2px 10px #ccc;
+    border-bottom: .062rem solid #cccccc;
+}
+
+#todaysStatus{
+    text-align: center;
+    padding: 30px;
+    background: white;
+}
+
+#contentSection{
+    min-height: 1200px;
+}
+
+#todayDate{
+    float: right;
+    color: #254b6e;
+}
+
+#div92per{
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: #254b6e;
+}
+
+#facilitator{
+    color: #444444;
+}
+
+#notPresent{
+    text-decoration: underline;
+    font-size: 13px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.hideMenu{
+    display: none;
+}
+
+#newFaces{
+    width: 20%;
+    height: 320px;
+    border-radius: 5px 5px 0px 0px;
+    background: white;
+    box-shadow: 0 0 1.2px #686868;
+}
+
+.newFaceHead{
+    padding-right: 10px;
+}

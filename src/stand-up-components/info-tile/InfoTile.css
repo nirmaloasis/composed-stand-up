@@ -1,12 +1,13 @@
 .InfoTilesWrapper{
     background: white;
-    margin: 20px;
-    box-shadow: 0 1px 3px #888;
+    box-shadow: 0 1px 10px 0 rgba(0,0,0,0.19), 0 5px 10px 0 rgba(0,0,0,0.24);
     overflow: auto;
     border-radius: 5px;
+    font-size: 17px;
+    margin-bottom: 10px;
 }
 
-.EditCloseIcon{
+.CloseIconDiv{
     display: flow-root;
     padding-bottom: 3px;
 }
@@ -14,12 +15,12 @@
 .TileContent{
     display: flex;
     align-items: center;
-    padding: 2px 10px;
+    padding: 5px;
 }
 
 .Icons{
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
 }   
 
 .ModalIcons{
@@ -87,4 +88,68 @@
 .EventPaddingModal{
     padding-top: 20px;
     padding-bottom: 10px;
+}
+
+.ExtraDetails{
+    margin: 5px;
+    color: #254b6e;
+}
+
+.BottomRight{
+    float: right;
+}
+
+.ItemSummary{
+    color: #686868;
+    padding-left: 5px;
+}
+
+.TalkingPerson{
+    padding-right: 5px;
+    color: #254b6e; 
+}
+
+.AddDetails{
+    float: left;
+    color: saddlebrown;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+}
+
+.AddDetails:hover{
+    background: beige;
+}
+
+.RotationRight{
+    transform: rotate(270deg);
+    transition: .5s ease;
+}
+
+.RotationDown{
+    transform: rotate(360deg);
+    transition: .5s ease;  
+}
+
+.Details{
+    display: none;
+    position: absolute;
+    height: 200px;
+    background: white;
+    width: 27%;
+    border: 1px solid #ccc;
+    z-index: 5;
+    border-radius: 10px;
+    overflow: auto;
+    color: #686868;
+    padding: 10px;
+}
+
+.DetailContent{
+    margin-top: 10px;
+    font-size: 16px;    
+}
+
+.DetailHeading{
+    color: #254b6e;
 }

@@ -3,13 +3,7 @@ import axios from 'axios'
 import './stand-up.css'
 import  Header from '../home-components/Header.js'
 import NewFaces from "../home-components/NewFaces.js"
-import ContentHelps from './ContentHelps'
-import ContentInterestings from './ContentInterestings'
-import ContentEvents from './ContentEvents'
-import ModalHelps from './ModalHelps'
-import ModalInterestings from './ModalInterestings'
-import ModalEvents from './ModalEvents'
-import InfoTile from './info-tile/InfoTile'
+import EachItem from './each-item/EachItem.js'
 
 export default class StandUpHome extends Component {
     constructor(props){
@@ -71,15 +65,12 @@ export default class StandUpHome extends Component {
                         <NewFaces standUpData={this.props.standUpData} loadLatestData={this.props.loadLatestData}/>
                     </div>
                 </div>
-                <div id="standUpcontentWrapper"> 
-                    <span id="leftContainer"><ContentHelps heading="Helps" standUpData = {this.props.standUpData}  loadThenUpdate={this.props.loadThenUpdate}/></span>
-                    <span id="middleontainer"><ContentInterestings heading="Interestings" standUpData = {this.props.standUpData} loadThenUpdate={this.props.loadThenUpdate}/></span>
-                    <span id="rightContainer"><ContentEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/></span>
+                <div className="ThreeItemsWrap">
+                    <div className="LeftItem Width32 MarginLeft"><EachItem heading="Helps"/></div>
+                    <div className="MiddleItem Width32 MarginLeft"><EachItem heading="Interestings"/></div>
+                    <div className="RightItem Width32"><EachItem heading="Events"/></div>
                 </div>
-                <ModalHelps heading="Helps" standUpData = {this.props.standUpData}  loadThenUpdate={this.props.loadThenUpdate}/>
-                <ModalInterestings heading="Interestings" standUpData = {this.props.standUpData} loadThenUpdate={this.props.loadThenUpdate}/>
-                <ModalEvents heading="Events" standUpData = {this.props.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/>
-                <div id="clapWrap">
+                {/*<div id="clapWrap">
                     <span className="ClapBtn" id={disable ? "disabledCursor" : "" } title={ disable ? "Todays Stand-up is done" : ""} onClick={this.letUsClap}>
                         <span  id={disable ? "disableClap" : "clap" }>let's clap</span>
                     </span>
@@ -93,7 +84,7 @@ export default class StandUpHome extends Component {
                 </div>
                 <div id="nextFacilitatorGen" className="ModalWrap ModalContent ModalFacilitator">
                     <div>{"Next Facilitator : " + this.props.standUpData.currentFacilitator} </div>
-                </div>
+                </div>*/}
             </div>
         );
     }

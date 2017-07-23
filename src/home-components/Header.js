@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
+import './Header.css'
 
 export default class Header extends React.Component {
     constructor(props){
