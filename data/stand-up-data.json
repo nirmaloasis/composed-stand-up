@@ -1,5 +1,5 @@
 {
-   "date": "Fri Jul 21 2017",
+   "date": "Mon Jul 24 2017",
    "newFaces": [
       "None"
    ],
@@ -12,30 +12,15 @@
          "date": "Tue Jul 18 2017",
          "helpedBy": "all",
          "helpDetails": "If something is not added during the stand-up , please take the responsibility to add those things , may be just after the stand-up."
-      },
-      {
-         "askingHelp": "Raja",
-         "helpText": "DR - If there are 4 instances, for CompoZed all 4 will be active, but for DR RO1, Ro2 will be switched off temporarily",
-         "date": "Thu Jul 20 2017",
-         "helpedBy": "None",
-         "helpDetails": ""
-      },
-      {
-         "askingHelp": "Senthil",
-         "helpText": "Volunteer for CF Lab Reach out to him",
-         "date": "Thu Jul 20 2017",
-         "helpedBy": "None",
-         "helpDetails": ""
-      },
-      {
-         "askingHelp": "saurabh",
-         "helpText": "google analytics",
-         "date": "Fri Jul 21 2017",
-         "helpedBy": "Shashank",
-         "helpDetails": ""
       }
    ],
-   "interestings": [],
+   "interestings": [
+      {
+         "tellingInteresting": "Saurabh Singh",
+         "interestingText": "Enterprise software firm Deskera to expand India operations - 125 crore of investment including  set up data center in Andhra",
+         "interestingDetail": ""
+      }
+   ],
    "events": [
       {
          "mentioningEvent": "Senthil",
@@ -95,7 +80,7 @@
          "refinedDate": "Today"
       }
    ],
-   "currentFacilitator": "Vinit Rohela",
+   "currentFacilitator": "Shree Lakshmi",
    "notDoneList": [
       "Abdul Ahad",
       "Animesh Parial",
@@ -123,7 +108,6 @@
       "Rakesh Dutta",
       "Ramandeep Kaur",
       "Senthil Basuva Raj",
-      "Shree Lakshmi",
       "Shreyansh Kant",
       "Srinivas Readdy",
       "Sumit Kumar",
@@ -139,6 +123,7 @@
       "Geeta Hubli",
       "Rakesh Shastry",
       "Rohit Kumar",
-      "Shashank Goyal"
+      "Shashank Goyal",
+      "Vinit Rohela"
    ]
 }

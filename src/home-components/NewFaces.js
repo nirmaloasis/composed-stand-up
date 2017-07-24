@@ -36,7 +36,7 @@ export default class NewFaces extends React.Component {
             minutes: minutes,
             seconds: seconds
         },()=>{
-            if(hours=="14"&&minutes=="00"&&seconds=="00"){
+            if(hours=="13"&&minutes=="59"&&seconds=="30"){
                 var audio = new Audio('audio/alarm.mp3');
                 audio.play();
             }
