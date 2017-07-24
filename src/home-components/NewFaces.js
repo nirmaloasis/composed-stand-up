@@ -8,14 +8,44 @@ export default class NewFaces extends React.Component {
         this.state = {listOfNewFaces : this.props.standUpData.newFaces}
         this.addNewFaces = this.addNewFaces.bind(this)
         this.enterKeyAddNewFaces = this.enterKeyAddNewFaces.bind(this)
+        this.setTime = this.setTime.bind(this)
+        this.checkTime = this.checkTime.bind(this)
+    }
+
+    componentWillMount(){
+        this.setTime();
     }
 
     componentDidMount(){
+        window.setInterval(function () {
+        this.setTime();
+        }.bind(this), 1000);
         this.socket = io('/')
         this.socket.on('add-newFaces',(standUpData)=>{
-            debugger
             this.setState({listOfNewFaces : standUpData.newFaces})
         })
+    }
+
+    setTime(){
+        var currentdate = new Date();
+        var hours = this.checkTime(currentdate.getHours())   
+        var minutes = this.checkTime(currentdate.getMinutes())
+        var seconds = this.checkTime(currentdate.getSeconds())
+        this.setState({
+            hours: hours,
+            minutes: minutes,
+            seconds: seconds
+        },()=>{
+            if(hours=="14"&&minutes=="00"&&seconds=="00"){
+                var audio = new Audio('audio/alarm.mp3');
+                audio.play();
+            }
+        });
+    }  
+
+    checkTime(time){
+        time = time < 10 ? '0' + time : time
+        return time
     }
 
     enterKeyAddNewFaces(event){
@@ -53,7 +83,7 @@ export default class NewFaces extends React.Component {
                     <input id="inputAddFace" type="text" name="newFace" required placeholder="Add new Faces" ref={(input) => { this.textInput = input}} onKeyUp={this.enterKeyAddNewFaces}/> 
                     <span id="addFace" onClick={this.addNewFaces}>+</span> 
                 </span>
-                <span id="todayDate">{new Date().toDateString()}</span>
+                <span id="todayDate">{this.state.hours}:{this.state.minutes}:{this.state.seconds} {" "+new Date().toDateString()}</span>
             </div>
         );
     }

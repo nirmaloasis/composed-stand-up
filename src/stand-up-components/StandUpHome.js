@@ -38,7 +38,7 @@ export default class StandUpHome extends Component {
         })
     }
 
-    letUsClap(event){
+    letUsClap(){
         var today = new Date().toDateString()
         var standUpData = this.state.standUpData
         if(standUpData.date != today){
@@ -72,11 +72,11 @@ export default class StandUpHome extends Component {
                 <div id="standUpcontentWrapper"> 
                     <span id="leftContainer"><ContentHelps heading="Helps" standUpData = {this.state.standUpData}  loadThenUpdate={this.props.loadThenUpdate}/></span>
                     <span id="middleontainer"><ContentInterestings heading="Interestings" standUpData = {this.state.standUpData} loadThenUpdate={this.props.loadThenUpdate}/></span>
-                    <span id="rightContainer"><ContentEvents heading="Events" standUpData = {this.state.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/></span>
+                    <span id="rightContainer"><ContentEvents heading="Events"  standUpData = {this.state.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/></span>
                 </div>
                 <ModalHelps heading="Helps" standUpData = {this.state.standUpData}  loadThenUpdate={this.props.loadThenUpdate}/>
                 <ModalInterestings heading="Interestings" standUpData = {this.state.standUpData} loadThenUpdate={this.props.loadThenUpdate}/>
-                <ModalEvents heading="Events" standUpData = {this.state.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/>
+                <ModalEvents heading="Events" letUsClap = {this.letUsClap} standUpData = {this.state.standUpData} refineEventList={this.props.refineEventList} loadThenUpdate={this.props.loadThenUpdate}/>
                 <div id="clapWrap">
                     <span className="ClapBtn" id={disable ? "disabledCursor" : "" } title={ disable ? "Todays Stand-up is done" : ""} onClick={this.letUsClap}>
                         <span  id={disable ? "disableClap" : "clap" }>let's clap</span>

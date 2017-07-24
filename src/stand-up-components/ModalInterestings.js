@@ -17,6 +17,7 @@ export default class ModalInterestings extends React.Component {
         this.returnToHomeTile = this.returnToHomeTile.bind(this)
         this.addEditedInteresting = this.addEditedInteresting.bind(this)
         this.addHelpDetails = this.addHelpDetails.bind(this)
+        this.zoomInEvents = this.zoomInEvents.bind(this)
     }
 
     componentDidMount(){
@@ -115,6 +116,11 @@ export default class ModalInterestings extends React.Component {
         }
     }
 
+    zoomInEvents(event){
+        document.getElementById('zoomInterestings').style.display = "none"
+        document.getElementById('zoomEvents').style.display = "block"       
+    }
+
   render() {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","KK","Sameer","Lavanya","Meenu","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
     var interestings = this.state.interestings
@@ -123,7 +129,8 @@ export default class ModalInterestings extends React.Component {
         <div className="modal-dialog">
             <div id="modalHelpHeading">
                 {this.props.heading}
-                <div id="closeModal" onClick={this.closeModal}>&times;</div>
+                {/*<div id="closeModal" onClick={this.closeModal}>&times;</div>*/}
+                <span className="MoveToNext" onClick={this.zoomInEvents}>Move to Events</span>
             </div>
             <div className="modal-body">
                 <div className="">  

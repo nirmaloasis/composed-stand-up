@@ -17,6 +17,7 @@ export default class ModalEvents extends React.Component {
         this.pickDateExtra = this.pickDateExtra.bind(this)
         this.addEventExtra = this.addEventExtra.bind(this)
         this.enterKeyAddEvent = this.enterKeyAddEvent.bind(this)
+        this.clapReplica = this.clapReplica.bind(this)
     }
 
     componentDidMount(){
@@ -217,6 +218,11 @@ export default class ModalEvents extends React.Component {
             document.getElementById('zoomEvents').style.display = "none"
     }
 
+    clapReplica(){
+        document.getElementById('zoomEvents').style.display = "none"
+        this.props.letUsClap()
+    }
+
   render() {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","KK","Sameer","Lavanya","Meenu","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
     var events = this.state.events
@@ -225,7 +231,8 @@ export default class ModalEvents extends React.Component {
             <div className="modal-dialog">
                 <div id="modalHelpHeading">
                     {this.props.heading}
-                    <div id="closeModal" onClick={this.closeModal}>&times;</div>
+                    {/*<div id="closeModal" onClick={this.closeModal}>&times;</div>*/}
+                    <span className="MoveToNext" onClick={this.clapReplica}>Let's Clap</span>
                 </div>
                 <div className="modal-body">
             { events.map((val,i)=>{

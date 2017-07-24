@@ -1,44 +1,37 @@
 {
-   "date": "Mon Jul 24 2017",
+   "date": "Fri Jul 21 2017",
    "newFaces": [
       "None"
    ],
    "lastModifiedNewFaces": "Sun Jul 16 2017",
-   "lastModifiedInterestings": "Tue Jul 18 2017",
+   "lastModifiedInterestings": "Mon Jul 24 2017",
    "helps": [
-      {
-         "askingHelp": "Anish",
-         "helpText": "Pay 200 Rs + fine  for birthday celebration",
-         "date": "Mon Jul 17 2017",
-         "helpedBy": "All",
-         "helpDetails": "hjbjb"
-      },
-      {
-         "askingHelp": "All",
-         "helpText": "Lab Movement",
-         "date": "Mon Jul 17 2017",
-         "helpedBy": "abdul",
-         "helpDetails": ""
-      },
-      {
-         "askingHelp": "Abhishek",
-         "helpText": " Screen - Saver is not working",
-         "date": "Mon Jul 17 2017",
-         "helpedBy": "None",
-         "helpDetails": ""
-      },
-      {
-         "askingHelp": "Senthil",
-         "helpText": "Kibana log clear -off after 10 days",
-         "date": "Mon Jul 17 2017",
-         "helpedBy": "None",
-         "helpDetails": ""
-      },
       {
          "askingHelp": "Pankaj",
          "helpText": "Add your helps,interestings or events before the stand-up starts",
          "date": "Tue Jul 18 2017",
          "helpedBy": "all",
+         "helpDetails": "If something is not added during the stand-up , please take the responsibility to add those things , may be just after the stand-up."
+      },
+      {
+         "askingHelp": "Raja",
+         "helpText": "DR - If there are 4 instances, for CompoZed all 4 will be active, but for DR RO1, Ro2 will be switched off temporarily",
+         "date": "Thu Jul 20 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
+      },
+      {
+         "askingHelp": "Senthil",
+         "helpText": "Volunteer for CF Lab Reach out to him",
+         "date": "Thu Jul 20 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
+      },
+      {
+         "askingHelp": "saurabh",
+         "helpText": "google analytics",
+         "date": "Fri Jul 21 2017",
+         "helpedBy": "Shashank",
          "helpDetails": ""
       }
    ],
@@ -46,9 +39,9 @@
    "events": [
       {
          "mentioningEvent": "Senthil",
-         "eventText": "Learning Day for Entire ASPL",
+         "eventText": "Learning Day for Entire ASPL FG ",
          "date": "Fri Jul 28 2017",
-         "eventDetails": "editing"
+         "eventDetails": "Will do Dry Run today on friday. "
       },
       {
          "mentioningEvent": "Meenu",
@@ -67,10 +60,42 @@
          "mentioningEvent": "Naveen",
          "eventText": "ISAM Changes ",
          "date": "Wed Jul 26 2017",
+         "eventDetails": "Call recorder team has implemented in local. Reach out for help"
+      },
+      {
+         "mentioningEvent": "Chandra",
+         "eventText": "High5 demo day ",
+         "date": "Wed Jul 26 2017",
          "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Animesh",
+         "eventText": "NPTEL certification  courses ",
+         "date": "Mon Jul 24 2017",
+         "eventDetails": "",
+         "refinedDate": "Today"
+      },
+      {
+         "mentioningEvent": "Geeta",
+         "eventText": "Potluck",
+         "date": "Mon Jul 31 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Harshal",
+         "eventText": "Machine Learning Meetup (Pune)",
+         "date": "Tue Aug 15 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Abdul",
+         "eventText": "Q2 check-in",
+         "date": "Mon Jul 24 2017",
+         "eventDetails": "",
+         "refinedDate": "Today"
       }
    ],
-   "currentFacilitator": "Praveen Kumar K",
+   "currentFacilitator": "Vinit Rohela",
    "notDoneList": [
       "Abdul Ahad",
       "Animesh Parial",
@@ -81,27 +106,29 @@
       "Dikshita Khandke",
       "Dinesh kumar Suvendrian",
       "Divya Chandrasekaran",
-      "Geeta Hubli",
       "Harish Onkarappa",
       "Hemasundara Naidu",
       "Himanshu Kumar",
       "Jimit Mehta",
+      "John Paul",
       "Jotsna M Babu",
+      "Krishn Kant Nayak",
       "Kumar Sameer Ranjan",
       "Lavanya Gowlla",
       "Meenu Sharma",
       "Naveen Telker",
+      "Nirmal PS",
+      "Praveen Kumar K",
       "Raja Madhu",
       "Rakesh Dutta",
-      "Rakesh Shastry",
       "Ramandeep Kaur",
-      "Rohit Kumar",
       "Senthil Basuva Raj",
-      "Shashank Goyal",
       "Shree Lakshmi",
       "Shreyansh Kant",
       "Srinivas Readdy",
-      "Vinit Rohela",
+      "Sumit Kumar",
+      "Thirupathi M",
+      "Vinod Subramanian",
       "Vivek"
    ],
    "doneList": [
@@ -109,11 +136,9 @@
       "Bharat Rathad",
       "Swapnil Shah",
       "Abhishek Kumar",
-      "Thirupathi M",
-      "John Paul",
-      "Nirmal PS",
-      "Sumit Kumar",
-      "Vinod Subramanian",
-      "Krishn Kant Nayak"
+      "Geeta Hubli",
+      "Rakesh Shastry",
+      "Rohit Kumar",
+      "Shashank Goyal"
    ]
 }

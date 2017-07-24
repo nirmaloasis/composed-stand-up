@@ -185,6 +185,7 @@ export default class ContentHelps extends React.Component {
                                         </span>
                                     </div>
                                     <div id="helpedByPerson">
+                                        <span className="DetailsReAdd" onClick={(event)=>this.helpDetails(event,i)}>{val.helpDetails ? "View Details": "Add Details" }</span>
                                         { val.helpedBy == "None" ? 
                                             <span>
                                                 <input className="MemberList" id={"memberListHelp"+i} list="memberList" placeholder="Volunteer" onKeyUp={this.enterKeyAddHelper}/>

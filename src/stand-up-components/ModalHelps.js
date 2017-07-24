@@ -20,6 +20,7 @@ export default class ModalHelps extends React.Component {
         this.enterKeyAddHelper = this.enterKeyAddHelper.bind(this)
         this.enterKeyAddHelp = this.enterKeyAddHelp.bind(this)
         this.addHelp = this.addHelp.bind(this)
+        this.zoomInInterestings = this.zoomInInterestings.bind(this)
     }
 
     componentWillMount(){
@@ -75,16 +76,11 @@ export default class ModalHelps extends React.Component {
     }
 
     addHelpDetails(event,i,val){
-        if(document.getElementById("helpDescriptionModal").value == ""){
-            document.getElementById("helpDescriptionModal").focus()
-        }
-        else{
-            val.helpDetails = document.getElementById("helpDescriptionModal").value
-            var helpItems = this.state.helps
-            helpItems[i] = val
-            this.state.action = "normal"
-            this.socket.emit('add-content',{content : helpItems, contentType : "helps"})
-        }
+        val.helpDetails = document.getElementById("helpDescriptionModal").value
+        var helpItems = this.state.helps
+        helpItems[i] = val
+        this.state.action = "normal"
+        this.socket.emit('add-content',{content : helpItems, contentType : "helps"})
     }
 
     returnToHomeTile(event){
@@ -145,6 +141,11 @@ export default class ModalHelps extends React.Component {
             document.getElementById("addHelpModal").click()
     }
 
+    zoomInInterestings(event){
+        document.getElementById('zoomHelp').style.display = "none"
+        document.getElementById('zoomInterestings').style.display = "block"
+    }
+
   render() {
     var membersList = [ "None","Abdul","Abhishek","Animesh","Anish","Anusha","Ashish","Bharat","Chandra","Dikshita","Dinesh","Divya","Geeta","Harish","Hemu","Himanshu","Jimit","John","Jotsna","KK","Sameer","Lavanya","Meenu","Naveen","Nirmal","Pankaj","Praveen","Raja","Rakesh D","Rakesh S","Raman","Rohit","Senthil","Shashank","Srinivas","Shree","Shrey","Thiru","Vinod","Sumit","Swapnil","Vinit","Vivek"]
     var helpItems = this.state.helps
@@ -153,7 +154,8 @@ export default class ModalHelps extends React.Component {
         <div className="modal-dialog">
             <div id="modalHelpHeading">
                 {this.props.heading}
-                <div id="closeModal" onClick={this.closeModal}>&times;</div>
+                {/*<div id="closeModal" onClick={this.closeModal}>&times;</div>*/}
+                <span className="MoveToNext" onClick={this.zoomInInterestings}>Move to Interestings</span>
             </div>
             <div className="modal-body">
                 <div className="">  
@@ -197,6 +199,7 @@ export default class ModalHelps extends React.Component {
                                                 </span>
                                             </div>
                                             <div id="helpedByPerson">
+                                                <span className="DetailsReAdd" onClick={(event)=>this.helpDetails(event,i)}>{val.helpDetails ? "View Details": "Add Details" }</span>
                                                 { val.helpedBy == "None" ? 
                                                     <span>
                                                         <input className="MemberList ModalNameListSize MemberListModalFont" id={"helpedByModal"+i} list="memberList" placeholder="Volunteer" onKeyUp={this.enterKeyAddHelper}/>

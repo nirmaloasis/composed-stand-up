@@ -77,7 +77,7 @@
 }
 
 .ForOverFlow{
-    height: 450px;
+    height: 550px;
     overflow-y: auto;
 }
 
@@ -549,4 +549,22 @@ color: #254b6e;
 #detailsReadable a{
     color: #007AB8;
     font-size: 15px;
+}
+
+.DetailsReAdd{
+    padding-left: 5px;
+    float: left;
+    color: brown;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.MoveToNext {
+    float: right;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 10px;
 }
