@@ -1,12 +1,14 @@
 {
-  "name": "node-react-configuration",
-  "version": "0.0.0",
+  "name": "compozed-stand-up",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "webpack": "webpack --history-api-fallback",
     "mocha": "mocha",
     "test": "npm run mocha ./test/*test.js -- --compilers js:babel-register,css:css-dnt-compiler.js"
+  },
+  "engines": {
+    "node" : "v7.8.0"
   },
   "dependencies": {
     "axios": "^0.15.3",
