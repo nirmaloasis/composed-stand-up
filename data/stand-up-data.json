@@ -4,7 +4,7 @@
       "None"
    ],
    "lastModifiedNewFaces": "Sun Jul 16 2017",
-   "lastModifiedInterestings": "Mon Jul 24 2017",
+   "lastModifiedInterestings": "Tue Jul 25 2017",
    "helps": [
       {
          "askingHelp": "Pankaj",
@@ -14,13 +14,7 @@
          "helpDetails": "If something is not added during the stand-up , please take the responsibility to add those things , may be just after the stand-up."
       }
    ],
-   "interestings": [
-      {
-         "tellingInteresting": "Saurabh Singh",
-         "interestingText": "Enterprise software firm Deskera to expand India operations - 125 crore of investment including  set up data center in Andhra",
-         "interestingDetail": ""
-      }
-   ],
+   "interestings": [],
    "events": [
       {
          "mentioningEvent": "Senthil",
@@ -33,7 +27,7 @@
          "eventText": "production freeze ",
          "date": "Tue Jul 25 2017",
          "eventDetails": "",
-         "refinedDate": "Tomorrow"
+         "refinedDate": "Today"
       },
       {
          "mentioningEvent": "jimit",
@@ -45,20 +39,15 @@
          "mentioningEvent": "Naveen",
          "eventText": "ISAM Changes ",
          "date": "Wed Jul 26 2017",
-         "eventDetails": "Call recorder team has implemented in local. Reach out for help"
+         "eventDetails": "Call recorder team has implemented in local. Reach out for help",
+         "refinedDate": "Tomorrow"
       },
       {
          "mentioningEvent": "Chandra",
          "eventText": "High5 demo day ",
          "date": "Wed Jul 26 2017",
-         "eventDetails": ""
-      },
-      {
-         "mentioningEvent": "Animesh",
-         "eventText": "NPTEL certification  courses ",
-         "date": "Mon Jul 24 2017",
          "eventDetails": "",
-         "refinedDate": "Today"
+         "refinedDate": "Tomorrow"
       },
       {
          "mentioningEvent": "Geeta",
@@ -71,13 +60,6 @@
          "eventText": "Machine Learning Meetup (Pune)",
          "date": "Tue Aug 15 2017",
          "eventDetails": ""
-      },
-      {
-         "mentioningEvent": "Abdul",
-         "eventText": "Q2 check-in",
-         "date": "Mon Jul 24 2017",
-         "eventDetails": "",
-         "refinedDate": "Today"
       }
    ],
    "currentFacilitator": "Shree Lakshmi",
