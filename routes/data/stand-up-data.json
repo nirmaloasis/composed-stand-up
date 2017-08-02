@@ -1,0 +1,84 @@
+{
+   "date": "Mon Jul 17 2017",
+   "newFaces": [
+      "None"
+   ],
+   "lastModifiedNewFaces": "Sun Jul 16 2017",
+   "lastModifiedInterestings": "Mon Jul 24 2017",
+   "helps": [
+      {
+         "askingHelp": "b j b",
+         "helpText": "bjkbhk",
+         "date": "Mon Jul 24 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
+      }
+   ],
+   "interestings": [
+      {
+         "tellingInteresting": "ergerg",
+         "interestingText": "rgerg",
+         "interestingDetail": ""
+      }
+   ],
+   "events": [
+      {
+         "mentioningEvent": "Senthil",
+         "eventText": "Learning Day for Entire ASPL",
+         "date": "Fri Jul 28 2017",
+         "eventDetails": "editing"
+      },
+      {
+         "mentioningEvent": "jimit",
+         "eventText": "table tennis tournament ",
+         "date": "Sat Jul 29 2017",
+         "eventDetails": "Nomination is ending this week."
+      }
+   ],
+   "currentFacilitator": "Jotsna M Babu",
+   "notDoneList": [
+      "Abdul Ahad",
+      "Animesh Parial",
+      "Anish Kumar",
+      "Anusha Pakalakunja",
+      "Ashish Verma",
+      "Chandramouli M S",
+      "Dikshita Khandke",
+      "Dinesh kumar Suvendrian",
+      "Divya Chandrasekaran",
+      "Geeta Hubli",
+      "Harish Onkarappa",
+      "Hemasundara Naidu",
+      "Himanshu Kumar",
+      "Jimit Mehta",
+      "John Paul",
+      "Krishn Kant Nayak",
+      "Kumar Sameer Ranjan",
+      "Lavanya Gowlla",
+      "Meenu Sharma",
+      "Naveen Telker",
+      "Nirmal PS",
+      "Praveen Kumar K",
+      "Raja Madhu",
+      "Rakesh Dutta",
+      "Rakesh Shastry",
+      "Ramandeep Kaur",
+      "Rohit Kumar",
+      "Senthil Basuva Raj",
+      "Shashank Goyal",
+      "Shree Lakshmi",
+      "Shreyansh Kant",
+      "Srinivas Readdy",
+      "Sumit Kumar",
+      "Thirupathi M",
+      "Vinit Rohela",
+      "Vinod Subramanian",
+      "Vivek"
+   ],
+   "doneList": [
+      "Pankaj Maurya",
+      "Bharat Rathad",
+      "Swapnil Shah",
+      "Abhishek Kumar"
+   ]
+}

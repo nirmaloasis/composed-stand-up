@@ -1,0 +1,94 @@
+.InfoTilesWrapper{
+    background: white;
+    margin: 20px;
+    box-shadow: 0 1px 3px #888;
+    overflow: auto;
+    border-radius: 5px;
+}
+
+.EditCloseIcon{
+    display: flow-root;
+    padding-bottom: 3px;
+}
+
+.TileContent{
+    display: flex;
+    align-items: center;
+    padding: 2px 10px;
+}
+
+.Icons{
+    width: 14px;
+    height: 14px;
+}   
+
+.ModalIcons{
+    width: 25px;
+    height: 25px;   
+}
+
+.IconsSpan,.CloseTileIcon{
+    float: right;
+    cursor: pointer;
+    position: relative;
+    padding: 0px 5px;
+}
+
+.IconsSpan:hover,.CloseTileIcon:hover{
+    background: #e0e0e0;
+}
+
+.CloseTileIcon{
+    color: brown;
+}
+
+.itemOptions{
+    display: none;
+}
+
+.ToolTipText{
+    display: none;
+    background-color: #254b6e;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    padding:5px;
+    position: absolute;
+    z-index: 1;
+    top: 120%;
+    right: 2%;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.ModalToolTipFont{
+    font-size: 22px;  
+    padding:5px 10px;
+}
+
+.CloseTileIcon:hover .ToolTipText,.IconsSpan:hover .ToolTipText{
+    display: block;
+}
+
+.ContentInteresting{
+    padding-bottom: 15px;   
+    padding-top: 5px;
+}
+
+.EventTilePaddingB{
+    padding-bottom: 5px;
+}
+
+.EventPadding{
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.EventPaddingModal{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.DetailsWritable{
+    display: none;
+}
