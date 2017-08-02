@@ -1,5 +1,5 @@
 {
-   "date": "Thu Aug 03 2017",
+   "date": "Wed Aug 02 2017",
    "newFaces": [
       "None"
    ],
@@ -21,7 +21,23 @@
          "helpDetails": ""
       }
    ],
-   "interestings": [],
+   "interestings": [
+      {
+         "tellingInteresting": "Shashank",
+         "interestingText": "paytm's messaging service",
+         "interestingDetail": ""
+      },
+      {
+         "tellingInteresting": "raja",
+         "interestingText": "Anna University is using python instead of C",
+         "interestingDetail": ""
+      },
+      {
+         "tellingInteresting": "All",
+         "interestingText": "jimit, chandra TT champions",
+         "interestingDetail": ""
+      }
+   ],
    "events": [
       {
          "mentioningEvent": "Harshal",
@@ -37,56 +53,69 @@
       },
       {
          "mentioningEvent": "Vinod",
+         "eventText": "Independence Day - Week long celebration Aug 7th thru 11th",
+         "date": "Wed Aug 02 2017",
+         "eventDetails": "",
+         "refinedDate": "Today"
+      },
+      {
+         "mentioningEvent": "Vinod",
          "eventText": "Oracle Code is a free event for developers - register now https://youtu.be/qHRNV4Y57wA",
          "date": "Thu Aug 10 2017",
          "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Vinod ",
+         "eventText": "Invitation: ASPL Town Hall with Sanjay Gupta - TODAY 03:15 – 04:15 PM",
+         "date": "Wed Aug 02 2017",
+         "eventDetails": "",
+         "refinedDate": "Today"
       }
    ],
-   "currentFacilitator": "Bharat Rathad",
+   "currentFacilitator": "Sumit Kumar",
    "notDoneList": [
       "Abdul Ahad",
-      "Abhishek Kumar",
       "Animesh Parial",
-      "Anish Kumar",
       "Anusha Pakalakunja",
       "Ashish Verma",
       "Chandramouli M S",
       "Dikshita Khandke",
       "Dinesh kumar Suvendrian",
       "Divya Chandrasekaran",
-      "Geeta Hubli",
       "Harish Onkarappa",
       "Hemasundara Naidu",
       "Himanshu Kumar",
       "Jimit Mehta",
       "John Paul",
       "Jotsna M Babu",
-      "Krishn Kant Nayak",
       "Kumar Sameer Ranjan",
       "Lavanya Gowlla",
       "Meenu Sharma",
       "Naveen Telker",
-      "Nirmal PS",
-      "Pankaj Maurya",
       "Praveen Kumar K",
-      "Raja Madhu",
       "Rakesh Dutta",
-      "Rakesh Shastry",
-      "Ramandeep Kaur",
-      "Rohit Kumar",
       "Senthil Basuva Raj",
-      "Shashank Goyal",
-      "Srinivas Reddy",
-      "Shree Lakshmi",
       "Shreyansh Kant",
+      "Srinivas Readdy",
       "Thirupathi M",
       "Vinod Subramanian",
-      "Sumit Kumar",
-      "Swapnil Shah",
-      "Vinit Rohela",
       "Vivek"
    ],
    "doneList": [
-      "Shashank Goyal"
+      "Pankaj Maurya",
+      "Bharat Rathad",
+      "Swapnil Shah",
+      "Abhishek Kumar",
+      "Geeta Hubli",
+      "Rakesh Shastry",
+      "Rohit Kumar",
+      "Shashank Goyal",
+      "Vinit Rohela",
+      "Shree Lakshmi",
+      "Raja Madhu",
+      "Krishn Kant Nayak",
+      "Anish Kumar",
+      "Ramandeep Kaur",
+      "Nirmal PS"
    ]
 }

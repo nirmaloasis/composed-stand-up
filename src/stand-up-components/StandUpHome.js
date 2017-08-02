@@ -21,20 +21,31 @@ export default class StandUpHome extends Component {
     }
 
     componentDidMount(){
+        var synth = window.speechSynthesis;
         this.socket = io('/')
         this.socket.on('letsClap',(rawData)=>{
             document.getElementById('modalWrap').style.display = "block"
             var clapCount = rawData.clapCount
+            var speechText = "On Count Of , " + clapCount
+            var utterThis = new SpeechSynthesisUtterance(speechText);
+            utterThis.pitch = .9;
+            utterThis.rate = .9;
+            utterThis.voice = synth.getVoices[50]
+            synth.speak(utterThis);
             document.getElementById('count').innerText = clapCount
-            this.counterFunction(clapCount,1,()=>{
-                this.setState({standUpData:rawData.data},()=>{
-                    document.getElementById('modalWrap').style.display = "none"
-                    document.getElementById('nextFacilitatorGen').style.display = "block"
+            setTimeout(()=>{
+                this.counterFunction(clapCount,1,()=>{
                     setTimeout(()=>{
-                        document.getElementById('nextFacilitatorGen').style.display = "none"
-                    },3000)
+                        this.setState({standUpData:rawData.data},()=>{
+                            document.getElementById('modalWrap').style.display = "none"
+                            document.getElementById('nextFacilitatorGen').style.display = "block"
+                            setTimeout(()=>{
+                                document.getElementById('nextFacilitatorGen').style.display = "none"
+                            },3000)
+                        })
+                    },1500)
                 })
-            })
+            },800)
         })
     }
 
@@ -49,11 +60,18 @@ export default class StandUpHome extends Component {
     }
 
     counterFunction(clapCount,i,cb){
-        if(clapCount < 0)
+        var synth = window.speechSynthesis;
+        var utterThis = new SpeechSynthesisUtterance(i);
+        utterThis.pitch = .9;
+        utterThis.rate = .9;
+        utterThis.voice = synth.getVoices[50]
+        if(i>clapCount)
             return cb() 
         return setTimeout(()=>{
+            debugger
+           synth.speak(utterThis);
            document.getElementById('modalContent').innerText = i
-           this.counterFunction(clapCount-1,i+1,cb)
+           this.counterFunction(clapCount,i+1,cb)
         },1000)
     }
 
