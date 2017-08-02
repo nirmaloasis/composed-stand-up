@@ -28,9 +28,8 @@ export default class StandUpHome extends Component {
             var clapCount = rawData.clapCount
             var speechText = "On Count Of , " + clapCount
             var utterThis = new SpeechSynthesisUtterance(speechText);
-            utterThis.pitch = .9;
-            utterThis.rate = .9;
-            utterThis.voice = synth.getVoices[50]
+            utterThis.voice = synth.getVoices()[50]
+            utterThis.rate = 1;
             synth.speak(utterThis);
             document.getElementById('count').innerText = clapCount
             setTimeout(()=>{
@@ -43,9 +42,9 @@ export default class StandUpHome extends Component {
                                 document.getElementById('nextFacilitatorGen').style.display = "none"
                             },3000)
                         })
-                    },1500)
+                    },2000)
                 })
-            },800)
+            },1800)
         })
     }
 
@@ -62,13 +61,11 @@ export default class StandUpHome extends Component {
     counterFunction(clapCount,i,cb){
         var synth = window.speechSynthesis;
         var utterThis = new SpeechSynthesisUtterance(i);
-        utterThis.pitch = .9;
-        utterThis.rate = .9;
-        utterThis.voice = synth.getVoices[50]
+        utterThis.rate = 1.5;
+        utterThis.voice = synth.getVoices()[50]
         if(i>clapCount)
             return cb() 
         return setTimeout(()=>{
-            debugger
            synth.speak(utterThis);
            document.getElementById('modalContent').innerText = i
            this.counterFunction(clapCount,i+1,cb)
