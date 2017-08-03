@@ -25,7 +25,7 @@ export default class StandUpHome extends Component {
         this.socket = io('/')
         this.socket.on('letsClap',(rawData)=>{
             document.getElementById('modalWrap').style.display = "block"
-            var clapCount = rawData.clapCount
+            var clapCount = 3 //rawData.clapCount
             var speechText = "On Count Of , " + clapCount
             var utterThis = new SpeechSynthesisUtterance(speechText);
             utterThis.voice = synth.getVoices()[50]
@@ -61,15 +61,15 @@ export default class StandUpHome extends Component {
     counterFunction(clapCount,i,cb){
         var synth = window.speechSynthesis;
         var utterThis = new SpeechSynthesisUtterance(i);
-        utterThis.rate = 1.5;
+        utterThis.rate = 1;
         utterThis.voice = synth.getVoices()[50]
         if(i>clapCount)
             return cb() 
+        synth.speak(utterThis);
         return setTimeout(()=>{
-           synth.speak(utterThis);
-           document.getElementById('modalContent').innerText = i
+        //    document.getElementById('modalContent').innerText = i
            this.counterFunction(clapCount,i+1,cb)
-        },1000)
+        },700)
     }
 
     render(){
