@@ -1,0 +1,123 @@
+{
+   "date": "Thu Aug 10 2017",
+   "newFaces": [
+      "None"
+   ],
+   "lastModifiedNewFaces": "Sun Jul 16 2017",
+   "lastModifiedInterestings": "Thu Aug 10 2017",
+   "helps": [
+      {
+         "askingHelp": "All",
+         "helpText": "Mac machines need to be validated",
+         "date": "Wed Aug 09 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
+      },
+      {
+         "askingHelp": "Abhishek",
+         "helpText": "using isam route file is not dowloaded",
+         "date": "Thu Aug 10 2017",
+         "helpedBy": "Meenu",
+         "helpDetails": ""
+      },
+      {
+         "askingHelp": "Dev",
+         "helpText": "SSO login ",
+         "date": "Thu Aug 10 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
+      }
+   ],
+   "interestings": [
+      {
+         "tellingInteresting": "Rohit",
+         "interestingText": "what's app UPI payment",
+         "interestingDetail": ""
+      }
+   ],
+   "events": [
+      {
+         "mentioningEvent": "Vinod",
+         "eventText": "Oracle Code is a free event for developers - register now https://youtu.be/qHRNV4Y57wA",
+         "date": "Thu Aug 10 2017",
+         "eventDetails": "interested people , please share the list to abdul.",
+         "refinedDate": "Today"
+      },
+      {
+         "mentioningEvent": "Harshal",
+         "eventText": "Machine Learning Meetup (Pune)",
+         "date": "Sun Aug 13 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Vinod",
+         "eventText": "COMPOZED JENKINS MIGRATING TO ENTERPRISE JENKINS BY AUGUST 15TH https://docs.compozed.allstate.com/pages/deploying_apps/jenkins_ci/jenkins-migration.html#deploying_apps",
+         "date": "Tue Aug 15 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Abdul",
+         "eventText": "A session from ramesh ",
+         "date": "Wed Aug 16 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "jimit",
+         "eventText": " ASPL badminton tournament",
+         "date": "Sat Sep 02 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Abdul",
+         "eventText": "pizza - party , all want a confirm date",
+         "date": "",
+         "eventDetails": ""
+      }
+   ],
+   "currentFacilitator": "Rakesh Dutta",
+   "notDoneList": [
+      "Animesh Parial",
+      "Anusha Pakalakunja",
+      "Ashish Verma",
+      "Chandramouli M S",
+      "Dikshita Khandke",
+      "Dinesh kumar Suvendrian",
+      "Divya Chandrasekaran",
+      "Harish Onkarappa",
+      "Hemasundara Naidu",
+      "Himanshu Kumar",
+      "Jimit Mehta",
+      "John Paul",
+      "Jotsna M Babu",
+      "Kumar Sameer Ranjan",
+      "Lavanya Gowlla",
+      "Naveen Telker",
+      "Praveen Kumar K",
+      "Shreyansh Kant",
+      "Srinivas Readdy",
+      "Thirupathi M",
+      "Vinod Subramanian"
+   ],
+   "doneList": [
+      "Pankaj Maurya",
+      "Bharat Rathad",
+      "Swapnil Shah",
+      "Abhishek Kumar",
+      "Geeta Hubli",
+      "Rakesh Shastry",
+      "Rohit Kumar",
+      "Shashank Goyal",
+      "Vinit Rohela",
+      "Shree Lakshmi",
+      "Raja Madhu",
+      "Krishn Kant Nayak",
+      "Anish Kumar",
+      "Ramandeep Kaur",
+      "Nirmal PS",
+      "Sumit Kumar",
+      "Senthil Basuva Raj",
+      "Abdul Ahad",
+      "Vivek",
+      "Meenu Sharma"
+   ]
+}

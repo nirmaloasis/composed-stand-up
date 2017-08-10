@@ -1,0 +1,368 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: rgb(248,248,248);
+    min-width: 1440px;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+#headerWrapper{
+    width: 100%;
+    margin: 0;
+    background-color: #254b6e;
+    box-sizing: border-box;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#header92{
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+#compozedLogo{
+   -webkit-font-smoothing: auto;
+   display: inline-flex;
+   align-items: center;
+   font-family: fantasy;
+   color: white;
+   font-size: xx-large;
+}
+
+#compozed-icon{
+   width: 50px;
+   height: 50px;
+   margin-right: 10px;
+   border-radius: 50%;
+}
+
+#adminSpan{
+    display: flex;
+    align-items: center;
+    float: right;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid white;
+    padding: 2px 5px 2px 5px;
+    border-radius: 4px;
+}
+
+#adminLink{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+#adminLogo{
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+}
+
+#menuDiv{
+    text-align: center;
+    font-size: 15px;
+    padding-left: 30px;
+}
+
+#headerRight{
+    float: right;
+    padding-top: 3px;
+}
+
+#headerRightAlign{
+    display: flex;
+    align-items: center;
+}
+
+#todaysFacilitator{
+    font-size: 20px;
+    color: white;
+}
+
+#rightBar{
+    float: right;
+    padding: 12px 25px 12px 0px;
+    margin-right: 25px;
+    border-right: 1px solid white;
+}
+
+
+
+.HeaderMenuItems{
+    margin: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 3px 10px 4px 10px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid white;
+}
+
+#newDateWrap{
+   width: 100%;
+   font-size: 20px;
+   background: white;
+   box-shadow: 1px 3px 3px #ccc;
+}
+
+#todaysStatus{
+    text-align: center;
+    padding: 30px;
+    background: white;
+}
+
+#contentSection{
+    min-height: 1200px;
+}
+
+#todayDate{
+    float: right;
+    color: #254b6e;
+}
+
+#div92per{
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: #254b6e;
+}
+
+#facilitator{
+    color: #444444;
+}
+
+#notPresent{
+    text-decoration: underline;
+    font-size: 13px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+
+.TextMedium{
+
+}
+
+/*#contentWrapper{
+    display: flex;
+    width: 92%;
+    min-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;   
+}*/
+
+#newFaces{
+    width: 20%;
+    height: 320px;
+    border-radius: 5px 5px 0px 0px;
+    background: white;
+    box-shadow: 0 0 1.2px #686868;
+}
+
+#prevHelp{
+    margin-left: 3%;
+    width: 38%;
+    min-height: 500px;
+    border-radius: 5px 5px 0px 0px;
+    background: white;
+    box-shadow: 0 0 1.2px #686868;
+}
+
+#upcommingEvents{
+    margin-left: 1%;
+    width: 38%;
+    min-height: 500px;
+    border-radius: 5px 5px 0px 0px;
+    background: white;
+    box-shadow: 0 0 1.2px #686868;
+}
+
+.contentStyle{
+    box-shadow: 0 0 1.2px #686868;
+    background: white;
+    float: left;
+}
+
+#fillColor{
+    padding: 10px;
+    background: #254b6e;
+    border-radius: 5px 5px 0px 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 1px;
+    word-spacing: 8px;
+    text-align: center;
+}
+
+#addMultipleItems{
+    padding: .5rem .75rem .75rem;
+    border: 1px solid #C5C5C5;
+    border-radius: .25rem;
+    cursor: text;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#noNewFace{
+
+}
+
+#addNewFaces{
+    border-bottom: 1.3px solid #ccc;
+    margin-left: 40px;
+    display: inline-flex;
+    width: 150px;
+    align-items: center;
+    height: 24px;
+    margin-right: 5px
+}
+
+#inputAddFace{
+    border: 0px;
+    outline: none;
+    padding-left: 5px;
+    font-size: 13px;
+    width: 120px;
+}
+
+#addFace{
+    color: white;
+    height: 25px;
+    text-align: center;
+    width: 30px;
+    border-left: 1.4px solid #254b6e;
+    font-size: 20px;
+    background: #254b6e;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.NewFaces{
+    letter-spacing: 1px;
+    text-align: left;
+    text-transform: capitalize;
+    color: #444444;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #262626;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
+  margin-left: 48%;
+  margin-top: 10%;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#loaderText{
+    text-align: center;
+    color: brown;
+    font-size: 20px;
+    margin: 30px;
+}
+
+#prevItemsWrap{
+    padding-top: 30px;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #6d6d6d;
+}
+
+#prevItemsDiv{
+    margin: 10px;
+}
+
+#prevItems{
+}
+
+#prevDate{
+    color: #254b6e;
+    font-family: fantasy;
+}
+
+#ui-datepicker-div{
+    box-shadow: 0 1px 3px #888;
+    font-size: 20px;
+}
+
+.ui-datepicker-header{
+    background: #254b6e;
+    padding: 5px;
+    color: white;
+}
+
+.ui-datepicker-prev{
+
+}
+
+.ui-datepicker-next{
+    float: right;
+}
+
+.ui-datepicker-title{
+    text-align: center;
+}
+
+.ui-datepicker-calendar{
+    background: white;
+}
+
+.ui-datepicker-calendar th{
+    padding: 5px;
+    color: #444444;
+}
+
+.ui-datepicker-calendar td{
+    padding: 5px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.ui-datepicker-calendar a{
+    color: #686868;
+}
+
+.hideMenu{
+    display: none;
+}
+
+.newFaceHead{
+    padding-right: 10px;
+}
+
+#errorMsg{
+    text-align: center;
+    color: red;
+    letter-spacing: 1px;
+}

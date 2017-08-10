@@ -1,0 +1,121 @@
+{
+   "date": "Wed Aug 02 2017",
+   "newFaces": [
+      "None"
+   ],
+   "lastModifiedNewFaces": "Sun Jul 16 2017",
+   "lastModifiedInterestings": "Wed Aug 02 2017",
+   "helps": [
+      {
+         "askingHelp": "Praveen",
+         "helpText": "Kronos accruals invalid data ",
+         "date": "Fri Jul 28 2017",
+         "helpedBy": "Abdul",
+         "helpDetails": ""
+      },
+      {
+         "askingHelp": "Pratod",
+         "helpText": "System Account as part of on-boarding is approved. Whats next? - Talk with Chandra",
+         "date": "Wed Aug 02 2017",
+         "helpedBy": "Chandra",
+         "helpDetails": ""
+      }
+   ],
+   "interestings": [
+      {
+         "tellingInteresting": "Shashank",
+         "interestingText": "paytm's messaging service",
+         "interestingDetail": ""
+      },
+      {
+         "tellingInteresting": "raja",
+         "interestingText": "Anna University is using python instead of C",
+         "interestingDetail": ""
+      },
+      {
+         "tellingInteresting": "All",
+         "interestingText": "jimit, chandra TT champions",
+         "interestingDetail": ""
+      }
+   ],
+   "events": [
+      {
+         "mentioningEvent": "Harshal",
+         "eventText": "Machine Learning Meetup (Pune)",
+         "date": "Sun Aug 13 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Abdul",
+         "eventText": "pizza - party , all want a confirm date",
+         "date": "",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Vinod",
+         "eventText": "Independence Day - Week long celebration Aug 7th thru 11th",
+         "date": "Wed Aug 02 2017",
+         "eventDetails": "",
+         "refinedDate": "Today"
+      },
+      {
+         "mentioningEvent": "Vinod",
+         "eventText": "Oracle Code is a free event for developers - register now https://youtu.be/qHRNV4Y57wA",
+         "date": "Thu Aug 10 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Vinod ",
+         "eventText": "Invitation: ASPL Town Hall with Sanjay Gupta - TODAY 03:15 – 04:15 PM",
+         "date": "Wed Aug 02 2017",
+         "eventDetails": "",
+         "refinedDate": "Today"
+      }
+   ],
+   "currentFacilitator": "Sumit Kumar",
+   "notDoneList": [
+      "Abdul Ahad",
+      "Animesh Parial",
+      "Anusha Pakalakunja",
+      "Ashish Verma",
+      "Chandramouli M S",
+      "Dikshita Khandke",
+      "Dinesh kumar Suvendrian",
+      "Divya Chandrasekaran",
+      "Harish Onkarappa",
+      "Hemasundara Naidu",
+      "Himanshu Kumar",
+      "Jimit Mehta",
+      "John Paul",
+      "Jotsna M Babu",
+      "Kumar Sameer Ranjan",
+      "Lavanya Gowlla",
+      "Meenu Sharma",
+      "Naveen Telker",
+      "Praveen Kumar K",
+      "Rakesh Dutta",
+      "Senthil Basuva Raj",
+      "Shreyansh Kant",
+      "Srinivas Readdy",
+      "Thirupathi M",
+      "Vinod Subramanian",
+      "Vivek"
+   ],
+   "doneList": [
+      "Pankaj Maurya",
+      "Bharat Rathad",
+      "Swapnil Shah",
+      "Abhishek Kumar",
+      "Geeta Hubli",
+      "Rakesh Shastry",
+      "Rohit Kumar",
+      "Shashank Goyal",
+      "Vinit Rohela",
+      "Shree Lakshmi",
+      "Raja Madhu",
+      "Krishn Kant Nayak",
+      "Anish Kumar",
+      "Ramandeep Kaur",
+      "Nirmal PS"
+   ]
+}
