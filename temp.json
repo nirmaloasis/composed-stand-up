@@ -1,0 +1,104 @@
+{
+   "date": "Mon Aug 21 2017",
+   "newFaces": [
+      "None"
+   ],
+   "lastModifiedNewFaces": "Mon Aug 14 2017",
+   "lastModifiedInterestings": "Mon Aug 21 2017",
+   "helps": [
+      {
+         "askingHelp": "Devendra",
+         "helpText": "active directory in node and react js",
+         "date": "Fri Aug 18 2017",
+         "helpedBy": "None",
+         "helpDetails": ""
+      }
+   ],
+   "interestings": [
+      {
+         "tellingInteresting": "Anish",
+         "interestingText": "UberEats at Bangalore   https://lbb.in/bangalore/ubereats-app/",
+         "interestingDetail": ""
+      }
+   ],
+   "events": [
+      {
+         "mentioningEvent": "jimit",
+         "eventText": " ASPL badminton tournament",
+         "date": "Sat Sep 02 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Geeta",
+         "eventText": "Potluck",
+         "date": "Wed Sep 06 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Abdul",
+         "eventText": "pizza - party , all want a confirm date",
+         "date": "",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Raja",
+         "eventText": "L&L topic- feature toggle",
+         "date": "Thu Aug 31 2017",
+         "eventDetails": ""
+      },
+      {
+         "mentioningEvent": "Abdul",
+         "eventText": "PM's offsite Event",
+         "date": "",
+         "eventDetails": ""
+      }
+   ],
+   "currentFacilitator": "Rakesh Dutta",
+   "notDoneList": [
+      "Anusha Pakalakunja",
+      "Ashish Verma",
+      "Chandramouli M S",
+      "Dikshita Khandke",
+      "Dinesh kumar Suvendrian",
+      "Harish Onkarappa",
+      "Hemasundara Naidu",
+      "John Paul",
+      "Jotsna M Babu",
+      "Kapil Taneja",
+      "Kumar Sameer Ranjan",
+      "Lavanya Gowlla",
+      "Mukesh Purohit",
+      "Naveen Telker",
+      "Praveen Kumar K",
+      "Shreyansh Kant",
+      "Thirupathi M"
+   ],
+   "doneList": [
+      "Pankaj Maurya",
+      "Bharat Rathad",
+      "Swapnil Shah",
+      "Abhishek Kumar",
+      "Geeta Hubli",
+      "Rakesh Shastry",
+      "Rohit Kumar",
+      "Shashank Goyal",
+      "Vinit Rohela",
+      "Shree Lakshmi",
+      "Raja Madhu",
+      "Krishn Kant Nayak",
+      "Anish Kumar",
+      "Ramandeep Kaur",
+      "Nirmal PS",
+      "Sumit Kumar",
+      "Senthil Basuva Raj",
+      "Abdul Ahad",
+      "Vivek",
+      "Meenu Sharma",
+      "Divya Chandrasekaran",
+      "Animesh Parial",
+      "Vinod Subramanian",
+      "Himanshu Kumar",
+      "Jimit Mehta",
+      "Srinivas Readdy"
+   ]
+}

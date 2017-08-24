@@ -1,0 +1,6 @@
+---
+applications:
+- name: compozed-standup
+  memory: 256M
+  buildpack: nodejs_buildpack_v1_5_17
+  host: compozed-standup
