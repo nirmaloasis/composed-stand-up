@@ -130,6 +130,32 @@ body {
     color: #254b6e;
 }
 
+.StandUpScheduled{
+    background: #254b6e;
+    float: right;
+    margin-right: 30px;
+    padding: 2px 15px;
+    color: white;
+}
+
+.StandUpScheduled input{
+    font-size: small;
+}
+
+#invalidTime{
+    color: darkorange;
+    margin-left: 5px;
+}
+
+.Cursor{
+    cursor: pointer;
+}
+
+.Cursor:hover{
+    background: blue;
+    padding: 2px;
+}
+
 #div92per{
     width: 96%;
     margin-left: auto;

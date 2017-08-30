@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs')
-var standUpFilePath = __dirname + '/data/stand-up-data.json'
+var standUpFilePath = process.cwd() + '/data/stand-up-data.json'
 
 var membersList = [ 
   "Abdul Ahad",
@@ -52,6 +52,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'compozed' });
 });
 
+router.post('/admin', function (req, res) {
+  var status = req.body.passkey == "123.com" ? true : false
+  res.send({status : status})
+})
+
 router.get('/sUpdata', function(req, res, next) {
   fs.readFile(standUpFilePath, 'utf8', function readFileCallback(err, data){
     if (err) {
@@ -64,7 +69,8 @@ router.get('/sUpdata', function(req, res, next) {
 
 
 router.post('/reset-sUpdata', function(req, res, next) {
-  json = JSON.stringify(req.body, null, 3); 
+  console.log("=..>>>>>>",req.body.standUpData)
+  json = JSON.stringify(req.body.standUpData, null, 3); 
   fs.writeFile(standUpFilePath, json, 'utf8',()=>{
     res.send(json);
   });

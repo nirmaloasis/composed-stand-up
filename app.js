@@ -9,51 +9,6 @@ const socketIo = require('socket.io')
 var fs = require('fs')
 var standUpFilePath = __dirname + '/data/stand-up-data.json'
 
-var membersList = [ 
-  "Abdul Ahad",
-  "Abhishek Kumar",
-  "Animesh Parial",
-  "Anish Kumar",
-  "Anusha Pakalakunja",
-  "Ashish Verma",
-  "Bharat Rathad",
-  "Chandramouli M S",
-  "Dikshita Khandke",
-  "Dinesh kumar Suvendrian",
-  "Divya Chandrasekaran",
-  "Geeta Hubli",
-  "Harish Onkarappa",
-  "Hemasundara Naidu",
-  "Himanshu Kumar",
-  "Jimit Mehta",
-  "John Paul",
-  "Jotsna M Babu",
-  "Krishn Kant Nayak",
-  "Kumar Sameer Ranjan",
-  "Lavanya Gowlla",
-  "Meenu Sharma",
-  "Naveen Telker",
-  "Nirmal PS",
-  "Pankaj Maurya",
-  "Praveen Kumar K",
-  "Raja Madhu",
-  "Rakesh Dutta",
-  "Rakesh Shastry",
-  "Ramandeep Kaur",
-  "Rohit Kumar",
-  "Senthil Basuva Raj",
-  "Shashank Goyal",
-  "Srinivas Reddy",
-  "Shree Lakshmi",
-  "Shreyansh Kant",
-  "Thirupathi M",
-  "Vinod Subramanian",
-  "Sumit Kumar",
-  "Swapnil Shah",
-  "Vinit Rohela",
-  "Vivek"
-]
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -97,7 +52,7 @@ app.use(function(err, req, res, next) {
 
 var port = process.env.PORT || 8080
 app.set('port', port);
-var preLoadedData 
+var preLoadedData,membersList
 
 io.on('connection', socket => {
   socket.on('sUpdata',()=>{
@@ -106,6 +61,7 @@ io.on('connection', socket => {
         return console.log(err);
       }
       preLoadedData = JSON.parse(data)
+      membersList = preLoadedData.membersList
       io.emit('sUpdata', preLoadedData);
     });
   })

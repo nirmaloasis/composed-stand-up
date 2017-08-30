@@ -1,0 +1,100 @@
+.AdminModal{
+    display: block;
+    text-align: center;
+    background: rgba(0,0,0,0.4)
+}
+
+.AdminModalBody{
+    background: white;
+    width: 25%;
+    margin: auto;
+    padding: 50px;
+    font-size: larger;
+}
+
+.AdminInput{
+    font-size: larger;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid;
+    margin: 30px;
+    width: 250px;
+}
+
+.AdminLoginBtn{
+    border: 1px solid;
+    width: 100px;
+    margin: auto;
+    background: #254b6e;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.ErrMsg{
+    color: red;
+    font: medium;
+    margin-top: 10px;
+}
+
+.AdminLoginSuccess{
+    width: 95%;
+    text-align: left;
+}
+
+.AsplColor{
+    color: #254b6e;
+}
+
+.NameContainerNotDone{
+    border: 1px solid darkorange;
+    padding: 1px 5px;
+    border-radius: 5px;
+    margin: 10px;
+    color: darkorange;
+    display: inline-block;
+    padding-right: 0px;
+    font-size: small;
+}
+
+.NameContainerDone{
+    border: 1px solid green;
+    padding: 1px 5px;
+    border-radius: 5px;
+    margin: 10px;
+    color: green;
+    display: inline-block;
+    padding-right: 0px;
+    font-size: small;
+}
+
+.FontLarge{
+    font-size: large;
+}
+
+.NameList{
+    margin: 20px 0px;
+}
+
+.DeleteName{
+    margin-left: 10px;
+    color: brown;
+    padding: 0px 2px;
+}
+
+.DeleteName:hover{
+    background: wheat;
+    cursor: pointer;
+}
+
+.AdminSuccessHeading{
+    text-align: center;
+    margin: 0px;
+    color: #254b6e;
+    text-decoration: underline;
+}
+
+#addSuccessMsg{
+    margin-left: 20px;
+    font-size: large;
+}

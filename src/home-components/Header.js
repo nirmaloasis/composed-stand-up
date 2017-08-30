@@ -1,14 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 import axios from 'axios'
 import io from 'socket.io-client'
+import Admin from '../admin/Admin.js'
 
 export default class Header extends React.Component {
     constructor(props){
         super(props)
-        this.state = {currentFacilitator : this.props.standUpData.currentFacilitator,setFlag : false}
+        this.state = {currentFacilitator : this.props.standUpData.currentFacilitator,setFlag : false,action : "normal"}
         this.startStandUp = this.startStandUp.bind(this)
         this.startRetro = this.startRetro.bind(this)
         this.facilitatorNotPresent = this.facilitatorNotPresent.bind(this)
+        this.adminAccess = this.adminAccess.bind(this)
+        this.resetToNormalUser = this.resetToNormalUser.bind(this)
     }
 
     componentDidMount(){
@@ -41,6 +44,14 @@ export default class Header extends React.Component {
         })
     }
 
+    adminAccess(event){
+        this.setState({action : "admin"})
+    }
+
+    resetToNormalUser(){
+        this.setState({action : "normal"})
+    }
+
   render() {
       console.log("header()=>>>>")
       var route = this.props.route
@@ -54,35 +65,46 @@ export default class Header extends React.Component {
                      };
     var currentFacilitator = this.props.nextFacilitator ? this.props.nextFacilitator : this.state.currentFacilitator//(this.state.setFlag )? this.state.currentFacilitator : this.props.standUpData.currentFacilitator
     this.state.setFlag = false 
-    return (
-        <div id="headerWrapper">
-            <div id="header92">
-                <span>
-                    <span id="compozedLogo">
-                        <img id="compozed-icon" src="images/compozed-logo.jpg" alt="#"/>
-                        Compozed Stand-Up
-                    </span>
-                    <span id="menuDiv">
-                        <a className="HeaderMenuItems" className="hideMenu" onClick={this.startStandUp} style={route=="standUp" ? tabStyleClicked : tabStyleNormal}>Stand-Up</a>
-                        <a className="HeaderMenuItems" className="hideMenu" onClick={this.startRetro} style={route=="retro" ? tabStyleClicked : tabStyleNormal}>Retro</a>
-                    </span>
-                </span>
-                <span id="headerRight">
-                    <div id="headerRightAlign">
-                        <span id="todaysFacilitator">
-                            <span id="rightBar">
-                                Facilitator : {currentFacilitator}
-                                <span id="notPresent" onClick={this.facilitatorNotPresent}>not present ?</span>
-                            </span>
-                        </span>
-                        <span id="adminSpan">
-                            <img id="adminLogo" src="images/admin-logo.svg" alt="#"/>
-                            <a id="adminLink" >Admin</a>
-                        </span>
-                    </div>
-                </span>
-            </div>
-        </div>
-    );
+    var headingContent = <div id="headerWrapper">
+                            <div id="header92">
+                                <span>
+                                    <span id="compozedLogo">
+                                        <img id="compozed-icon" src="images/compozed-logo.jpg" alt="#"/>
+                                        Compozed Stand-Up
+                                    </span>
+                                    <span id="menuDiv">
+                                        <a className="HeaderMenuItems" className="hideMenu" onClick={this.startStandUp} style={route=="standUp" ? tabStyleClicked : tabStyleNormal}>Stand-Up</a>
+                                        <a className="HeaderMenuItems" className="hideMenu" onClick={this.startRetro} style={route=="retro" ? tabStyleClicked : tabStyleNormal}>Retro</a>
+                                    </span>
+                                </span>
+                                <span id="headerRight">
+                                    <div id="headerRightAlign">
+                                        <span id="todaysFacilitator">
+                                            <span id="rightBar">
+                                                Facilitator : {currentFacilitator}
+                                                <span id="notPresent" onClick={this.facilitatorNotPresent}>not present ?</span>
+                                            </span>
+                                        </span>
+                                        <span id="adminSpan" onClick={this.adminAccess}>
+                                            <img id="adminLogo" src="images/admin-logo.svg" alt="#"/>
+                                            <a id="adminLink" >Admin</a>
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+    switch(this.state.action){
+        case "normal" : 
+            return (
+                headingContent
+            );
+        case "admin" :
+            return(
+                <div>
+                    {headingContent}
+                    <Admin resetToNormalUser={this.resetToNormalUser} standUpData={this.props.standUpData}/>
+                </div>
+            )
+    }
   }
 }

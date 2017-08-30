@@ -120,7 +120,6 @@ export default class Router extends Component {
 
             case "retro" : 
                 return (<RetroHome standUpData={this.state.standUpData} route={this.state.route} changeRoute={this.changeRoute}/>);
-
             case "loader" :
                 return(
                     <Loader />

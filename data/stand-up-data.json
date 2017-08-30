@@ -1,10 +1,12 @@
 {
-   "date": "Wed Aug 23 2017",
+   "date": "Wed Aug 30 2017",
    "newFaces": [
       "None"
    ],
-   "lastModifiedNewFaces": "Mon Aug 14 2017",
+   "lastModifiedNewFaces": "Wed Aug 30 2017",
    "lastModifiedInterestings": "Wed Aug 23 2017",
+   "xyz": "123.com",
+   "startsAt": "14:00:00",
    "helps": [
       {
          "askingHelp": "Jimit",
@@ -20,13 +22,15 @@
          "mentioningEvent": "Senthil",
          "eventText": "Learning Day 2 pm to 4 pm - Training Room 2",
          "date": "Wed Aug 30 2017",
-         "eventDetails": ""
+         "eventDetails": "",
+         "refinedDate": "Today"
       },
       {
          "mentioningEvent": "Raja",
          "eventText": "L&L topic- feature toggle",
          "date": "Thu Aug 31 2017",
-         "eventDetails": ""
+         "eventDetails": "",
+         "refinedDate": "Tomorrow"
       },
       {
          "mentioningEvent": "jimit",
@@ -60,52 +64,47 @@
       }
    ],
    "currentFacilitator": "Hemasundara Naidu",
+   "notPresentList" : [],
+   "doneTwiceList" : [],
    "notDoneList": [
+      "Vivek"
+   ],
+   "doneList": [],
+   "membersList": [
+      "Abhishek Kumar",
+      "Animesh Parial",
       "Anusha Pakalakunja",
       "Ashish Verma",
-      "Chandramouli M S",
-      "Dikshita Khandke",
-      "Harish Onkarappa",
-      "Hemasundara Naidu",
-      "John Paul",
-      "Jotsna M Babu",
-      "Kapil Taneja",
-      "Kumar Sameer Ranjan",
-      "Lavanya Gowlla",
-      "Mukesh Purohit",
-      "Naveen Telker",
-      "Praveen Kumar K",
-      "Shreyansh Kant",
-      "Srinivas Readdy"
-   ],
-   "doneList": [
-      "Pankaj Maurya",
       "Bharat Rathad",
-      "Swapnil Shah",
-      "Abhishek Kumar",
-      "Geeta Hubli",
-      "Rakesh Shastry",
-      "Rohit Kumar",
-      "Shashank Goyal",
-      "Vinit Rohela",
-      "Shree Lakshmi",
-      "Raja Madhu",
-      "Krishn Kant Nayak",
-      "Anish Kumar",
-      "Ramandeep Kaur",
-      "Nirmal PS",
-      "Sumit Kumar",
-      "Senthil Basuva Raj",
-      "Abdul Ahad",
-      "Vivek",
-      "Meenu Sharma",
+      "Dikshita Khandke",
       "Divya Chandrasekaran",
-      "Animesh Parial",
-      "Vinod Subramanian",
+      "Geeta Hubli",
+      "Hemasundara Naidu",
       "Himanshu Kumar",
       "Jimit Mehta",
-      "Rakesh Dutta",
-      "Dinesh kumar Suvendrian",
-      "Thirupathi M"
+      "John Paul",
+      "Jotsna M Babu",
+      "Jsdij skdfi",
+      "Krishn Kant Nayak",
+      "Kumar Sameer Ranjan",
+      "Kunal",
+      "Lavanya Gowlla",
+      "Meenu Sharma",
+      "Mukesh Purohit",
+      "Naveen Telker",
+      "Nirmal PS",
+      "Praveen Kumar K",
+      "Raja Madhu",
+      "Rakesh Shastry",
+      "Ramandeep Kaur",
+      "Rohit Kumar",
+      "Senthil Basuva Raj",
+      "Shree Lakshmi",
+      "Shreyansh Kant",
+      "Srinivas Reddy",
+      "Sumit Kumar",
+      "Vinit Rohela",
+      "Vinod Subramanian",
+      "Vivek"
    ]
 }
