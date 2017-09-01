@@ -1,161 +1,149 @@
 {
-   "standUpData": {
-      "date": "Wed Aug 23 2017",
-      "newFaces": [
-         "None"
-      ],
-      "lastModifiedNewFaces": "Mon Aug 14 2017",
-      "lastModifiedInterestings": "Wed Aug 23 2017",
-      "helps": [
-         {
-            "askingHelp": "Jimit",
-            "helpText": "Problem with entrprise jenkins",
-            "date": "Wed Aug 23 2017",
-            "helpedBy": "None",
-            "helpDetails": ""
-         }
-      ],
-      "interestings": [],
-      "events": [
-         {
-            "mentioningEvent": "Senthil",
-            "eventText": "Learning Day 2 pm to 4 pm - Training Room 2",
-            "date": "Wed Aug 30 2017",
-            "eventDetails": "",
-            "refinedDate": "Tomorrow"
-         },
-         {
-            "mentioningEvent": "Raja",
-            "eventText": "L&L topic- feature toggle",
-            "date": "Thu Aug 31 2017",
-            "eventDetails": ""
-         },
-         {
-            "mentioningEvent": "jimit",
-            "eventText": " ASPL badminton tournament",
-            "date": "Sat Sep 02 2017",
-            "eventDetails": ""
-         },
-         {
-            "mentioningEvent": "Geeta",
-            "eventText": "Potluck",
-            "date": "Wed Sep 06 2017",
-            "eventDetails": ""
-         },
-         {
-            "mentioningEvent": "Thiru",
-            "eventText": "Thoughtwork event",
-            "date": "Sat Sep 09 2017",
-            "eventDetails": ""
-         },
-         {
-            "mentioningEvent": "Abdul",
-            "eventText": "pizza - party , all want a confirm date",
-            "date": "",
-            "eventDetails": ""
-         },
-         {
-            "mentioningEvent": "Abdul",
-            "eventText": "PM's offsite Event",
-            "date": "",
-            "eventDetails": ""
-         }
-      ],
-      "currentFacilitator": "Ashish Verma",
-      "notDoneList": [
-         "Anusha Pakalakunja",
-         "Chandramouli M S",
-         "Dikshita Khandke",
-         "Harish Onkarappa",
-         "Hemasundara Naidu",
-         "Hemasundara Naidu",
-         "John Paul",
-         "Jotsna M Babu",
-         "Kapil Taneja",
-         "Kumar Sameer Ranjan",
-         "Lavanya Gowlla",
-         "Mukesh Purohit",
-         "Naveen Telker",
-         "Praveen Kumar K",
-         "Shreyansh Kant",
-         "Srinivas Readdy",
-         "kunal"
-      ],
-      "doneList": [
-         "Pankaj Maurya",
-         "Bharat Rathad",
-         "Swapnil Shah",
-         "Abhishek Kumar",
-         "Geeta Hubli",
-         "Rakesh Shastry",
-         "Rohit Kumar",
-         "Shashank Goyal",
-         "Vinit Rohela",
-         "Shree Lakshmi",
-         "Raja Madhu",
-         "Krishn Kant Nayak",
-         "Anish Kumar",
-         "Ramandeep Kaur",
-         "Nirmal PS",
-         "Sumit Kumar",
-         "Senthil Basuva Raj",
-         "Abdul Ahad",
-         "Vivek",
-         "Meenu Sharma",
-         "Divya Chandrasekaran",
-         "Animesh Parial",
-         "Vinod Subramanian",
-         "Himanshu Kumar",
-         "Jimit Mehta",
-         "Rakesh Dutta",
-         "Dinesh kumar Suvendrian",
-         "Thirupathi M"
-      ],
-      "membersList" : [ 
-        "Abdul Ahad",
-        "Abhishek Kumar",
-        "Animesh Parial",
-        "Anish Kumar",
+    "date": "Wed Aug 23 2017",
+    "newFaces": [
+        "None"
+    ],
+    "lastModifiedNewFaces": "Mon Aug 14 2017",
+    "lastModifiedInterestings": "Wed Aug 23 2017",
+    "startsAt": "14:00:00",
+    "helps": [
+        {
+        "askingHelp": "Jimit",
+        "helpText": "Problem with entrprise jenkins",
+        "date": "Wed Aug 23 2017",
+        "helpedBy": "None",
+        "helpDetails": "",
+        "important" : false
+        }
+    ],
+    "interestings": [],
+    "events": [
+        {
+        "mentioningEvent": "Senthil",
+        "eventText": "Learning Day 2 pm to 4 pm - Training Room 2",
+        "date": "Wed Aug 30 2017",
+        "eventDetails": "",
+        "refinedDate": "Tomorrow"
+        },
+        {
+        "mentioningEvent": "Raja",
+        "eventText": "L&L topic- feature toggle",
+        "date": "Thu Aug 31 2017",
+        "eventDetails": ""
+        },
+        {
+        "mentioningEvent": "jimit",
+        "eventText": " ASPL badminton tournament",
+        "date": "Sat Sep 02 2017",
+        "eventDetails": ""
+        },
+        {
+        "mentioningEvent": "Geeta",
+        "eventText": "Potluck",
+        "date": "Wed Sep 06 2017",
+        "eventDetails": ""
+        },
+        {
+        "mentioningEvent": "Thiru",
+        "eventText": "Thoughtwork event",
+        "date": "Sat Sep 09 2017",
+        "eventDetails": ""
+        },
+        {
+        "mentioningEvent": "Abdul",
+        "eventText": "pizza - party , all want a confirm date",
+        "date": "",
+        "eventDetails": ""
+        },
+        {
+        "mentioningEvent": "Abdul",
+        "eventText": "PM's offsite Event",
+        "date": "",
+        "eventDetails": ""
+        }
+    ],
+    "notPresentList": [],
+    "currentFacilitator": "Ashish Verma",
+    "notDoneList": [
         "Anusha Pakalakunja",
-        "Ashish Verma",
-        "Bharat Rathad",
         "Chandramouli M S",
         "Dikshita Khandke",
-        "Dinesh kumar Suvendrian",
-        "Divya Chandrasekaran",
+        "Harish Onkarappa"
+    ],
+    "doneList": [
+        "Pankaj Maurya",
+        "Bharat Rathad",
+        "Swapnil Shah",
+        "Abhishek Kumar",
         "Geeta Hubli",
-        "Harish Onkarappa",
-        "Hemasundara Naidu",
+        "Rakesh Shastry",
+        "Rohit Kumar",
+        "Shashank Goyal",
+        "Vinit Rohela",
+        "Shree Lakshmi",
+        "Raja Madhu",
+        "Krishn Kant Nayak",
+        "Anish Kumar",
+        "Ramandeep Kaur",
+        "Nirmal PS",
+        "Sumit Kumar",
+        "Senthil Basuva Raj",
+        "Abdul Ahad",
+        "Vivek",
+        "Meenu Sharma",
+        "Divya Chandrasekaran",
+        "Animesh Parial",
+        "Vinod Subramanian",
         "Himanshu Kumar",
         "Jimit Mehta",
-        "John Paul",
-        "Jotsna M Babu",
-        "Kapil Taneja",
-        "Krishn Kant Nayak",
-        "Kumar Sameer Ranjan",
-        "Lavanya Gowlla",
-        "Meenu Sharma",
-        "Mukesh Purohit",
-        "Naveen Telker",
-        "Nirmal PS",
-        "Pankaj Maurya",
-        "Praveen Kumar K",
-        "Raja Madhu",
         "Rakesh Dutta",
-        "Rakesh Shastry",
-        "Ramandeep Kaur",
-        "Rohit Kumar",
-        "Senthil Basuva Raj",
-        "Shashank Goyal",
-        "Srinivas Reddy",
-        "Shree Lakshmi",
-        "Shreyansh Kant",
-        "Thirupathi M",
-        "Vinod Subramanian",
-        "Sumit Kumar",
-        "Swapnil Shah",
-        "Vinit Rohela",
-        "Vivek"
-        ]
-   }
+        "Dinesh kumar Suvendrian",
+        "Thirupathi M"
+    ],
+    "membersList" : [ 
+    "Abdul Ahad",
+    "Abhishek Kumar",
+    "Animesh Parial",
+    "Anish Kumar",
+    "Anusha Pakalakunja",
+    "Ashish Verma",
+    "Bharat Rathad",
+    "Chandramouli M S",
+    "Dikshita Khandke",
+    "Dinesh kumar Suvendrian",
+    "Divya Chandrasekaran",
+    "Geeta Hubli",
+    "Harish Onkarappa",
+    "Hemasundara Naidu",
+    "Himanshu Kumar",
+    "Jimit Mehta",
+    "John Paul",
+    "Jotsna M Babu",
+    "Kapil Taneja",
+    "Krishn Kant Nayak",
+    "Kumar Sameer Ranjan",
+    "Lavanya Gowlla",
+    "Meenu Sharma",
+    "Mukesh Purohit",
+    "Naveen Telker",
+    "Nirmal PS",
+    "Pankaj Maurya",
+    "Praveen Kumar K",
+    "Raja Madhu",
+    "Rakesh Dutta",
+    "Rakesh Shastry",
+    "Ramandeep Kaur",
+    "Rohit Kumar",
+    "Senthil Basuva Raj",
+    "Shashank Goyal",
+    "Srinivas Reddy",
+    "Shree Lakshmi",
+    "Shreyansh Kant",
+    "Thirupathi M",
+    "Vinod Subramanian",
+    "Sumit Kumar",
+    "Swapnil Shah",
+    "Vinit Rohela",
+    "Vivek"
+    ]
 }

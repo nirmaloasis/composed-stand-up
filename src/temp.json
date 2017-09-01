@@ -1,143 +1,159 @@
-{
-   "date": "Wed Aug 23 2017",
-   "newFaces": [
+{  
+   "date":"Thu Aug 31 2017",
+   "newFaces":[  
       "None"
    ],
-   "lastModifiedNewFaces": "Wed Aug 30 2017",
-   "lastModifiedInterestings": "Wed Aug 23 2017",
-   "xyz": "123.com",
+   "lastModifiedNewFaces":"Mon Aug 14 2017",
+   "lastModifiedInterestings":"Tue Aug 29 2017",
    "startsAt": "14:00:00",
-   "helps": [
-      {
-         "askingHelp": "Jimit",
-         "helpText": "Problem with entrprise jenkins",
-         "date": "Wed Aug 23 2017",
-         "helpedBy": "None",
-         "helpDetails": ""
+   "helps":[  
+      {  
+         "askingHelp":"Pankaj",
+         "helpText":"Please add your stuffs Before or After the stand-up ..",
+         "date":"Thu Aug 24 2017",
+         "helpedBy":"All",
+         "helpDetails":""
+      },
+      {  
+         "askingHelp":"Vinod",
+         "helpText":"PROD FREEZE DUE TO HARVEY - EFFECTIVE IMMEDIATE",
+         "date":"Mon Aug 28 2017",
+         "helpedBy":"None",
+         "helpDetails":""
       }
    ],
-   "interestings": [],
-   "events": [
-      {
-         "mentioningEvent": "Senthil",
-         "eventText": "Learning Day 2 pm to 4 pm - Training Room 2",
-         "date": "Wed Aug 30 2017",
-         "eventDetails": "",
-         "refinedDate": "Today"
+   "interestings":[  
+
+   ],
+   "events":[  
+      {  
+         "mentioningEvent":"jimit",
+         "eventText":" ASPL badminton tournament",
+         "date":"Sat Sep 02 2017",
+         "eventDetails":""
       },
-      {
-         "mentioningEvent": "Raja",
-         "eventText": "L&L topic- feature toggle",
-         "date": "Thu Aug 31 2017",
-         "eventDetails": "",
-         "refinedDate": "Tomorrow"
+      {  
+         "mentioningEvent":"Geeta",
+         "eventText":"Potluck- Details posted on Board adjacent to projector",
+         "date":"Wed Sep 06 2017",
+         "eventDetails":""
       },
-      {
-         "mentioningEvent": "jimit",
-         "eventText": " ASPL badminton tournament",
-         "date": "Sat Sep 02 2017",
-         "eventDetails": ""
+      {  
+         "mentioningEvent":"Raja",
+         "eventText":"L&L topic- feature toggle",
+         "date":"Thu Sep 07 2017",
+         "eventDetails":""
       },
-      {
-         "mentioningEvent": "Geeta",
-         "eventText": "Potluck",
-         "date": "Wed Sep 06 2017",
-         "eventDetails": ""
+      {  
+         "mentioningEvent":"Vinod",
+         "eventText":"World Blockchain Summit Bangalore , it's a paid event. http://www.unicomlearning.com/2017/World_Blockchain_Summit_Bangalore/",
+         "date":"Thu Sep 07 2017",
+         "eventDetails":""
       },
-      {
-         "mentioningEvent": "Thiru",
-         "eventText": "Thoughtwork event",
-         "date": "Sat Sep 09 2017",
-         "eventDetails": ""
+      {  
+         "mentioningEvent":"Thiru",
+         "eventText":"Thoughtwork event",
+         "date":"Sat Sep 09 2017",
+         "eventDetails":""
       },
-      {
-         "mentioningEvent": "Abdul",
-         "eventText": "pizza - party , all want a confirm date",
-         "date": "",
-         "eventDetails": ""
-      },
-      {
-         "mentioningEvent": "Abdul",
-         "eventText": "PM's offsite Event",
-         "date": "",
-         "eventDetails": ""
+      {  
+         "mentioningEvent":"Abdul",
+         "eventText":"PM's offsite Event",
+         "date":"",
+         "eventDetails":""
       }
    ],
-   "currentFacilitator": "Hemasundara Naidu",
-   "notDoneList": [
+   "currentFacilitator":"Harish Onkarappa",
+   "notPresentList": [],
+   "notDoneList":[  
       "Anusha Pakalakunja",
       "Ashish Verma",
+      "Chandramouli M S",
       "Dikshita Khandke",
       "Hemasundara Naidu",
-      "John Paul",
-      "Jotsna M Babu",
-      "Jsdij skdfi",
+      "Kapil Taneja",
       "Kumar Sameer Ranjan",
-      "Kunal",
       "Lavanya Gowlla",
       "Mukesh Purohit",
-      "Naveen Telker",
-      "Praveen Kumar K",
-      "Shreyansh Kant",
-      "Srinivas Readdy"
+      "Naveen Telker"
    ],
-   "doneList": [
+   "doneList":[  
+      "Pankaj Maurya",
       "Bharat Rathad",
+      "Swapnil Shah",
       "Abhishek Kumar",
       "Geeta Hubli",
       "Rakesh Shastry",
       "Rohit Kumar",
+      "Shashank Goyal",
       "Vinit Rohela",
       "Shree Lakshmi",
       "Raja Madhu",
       "Krishn Kant Nayak",
+      "Anish Kumar",
       "Ramandeep Kaur",
       "Nirmal PS",
       "Sumit Kumar",
       "Senthil Basuva Raj",
+      "Abdul Ahad",
       "Vivek",
       "Meenu Sharma",
       "Divya Chandrasekaran",
       "Animesh Parial",
       "Vinod Subramanian",
       "Himanshu Kumar",
-      "Jimit Mehta"
+      "Jimit Mehta",
+      "Rakesh Dutta",
+      "Dinesh kumar Suvendrian",
+      "Thirupathi M",
+      "Srinivas Readdy",
+      "Praveen Kumar K",
+      "Shreyansh Kant",
+      "Jotsna M Babu",
+      "John Paul"
    ],
    "membersList": [
+      "Abdul Ahad",
       "Abhishek Kumar",
       "Animesh Parial",
+      "Anish Kumar",
       "Anusha Pakalakunja",
       "Ashish Verma",
       "Bharat Rathad",
-      "Dikshita Khandke",
+      "Chandramouli M S",
+      "Dinesh kumar Suvendrian",
       "Divya Chandrasekaran",
       "Geeta Hubli",
+      "Harish Onkarappa",
       "Hemasundara Naidu",
       "Himanshu Kumar",
       "Jimit Mehta",
       "John Paul",
       "Jotsna M Babu",
-      "Jsdij skdfi",
+      "Kapil Taneja",
       "Krishn Kant Nayak",
       "Kumar Sameer Ranjan",
-      "Kunal",
       "Lavanya Gowlla",
       "Meenu Sharma",
       "Mukesh Purohit",
       "Naveen Telker",
       "Nirmal PS",
+      "Pankaj Maurya",
       "Praveen Kumar K",
       "Raja Madhu",
+      "Rakesh Dutta",
       "Rakesh Shastry",
       "Ramandeep Kaur",
       "Rohit Kumar",
       "Senthil Basuva Raj",
+      "Shashank Goyal",
+      "Srinivas Reddy",
       "Shree Lakshmi",
       "Shreyansh Kant",
-      "Srinivas Reddy",
-      "Sumit Kumar",
-      "Vinit Rohela",
       "Vinod Subramanian",
+      "Sumit Kumar",
+      "Swapnil Shah",
+      "Vinit Rohela",
       "Vivek"
    ]
 }

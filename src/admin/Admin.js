@@ -45,7 +45,6 @@ export default class ContentEvents extends React.Component {
         standUpData.membersList.push(this.newMember.value)
         standUpData.membersList.sort()
         this.modifyTheData(standUpData,()=>{
-            debugger
             document.getElementById('addSuccessMsg').innerText = ' "' + this.newMember.value + '" ' + "has been added to the list !!" 
             document.getElementById('addSuccessMsg').style.color = "green"
             this.newMember.value = ""
@@ -65,7 +64,6 @@ export default class ContentEvents extends React.Component {
         }
         standUpData.membersList.splice(j,1)
         this.modifyTheData(standUpData,()=>{
-            debugger
             document.getElementById('addSuccessMsg').innerText = ' "' + val + '" ' + "has been removed from the list !!" 
             document.getElementById('addSuccessMsg').style.color = "red"
             setTimeout(()=>{
@@ -88,6 +86,8 @@ export default class ContentEvents extends React.Component {
         this.state.action == "fail" ? this.adminUser.value = "" : ""
         var notDoneList = this.state.standUpData.notDoneList
         var doneList = this.state.standUpData.doneList
+        var notPresentList = this.state.standUpData.notPresentList
+        var count = notDoneList.length + notPresentList.length
         switch(this.state.action){
             case "normal" :
                 return(
@@ -111,7 +111,8 @@ export default class ContentEvents extends React.Component {
                             </div>
                             <div><span className="AsplColor FontLarge"> Current Facilitator : </span>{this.props.standUpData.currentFacilitator}</div>
                             <div className="NameList">
-                                <div className="AsplColor FontLarge"> {"People who have Not done the stand-up ( "+ notDoneList.length + " ) : " }</div>
+                                <div className="AsplColor FontLarge"> {"People who have Not done the stand-up ( "+ count + " ) : " }</div>
+                                {notPresentList.map((val,i)=><span key={i} className="NameContainerNotDone">{val}<span className="DeleteName" onClick={(event)=>this.removeAMember(event,"notPresentList",i,val)}>&times;</span></span>)}
                                 {notDoneList.map((val,i)=><span key={i} className="NameContainerNotDone">{val}<span className="DeleteName" onClick={(event)=>this.removeAMember(event,"notDoneList",i,val)}>&times;</span></span>)}
                             </div>
                              <div className="NameList">

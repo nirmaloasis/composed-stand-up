@@ -21,6 +21,7 @@ export default class ModalHelps extends React.Component {
         this.enterKeyAddHelp = this.enterKeyAddHelp.bind(this)
         this.addHelp = this.addHelp.bind(this)
         this.zoomInInterestings = this.zoomInInterestings.bind(this)
+        this.makeItImportant = this.makeItImportant.bind(this)
     }
 
     componentWillMount(){
@@ -28,6 +29,13 @@ export default class ModalHelps extends React.Component {
         this.socket.on('add-content',(data)=>{
             this.setState({helps : data.helps},()=>{})
         })
+    }
+
+    makeItImportant(event,i){
+        var helpItems = this.state.helps
+        helpItems[i].important = helpItems[i].important ? false : true 
+        this.state.action = "normal"
+        this.socket.emit('add-content',{content : helpItems, contentType : "helps"})
     }
 
     closeModal(event){
@@ -162,11 +170,12 @@ export default class ModalHelps extends React.Component {
                 <div className="">  
                 { helpItems.map((val,i)=>{
                     return (
-                        <div key={i} className="InfoTilesWrapper" data-id={i}>
+                        <div key={i} className={val.important ? "InfoTilesWrapper YellowBackG" : "InfoTilesWrapper"} data-id={i}>
                             <div className="EditCloseIcon">
                                 <span className="CloseTileIcon" onClick={(event)=>this.closeHelp(event,i)}>&times;<span className="ToolTipText ModalToolTipFont">remove</span></span>
-                                <span className="IconsSpan" onClick={(event)=>this.editHelp(event,i)}><img className="ModalIcons"  src="images/edit-icon.png" alt="edit"/><span className="ToolTipText ModalToolTipFont">edit</span></span>
-                                <span className="IconsSpan" onClick={(event)=>this.helpDetails(event,i)}>{val.helpDetails ? <img className="NotificationIconModal" src="images/comment-icon.png" alt="details" />: ""}<img className="ModalIcons" src="images/details.png" alt="details" /><span className="ToolTipText ModalToolTipFont">details</span></span>
+                                <span className="IconsSpan" onClick={(event)=>this.editHelp(event,i)}><img className="ModalIcons"  src="images/edit.svg" alt="edit"/><span className="ToolTipText ModalToolTipFont">edit</span></span>
+                                <span className="IconsSpan" onClick={(event)=>this.helpDetails(event,i)}>{val.helpDetails ? <img className="NotificationIconModal" src="images/comment-icon.png" alt="details" />: ""}<img className="ModalIcons" src="images/details.svg" alt="details" /><span className="ToolTipText ModalToolTipFont">details</span></span>
+                                <span className="IconsSpan" onClick={(event)=>this.makeItImportant(event,i)}><img className="ModalIcons"  src="images/star.svg" alt="important?" /><span className="ToolTipText ModalToolTipFont">important?</span></span>
                                 { this.state.helpId == i && (this.state.action == "edit" || this.state.action == "details") ?<span className="IconsSpan" onClick={(event)=>this.returnToHomeTile(event,i)}><img className="ModalIcons" src="images/previous.svg" alt="return" /><span className="ToolTipText ModalToolTipFont">return</span></span>:""}
                             </div>
                             {   

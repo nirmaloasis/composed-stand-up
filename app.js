@@ -16,7 +16,7 @@ var app = express();
 
 const server = http.createServer(app)
 const io = socketIo(server)
-
+// process.env.varName
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -93,30 +93,17 @@ io.on('connection', socket => {
 
   socket.on('facilitator', function(req){
     var standUpData = preLoadedData
-    var temp = standUpData.notDoneList
-    var doneList= standUpData["doneList"]
-    var notDoneList
-    if(temp.length > 0 ){
-      notDoneList = temp
-    }
-    else{
-      notDoneList = membersList
-      doneList = []
-    }
+    var temp, notDoneList = standUpData["notDoneList"], doneList = standUpData["doneList"] 
+   
+    temp = (notDoneList.length > 0 ) ? notDoneList.slice(0) : doneList.slice(0)
     var currentFacilitator = standUpData["currentFacilitator"]
-    var randomIndex = Math.floor((notDoneList.length) * Math.random())
-    var nextFacilitator = notDoneList[randomIndex];
+    standUpData.notPresentList.push(currentFacilitator)
+    var randomIndex = Math.floor((temp.length) * Math.random())
+    var nextFacilitator = temp[randomIndex];
     temp.splice(randomIndex,1)
+    if(notDoneList.length > 0 ) notDoneList = temp
+    else doneList = temp
     var writeBackObject = standUpData
-
-    if(!req.notPresent){
-      (temp.length >0) ? doneList.push(currentFacilitator) : ""
-      writeBackObject.date = new Date().toDateString()
-    }
-    else{
-      notDoneList.push(currentFacilitator)
-      notDoneList.sort()
-    }
     writeBackObject.currentFacilitator = nextFacilitator
     writeBackObject.notDoneList = notDoneList
     writeBackObject.doneList = doneList
@@ -129,9 +116,11 @@ io.on('connection', socket => {
 
   socket.on('letsClap', function(req){
     var standUpData = preLoadedData
-    var temp = standUpData.notDoneList
-    var doneList= standUpData["doneList"]
-    var notDoneList
+    var temp = standUpData.notDoneList.concat(standUpData.notPresentList)
+    var doneList = standUpData["doneList"]
+    var notDoneList 
+    standUpData.notPresentList = []
+    temp.sort()
     if(temp.length > 0 ){
       notDoneList = temp
     }

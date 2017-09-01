@@ -113,9 +113,12 @@ export default class NewFaces extends React.Component {
     invalidTimeMsg(){
         document.getElementById('invalidTime').innerText = "Invalid-Time!!!"
         setTimeout(()=>{
-            document.getElementById('invalidTime').innerText = ""
             this.setState({action : "normal"})
         },1000)
+    }
+
+    componentDidUpdate(){
+        document.getElementById('timeInput') ? document.getElementById('timeInput').focus() : ""
     }
 
     render() {
@@ -138,7 +141,7 @@ export default class NewFaces extends React.Component {
                     <span>Starts At - </span>
                     {
                         this.state.action == "normal" ? <span onClick={this.scheduleAt} className="Cursor">{this.state.startsAt}</span>:
-                        <span><input type="text" placeholder="hh:mm:ss" onKeyUp={this.keyUpTimeScheduler} onBlur={this.onBlurTimeScheduler} title="Enter in 24hrs Format"/><span id="invalidTime"></span></span>
+                        <span><input id="timeInput" type="text" placeholder="hh:mm:ss" onKeyUp={this.keyUpTimeScheduler} onBlur={this.onBlurTimeScheduler} title="Enter in 24hrs Format"/><span id="invalidTime"></span></span>
                     }
                     
                 </span>

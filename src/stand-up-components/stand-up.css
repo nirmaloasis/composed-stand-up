@@ -125,7 +125,7 @@ input{
 }
 .HelpText{
     text-align: left;
-    color: #686868;
+    color: #444;
     padding: 0px 10px;
     word-break: break-word;
     word-wrap : break-word; 
@@ -139,6 +139,7 @@ input{
     border: 0;
     font-size: 16px;
     border-bottom: 1px solid #686868;
+    background: none;
 }
 .AddLittleIcon{
     border: 1px solid #254b6e;
@@ -199,7 +200,6 @@ input{
     float: right;
 }
 #helpItemReadOnly{
-    color: #686868;
 }
 #askingHelpReadOnlyFont{
 color: #254b6e;
@@ -421,6 +421,7 @@ color: #254b6e;
     padding-left: 10px;
     border-bottom: 1px dotted;
     width: 72%;
+    background: none;
 }
 #helpAddTile{
     padding-bottom: 20px;
@@ -439,6 +440,7 @@ color: #254b6e;
     font-size: 18px;
     color: #686868;
     height: 80px;
+    background: none;                
 }
 .itemDetalsModal{
     width: 96%;
@@ -511,4 +513,8 @@ color: #254b6e;
 
 .MoveToPrev{
     float: left;
+}
+
+.YellowBackG{
+    background: palegoldenrod !important;
 }

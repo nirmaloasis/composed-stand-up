@@ -20,6 +20,7 @@ export default class ContentHelps extends React.Component {
         this.helpDetails = this.helpDetails.bind(this)
         this.addHelpDetails = this.addHelpDetails.bind(this)
         this.zoomInHelp = this.zoomInHelp.bind(this)
+        this.makeItImportant = this.makeItImportant.bind(this)
     }
 
     componentWillMount(){
@@ -27,6 +28,13 @@ export default class ContentHelps extends React.Component {
         this.socket.on('add-content',(data)=>{
             this.setState({helps : data.helps},()=>{})
         })
+    }
+
+    makeItImportant(event,i){
+        var helpItems = this.state.helps
+        helpItems[i].important = helpItems[i].important ? false : true 
+        this.state.action = "normal"
+        this.socket.emit('add-content',{content : helpItems, contentType : "helps"})
     }
     
     addHelp(event){
@@ -148,11 +156,12 @@ export default class ContentHelps extends React.Component {
             <div className="ForOverFlow" style={ {height: bodyBottomHeight+'px'}}>  
                 { this.state.helps.map((val,i)=>{
                     return (
-                        <div key={i} className="InfoTilesWrapper" data-id={i}>
+                        <div key={i} className={val.important ? "InfoTilesWrapper YellowBackG" : "InfoTilesWrapper"} data-id={i}>
                             <div className="EditCloseIcon">
                                 <span className="CloseTileIcon" onClick={(event)=>this.closeHelp(event,i)}>&times;<span className="ToolTipText">remove</span></span>
-                                <span className="IconsSpan" onClick={(event)=>this.editHelp(event,i)}><img className="Icons"  src="images/edit-icon.png" alt="edit" /><span className="ToolTipText">edit</span></span>
-                                <span className="IconsSpan" onClick={(event)=>this.helpDetails(event,i)}>{val.helpDetails ? <img className="NotificationIcon" src="images/comment-icon.png" alt="details" />: ""}<img className="Icons" src="images/details.png" alt="details" /><span className="ToolTipText">details</span></span>
+                                <span className="IconsSpan" onClick={(event)=>this.editHelp(event,i)}><img className="Icons"  src="images/edit.svg" alt="edit" /><span className="ToolTipText">edit</span></span>
+                                <span className="IconsSpan" onClick={(event)=>this.helpDetails(event,i)}>{val.helpDetails ? <img className="NotificationIcon" src="images/comment-icon.png" alt="details" />: ""}<img className="Icons" src="images/details.svg" alt="details" /><span className="ToolTipText">details</span></span>
+                                <span className="IconsSpan" onClick={(event)=>this.makeItImportant(event,i)}><img className="Icons"  src="images/star.svg" alt="important?" /><span className="ToolTipText">important?</span></span>
                                 { this.state.helpId == i && (this.state.action == "edit" || this.state.action == "details") ?<span className="IconsSpan" onClick={(event)=>this.returnToHomeTile(event,i)}><img className="Icons" src="images/previous.svg" alt="return"/><span className="ToolTipText">return</span></span>:""}
                             </div>
                             {   

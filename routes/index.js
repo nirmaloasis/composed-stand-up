@@ -53,7 +53,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/admin', function (req, res) {
-  var status = req.body.passkey == "123.com" ? true : false
+  var status = req.body.passkey == process.env.passkey ? true : false
   res.send({status : status})
 })
 
@@ -69,7 +69,6 @@ router.get('/sUpdata', function(req, res, next) {
 
 
 router.post('/reset-sUpdata', function(req, res, next) {
-  console.log("=..>>>>>>",req.body.standUpData)
   json = JSON.stringify(req.body.standUpData, null, 3); 
   fs.writeFile(standUpFilePath, json, 'utf8',()=>{
     res.send(json);
@@ -123,7 +122,6 @@ router.post('/facilitator', function(req, res, next) {
 })
 
 router.post('/add-content',(req, res, next)=>{
-  console.log("add = load ===>",req.body)
   var req = req.body
     fs.readFile(standUpFilePath, 'utf8', function readFileCallback(err, data){
         if (err) {
@@ -135,7 +133,6 @@ router.post('/add-content',(req, res, next)=>{
         req.contentType = "interestings" ? writeBackObject.lastModifiedInterestings = new Date().toDateString() : ""
         var json = JSON.stringify(writeBackObject, null, 3); 
         fs.writeFile(standUpFilePath, json, 'utf8',()=>{
-            console.log("writeBackObject ===>",writeBackObject)
           res.json(writeBackObject)
         });
     });
